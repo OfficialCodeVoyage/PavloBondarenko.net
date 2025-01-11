@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_1">
-      <change afterPath="$PROJECT_DIR$/src/app/components/Form/mailer.php" afterDir="false" />
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_2">
+      <change afterPath="$PROJECT_DIR$/mailer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/404/404.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/404/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/home/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/404/page404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/404/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Form/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Form/mailer.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/app/components/Form" />
       <recent name="$PROJECT_DIR$/src/app" />
     </key>
@@ -77,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736519813336</updated>
       <workItem from="1736519815071" duration="11634000" />
-      <workItem from="1736576428189" duration="8292000" />
+      <workItem from="1736576428189" duration="16026000" />
     </task>
     <task id="LOCAL-00001" summary="part_1">
       <option name="closed" value="true" />
@@ -87,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736583915168</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="part_2">
+      <option name="closed" value="true" />
+      <created>1736586345038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736586345038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="part_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="part_1" />
+    <MESSAGE value="part_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="part_2" />
   </component>
 </project>

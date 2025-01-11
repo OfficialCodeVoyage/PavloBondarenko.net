@@ -4,6 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+    subsets: ['latin'], // Подмножества
+    weights: ['400', '500', '600', '700'], // Нужные веса
+});
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -23,14 +29,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-        <head>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
-        </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div id="container"></div>
         <h3 id="coords"></h3>
 
-        <main className="main-aboutpage">
+        <main className="main-homepage">
             <Header/>
             {children}
             <Footer/>

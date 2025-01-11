@@ -4,6 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'], // Подмножества
+  weights: ['400', '500', '600', '700'], // Нужные веса
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -2,8 +2,9 @@
 import { useEffect } from 'react';
 import bgMain from './../bg/bg-main.js';
 import './../bg/bg_style.css'
+import './globals.css'
 
-export default function Home() {
+export default function HomePage() {
 
   useEffect(() => {
     bgMain(); // Запускаем анимацию

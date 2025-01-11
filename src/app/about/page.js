@@ -1,12 +1,19 @@
 'use client';
 import './../../bg/bg_style.css';
+import './../globals.css'
 import bgAbout from "@/bg/bg-about";
 import {useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Page = () => {
     useEffect(() => {
         bgAbout(); // Запускаем анимацию
+        AOS.init({
+            duration: 1500, // Настройка длительности анимации
+            once: true,     // Выполнение анимации один раз
+        });
     }, []);
 
     return (

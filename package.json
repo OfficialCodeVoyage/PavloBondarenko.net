@@ -11,9 +11,9 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "iconoir-react": "^7.10.1",
     "next": "15.1.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.172.0"
   }
 }

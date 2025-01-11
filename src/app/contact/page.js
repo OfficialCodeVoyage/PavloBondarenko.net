@@ -4,11 +4,18 @@ import './../../bg/bg_style.css';
 import bgContact from "@/bg/bg-contact";
 import {useEffect} from "react";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const ContactPage = () => {
 
     useEffect(() => {
         bgContact(); // Запускаем анимацию
+        AOS.init({
+            duration: 1500, // Настройка длительности анимации
+            once: true,     // Выполнение анимации один раз
+        });
     }, []);
 
     return (
