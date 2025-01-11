@@ -4,11 +4,11 @@ const Form = () => {
     return (
         <div data-aos="zoom-in" className="contact-form">
             <div className="shadow-box">
-                <img src="./assets/images/bg1.png" alt="BG" className="bg-img"/>
-                <img src="./assets/images/icon3.png" alt="Icon"/>
+                <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                <img src="/images/icon3.png" alt="Icon"/>
                 <h1>Let’s work <span>together.</span></h1>
                 <form method="POST" action="mailer.php">
-                    <div className="alert alert-success messenger-box-contact__msg" style="display: none" role="alert">
+                    <div className="alert alert-success messenger-box-contact__msg" style={{display: 'none'}} role="alert">
                         Your message was sent successfully.
                     </div>
                     <div className="input-group">

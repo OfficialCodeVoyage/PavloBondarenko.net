@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
     return (
         <div>
@@ -5,10 +7,10 @@ const Footer = () => {
                 <div className="container">
                     <div className="footer-content text-center">
                         <ul className="footer-menu">
-                            {/*<li><a href="index.html">Home</a></li>*/}
-                            {/*<li><a href="about.html">About</a></li>*/}
-                            {/*<li><a href="works.html">Works</a></li>*/}
-                            {/*<li><a href="contact.html">Contact</a></li>*/}
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/about">About</Link></li>
+                            <li><Link href="/works">Works</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
                         </ul>
                         <p className="copyright" style={{marginTop: '-20px'}}>
                             &copy; Created with love by <span><a href="https://www.linkedin.com/in/mrbondarenko/"
