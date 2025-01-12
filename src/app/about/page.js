@@ -5,6 +5,7 @@ import bgAbout from "@/bg/bg-about";
 import {useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from "next/link";
 
 
 const Page = () => {
@@ -57,14 +58,14 @@ const Page = () => {
                                 <li>
                                     <p className="date">01/2021 - 04/2024</p>
                                     <h2>Software Engineer & Cloud Solutions Engineer</h2>
-                                    <p className="type"><a href="https://qit.software/"
-                                                           style={{color: '#98D2E6', fontSize: '18px'}}>QIT Software</a></p>
+                                    <p className="type"><Link href="https://qit.software/"
+                                                           style={{color: '#98D2E6', fontSize: '18px'}}>QIT Software</Link></p>
                                 </li>
                                 <li>
                                     <p className="date">09/2016 - 05/2018</p>
                                     <h2>Full Stack Developer</h2>
-                                    <p className="type"><a href="https://123remodeling.com/"
-                                                           style={{color: '#98D2E6', fontSize: '18px'}}>123 Remodeling</a>
+                                    <p className="type"><Link href="https://123remodeling.com/"
+                                                           style={{color: '#98D2E6', fontSize: '18px'}}>123 Remodeling</Link>
                                     </p>
                                 </li>
                             </ul>
@@ -79,16 +80,16 @@ const Page = () => {
                                 <li>
                                     <p className="date">2023 - 2024</p>
                                     <h2>B.S. in Computer Science</h2>
-                                    <p className="type"><a href="https://www.unt.edu/index.html"
+                                    <p className="type"><Link href="https://www.unt.edu/index.html"
                                                            style={{color: '#98D2E6', fontSize: '18px'}}>University of North
-                                        Texas</a></p>
+                                        Texas</Link></p>
                                 </li>
                                 <li>
                                     <p className="date">2011 - 2015</p>
                                     <h2>B.S. in Computer Engineering</h2>
-                                    <p className="type"><a href="https://op.edu.ua/en"
+                                    <p className="type"><Link href="https://op.edu.ua/en"
                                                            style={{color: '#98D2E6', fontSize: '18px'}}>Odesа Polytechnic
-                                        National University</a></p>
+                                        National University</Link></p>
                                 </li>
                             </ul>
                         </div>
@@ -103,18 +104,18 @@ const Page = () => {
                                 <div className="about-profile-box info-box shadow-box h-full">
                                     <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                     <div className="inner-profile-icons shadow-box">
-                                        <a target="_blank" rel="noopener noreferrer" className="linkedln"
+                                        <Link target="_blank" rel="noopener noreferrer" className="linkedln"
                                            href="https://www.linkedin.com/in/mrbondarenko/">
                                             <i className="iconoir-linkedin"></i>
-                                        </a>
-                                        <a target="_blank" rel="noopener noreferrer"
+                                        </Link>
+                                        <Link target="_blank" rel="noopener noreferrer"
                                            href="https://www.instagram.com/pavlo_bondarenko_hello_world/">
                                             <i className="iconoir-instagram"></i>
-                                        </a>
-                                        <a target="_blank" rel="noopener noreferrer"
+                                        </Link>
+                                        <Link target="_blank" rel="noopener noreferrer"
                                            href="https://github.com/OfficialCodeVoyage">
                                             <i className="iconoir-github"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="d-flex align-items-center justify-content-between">
                                         <div className="infos">
@@ -122,9 +123,9 @@ const Page = () => {
                                             <h1>My Social Profiles</h1>
                                         </div>
 
-                                        <a href="./contact.html" className="about-btn">
+                                        <Link href='./../contact' className="about-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
-                                        </a>
+                                        </Link>
 
                                     </div>
                                 </div>
@@ -132,19 +133,19 @@ const Page = () => {
 
                             <div data-aos="zoom-in" className="flex-1">
                                 <div className="about-contact-box info-box shadow-box">
-                                    <a className="overlay-link" href="./contact.html"></a>
+                                    <Link className="overlay-link" href='./../contact'></Link>
                                     <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                     <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
                                     <h1>Let's <br/>work <span>together.</span></h1>
-                                    <a href="./contact.html" className="about-btn">
+                                    <Link href='./../contact' className="about-btn">
                                         <img src="/images/icon.svg" alt="Button"/>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" className="h-full">
                                 <div className="about-crenditials-box info-box shadow-box">
-                                    <a className="overlay-link" href="PavloBondarenkoResume.pdf" download></a>
+                                    <Link className="overlay-link" href="PavloBondarenkoResume.pdf" download></Link>
                                     <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                     <img src="/images/resume.png" style={{height: '124px'}} alt="Sign"/>
                                     <div className="d-flex align-items-center justify-content-between">
@@ -153,7 +154,7 @@ const Page = () => {
                                             <h1>Updated Resume</h1>
                                         </div>
 
-                                        <a href="PavloBondarenkoResume.pdf" download className="about-btn">
+                                        <a href="/PavloBondarenkoResume.pdf" download className="about-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
                                         </a>
 

@@ -78,7 +78,7 @@ const Form = () => {
                 <h1>
                     Let’s work <span>together.</span>
                 </h1>
-                <form method="POST" action="../../../../mailer.php" ref={formRef}>
+                <form method="POST" action="mailer.php" ref={formRef}>
                     <div
                         className="alert alert-success messenger-box-contact__msg"
                         style={{ display: 'none' }}

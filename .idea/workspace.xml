@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_2">
-      <change afterPath="$PROJECT_DIR$/mailer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/404/404.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/404/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/home/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_3">
+      <change afterPath="$PROJECT_DIR$/src/app/components/MagicCanvs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/404/page404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/404/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Form/mailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Form/mailer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/works/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/works/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/works/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +62,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/app/components/Form" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
@@ -87,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736519813336</updated>
       <workItem from="1736519815071" duration="11634000" />
-      <workItem from="1736576428189" duration="16026000" />
+      <workItem from="1736576428189" duration="20365000" />
+      <workItem from="1736673269631" duration="4576000" />
     </task>
     <task id="LOCAL-00001" summary="part_1">
       <option name="closed" value="true" />
@@ -105,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736586345038</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="part_3">
+      <option name="closed" value="true" />
+      <created>1736595495000</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736595495000</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="part_1" />
     <MESSAGE value="part_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="part_2" />
+    <MESSAGE value="part_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="part_3" />
   </component>
 </project>
