@@ -1,9 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./../globals.css";
+import "../../globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
-import Header from "./../components/Header";
-import Footer from "./../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -23,11 +23,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+        <head>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
+        </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div id="container"></div>
         <h3 id="coords"></h3>
 
-        <main className="main-workspage">
+        <main className="main-aboutpage">
             <Header/>
             {children}
             <Footer/>

@@ -1,6 +1,6 @@
 'use client';
-import './../../bg/bg_style.css';
-import './../globals.css'
+import '../../../bg/bg_style.css';
+import '../../globals.css'
 import bgAbout from "@/bg/bg-about";
 import {useEffect} from "react";
 import AOS from 'aos';
@@ -123,7 +123,7 @@ const Page = () => {
                                             <h1>My Social Profiles</h1>
                                         </div>
 
-                                        <Link href='./../contact' className="about-btn">
+                                        <Link href='../contact' className="about-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
                                         </Link>
 
@@ -133,11 +133,11 @@ const Page = () => {
 
                             <div data-aos="zoom-in" className="flex-1">
                                 <div className="about-contact-box info-box shadow-box">
-                                    <Link className="overlay-link" href='./../contact'></Link>
+                                    <Link className="overlay-link" href='../contact'></Link>
                                     <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                     <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
                                     <h1>Let's <br/>work <span>together.</span></h1>
-                                    <Link href='./../contact' className="about-btn">
+                                    <Link href='../contact' className="about-btn">
                                         <img src="/images/icon.svg" alt="Button"/>
                                     </Link>
                                 </div>

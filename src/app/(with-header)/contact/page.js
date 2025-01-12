@@ -1,6 +1,6 @@
 'use client';
-import Form from './../components/Form/Form'
-import './../../bg/bg_style.css';
+import Form from '../../components/Form/Form'
+import '../../../bg/bg_style.css';
 import bgContact from "@/bg/bg-contact";
 import {useEffect} from "react";
 

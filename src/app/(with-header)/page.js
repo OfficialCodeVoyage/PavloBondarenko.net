@@ -1,8 +1,8 @@
 'use client';
 import { useEffect } from 'react';
-import bgMain from './../bg/bg-main.js';
-import './../bg/bg_style.css'
-import './globals.css'
+import bgMain from '../../bg/bg-main.js';
+import '../../bg/bg_style.css'
+import '../globals.css'
 
 export default function HomePage() {
 

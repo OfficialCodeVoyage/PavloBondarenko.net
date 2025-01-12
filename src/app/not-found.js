@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import './not-found.css'
 
 export default function NotFoundPage() {
     useEffect(() => {
@@ -62,7 +63,7 @@ export default function NotFoundPage() {
         <head>
             <title>404 - Soon</title>
             <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="stylesheet" href="404.css" />
+            <link rel="stylesheet" href="not-found.css" />
         </head>
         <body>
         <p className="mega">
