@@ -1,20 +1,27 @@
 'use client';
 
-import { useEffect } from 'react';
-import './not-found.css'
+import { useEffect, useRef } from 'react';
+import Head from 'next/head';
+import styles from './not-found.module.css';
 
 export default function NotFoundPage() {
+    // Создаём ref для элемента с классом bola
+    const bolaRef = useRef(null);
+
     useEffect(() => {
+        // Проверяем, что реф не пустой
+        if (!bolaRef.current) return;
+
         const THREE = require('three'); // Импортируем three.js
 
-        const $container = document.querySelector('.bola');
+        const container = bolaRef.current;
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         const camera = new THREE.PerspectiveCamera(80, 1, 0.1, 10000);
         const scene = new THREE.Scene();
 
         scene.add(camera);
         renderer.setSize(300, 300);
-        $container.appendChild(renderer.domElement);
+        container.appendChild(renderer.domElement);
 
         // Camera
         camera.position.z = 200;
@@ -29,6 +36,7 @@ export default function NotFoundPage() {
             transparent: true,
             opacity: 1,
         });
+
 
         // Lights
         const L1 = new THREE.PointLight(0xffffff, 1);
@@ -59,29 +67,29 @@ export default function NotFoundPage() {
     }, []);
 
     return (
-        <html lang="en">
-        <head>
-            <title>404 - Soon</title>
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="stylesheet" href="not-found.css" />
-        </head>
-        <body>
-        <p className="mega">
-            4<span className="boom">0</span>4
-            <div className="bola"></div>
-        </p>
-        <p className="mini">
-            I am working on it) <i>P.B.</i>
-        </p>
-        <p className="mini2">
-            Go Back to the{' '}
-            <i>
-                <a href="/" style={{ color: 'white' }}>
-                    Main Page
-                </a>
-            </i>
-        </p>
-        </body>
-        </html>
+        <>
+            <Head>
+                <title>404 - Soon</title>
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            </Head>
+            <main className={styles.container_not_found}>
+                <p className={styles.mega}>
+                    4<span className={styles.boom}>0</span>4
+                </p>
+                {/* Привязываем реф к div с классом bola */}
+                <div ref={bolaRef} className={styles.bola}></div>
+                <p className={styles.mini}>
+                    I am working on it) <i>P.B.</i>
+                </p>
+                <p className={styles.mini2}>
+                    Go Back to the{' '}
+                    <i>
+                        <a href="/" style={{ color: 'white' }}>
+                            Main Page
+                        </a>
+                    </i>
+                </p>
+            </main>
+        </>
     );
 }

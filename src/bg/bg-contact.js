@@ -42,10 +42,9 @@ export default function bgContact() {
         canvas = container.querySelector('canvas');
 
         if (canvas) {
-            console.log('В контейнере присутствует тег <canvas>.');
-        } else {
-            canvas = document.createElement( 'canvas' );
+            canvas.remove();
         }
+        canvas = document.createElement( 'canvas' );
 
         let coords;
         coords = document.getElementById( 'coords' );
