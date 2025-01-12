@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_5">
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_6">
+      <change afterPath="$PROJECT_DIR$/src/hooks/useCanvasAnimation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(with-header)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/bg-about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/bg-contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/bg-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bg/bg-works.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-works.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736683341430</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="part_6">
+      <option name="closed" value="true" />
+      <created>1736684753076</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736684753076</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +141,7 @@
     <MESSAGE value="part_3" />
     <MESSAGE value="part_4.3" />
     <MESSAGE value="part_5" />
-    <option name="LAST_COMMIT_MESSAGE" value="part_5" />
+    <MESSAGE value="part_6" />
+    <option name="LAST_COMMIT_MESSAGE" value="part_6" />
   </component>
 </project>

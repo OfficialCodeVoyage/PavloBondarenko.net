@@ -39,7 +39,13 @@ export default function bgWorks() {
     function init() {
         console.log("resize");
         container = document.getElementById( 'container' );
-        canvas = document.createElement( 'canvas' );
+        canvas = container.querySelector('canvas');
+
+        if (canvas) {
+            console.log('В контейнере присутствует тег <canvas>.');
+        } else {
+            canvas = document.createElement( 'canvas' );
+        }
         let coords;
         coords = document.getElementById( 'coords' );
         ctx = canvas.getContext( '2d' );
