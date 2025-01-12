@@ -3,6 +3,7 @@ import "./globals.css";
 import styles from './not-found.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from 'next/font/google';
+import Head from "next/head";
 
 const inter = Inter({
     subsets: ['latin'], // Подмножества
@@ -21,6 +22,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
     title: "Pavlo Bondarenko - Hello World!",
+    icons: {
+        icon: '/favicon.ico',
+    },
 };
 
 export default function RootLayout({ children }) {
@@ -30,7 +34,7 @@ export default function RootLayout({ children }) {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
-            {children}
+        {children}
         </body>
         </html>
     );

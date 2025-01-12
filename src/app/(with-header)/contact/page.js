@@ -13,8 +13,8 @@ const ContactPage = () => {
     useEffect(() => {
         bgContact(); // Запускаем анимацию
         AOS.init({
-            duration: 1500, // Настройка длительности анимации
-            once: true,     // Выполнение анимации один раз
+            duration: 1500,
+            once: true,
         });
     }, []);
 

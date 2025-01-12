@@ -21,12 +21,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Pavlo Bondarenko - Hello World!",
+    title: "Pavlo Bondarenko - Hello World!",
 };
+
 
 export default function RootLayout({ children }) {
   return (
       <>
+
           <div id="container"></div>
           <h3 id="coords"></h3>
 
