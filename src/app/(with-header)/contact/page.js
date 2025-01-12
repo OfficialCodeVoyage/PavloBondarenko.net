@@ -6,12 +6,13 @@ import {useEffect} from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Background from "@/app/components/Background";
 
 
 const ContactPage = () => {
 
     useEffect(() => {
-        bgContact(); // Запускаем анимацию
+        // bgContact(); // Запускаем анимацию
         AOS.init({
             duration: 1500,
             once: true,
@@ -19,54 +20,58 @@ const ContactPage = () => {
     }, []);
 
     return (
-        <div>
-            <section className="contact-area">
-                <div className="container">
-                    <div className="gx-row d-flex justify-content-between gap-24">
-                        <div className="contact-infos">
-                            <h3 data-aos="fade-up">Contact Info</h3>
-                            <ul className="contact-details">
-                                <li className="d-flex align-items-center" data-aos="zoom-in">
-                                    <div className="icon-box shadow-box">
-                                        <i className="iconoir-map-pin"></i>
-                                    </div>
-                                    <div className="right">
-                                        <span>From</span>
-                                        <h4>Odesa, Ukraine</h4>
-                                    </div>
-                                </li>
-                                <li className="d-flex align-items-center" data-aos="zoom-in">
-                                    <div className="icon-box shadow-box">
-                                        <i className="iconoir-map-pin"></i>
-                                    </div>
-                                    <div className="right">
-                                        <span>Live in</span>
-                                        <h4>Dallas, Texas</h4>
-                                    </div>
-                                </li>
-                            </ul>
+        <>
+            <Background rows={264}/>
+            <div>
+                <section className="contact-area">
+                    <div className="container">
+                        <div className="gx-row d-flex justify-content-between gap-24">
+                            <div className="contact-infos">
+                                <h3 data-aos="fade-up">Contact Info</h3>
+                                <ul className="contact-details">
+                                    <li className="d-flex align-items-center" data-aos="zoom-in">
+                                        <div className="icon-box shadow-box">
+                                            <i className="iconoir-map-pin"></i>
+                                        </div>
+                                        <div className="right">
+                                            <span>From</span>
+                                            <h4>Odesa, Ukraine</h4>
+                                        </div>
+                                    </li>
+                                    <li className="d-flex align-items-center" data-aos="zoom-in">
+                                        <div className="icon-box shadow-box">
+                                            <i className="iconoir-map-pin"></i>
+                                        </div>
+                                        <div className="right">
+                                            <span>Live in</span>
+                                            <h4>Dallas, Texas</h4>
+                                        </div>
+                                    </li>
+                                </ul>
 
-                            <h3 data-aos="fade-up">Social Info</h3>
-                            <ul className="social-links d-flex align-center" data-aos="zoom-in">
-                                <li><a className="shadow-box" href="https://www.linkedin.com/in/mrbondarenko/"
-                                       target="_blank"><i className="iconoir-linkedin"></i></a></li>
-                                <li><a className="shadow-box" href="https://www.instagram.com/officialcodevoyage/"
-                                       target="_blank"><i className="iconoir-instagram"></i></a></li>
-                                <li><a className="shadow-box" href="https://github.com/OfficialCodeVoyage"
-                                       target="_blank"><i className="iconoir-github"></i></a></li>
-                                <li><a className="shadow-box" href="https://www.youtube.com/@OfficialCodeVoyage"
-                                       target="_blank"><i className="iconoir-youtube"></i></a></li>
+                                <h3 data-aos="fade-up">Social Info</h3>
+                                <ul className="social-links d-flex align-center" data-aos="zoom-in">
+                                    <li><a className="shadow-box" href="https://www.linkedin.com/in/mrbondarenko/"
+                                           target="_blank"><i className="iconoir-linkedin"></i></a></li>
+                                    <li><a className="shadow-box" href="https://www.instagram.com/officialcodevoyage/"
+                                           target="_blank"><i className="iconoir-instagram"></i></a></li>
+                                    <li><a className="shadow-box" href="https://github.com/OfficialCodeVoyage"
+                                           target="_blank"><i className="iconoir-github"></i></a></li>
+                                    <li><a className="shadow-box" href="https://www.youtube.com/@OfficialCodeVoyage"
+                                           target="_blank"><i className="iconoir-youtube"></i></a></li>
 
-                            </ul>
+                                </ul>
+
+                            </div>
+
+                            <Form/>
 
                         </div>
-
-                        <Form/>
-
                     </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
+        </>
+
     );
 };
 
