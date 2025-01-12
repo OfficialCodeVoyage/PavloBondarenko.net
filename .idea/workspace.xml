@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_4.3">
-      <change afterPath="$PROJECT_DIR$/src/app/(with-header)/layout.js" afterDir="false" />
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/404/404.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/404/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/404/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/about/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/contact/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/works/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/works/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736682014108</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="part_5">
+      <option name="closed" value="true" />
+      <created>1736683341430</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736683341430</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +130,7 @@
     <MESSAGE value="part_2" />
     <MESSAGE value="part_3" />
     <MESSAGE value="part_4.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="part_4.3" />
+    <MESSAGE value="part_5" />
+    <option name="LAST_COMMIT_MESSAGE" value="part_5" />
   </component>
 </project>

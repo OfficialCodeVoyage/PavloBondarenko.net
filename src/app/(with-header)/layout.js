@@ -30,11 +30,11 @@ export default function RootLayout({ children }) {
           <div id="container"></div>
           <h3 id="coords"></h3>
 
-          <main className="main-homepage">
+          {/*<main className="main-homepage">*/}
               <Header/>
               {children}
               <Footer/>
-          </main>
+          {/*</main>*/}
       </>
   )
 }

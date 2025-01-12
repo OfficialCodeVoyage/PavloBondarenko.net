@@ -1,9 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../../globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.js';
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -16,22 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-    title: "Pavlo Bondarenko - Hello World!",
+    title: "Pavlo Bondarenko - Hello World",
 };
 
-export default function RootLayout({ children }) {
+export default function AboutLayout({ children }) {
     return (
-        <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div id="container"></div>
-        <h3 id="coords"></h3>
-
-        <main className="main-aboutpage">
-            <Header/>
-            {children}
-            <Footer/>
-        </main>
-        </body>
-        </html>
+            <main className="main-aboutpage">
+                {children}
+            </main>
     );
 }
