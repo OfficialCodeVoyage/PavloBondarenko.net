@@ -1,24 +1,29 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Используем usePathname для получения текущего пути
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 const Header = () => {
     const pathname = usePathname(); // Текущий путь
+    const [menuActive, setMenuActive] = useState(false);
 
-    // Функция для добавления класса "active"
     const getActiveClass = (path) => (pathname === path ? 'active' : '');
+
+    const toggleMenu = () => {
+        setMenuActive(!menuActive);
+    };
 
     return (
         <div>
             <header className="header-area">
                 <div className="container">
-                    <div className="gx-row d-flex align-items-center justify-content-between ">
+                    <div className="gx-row d-flex align-items-center justify-content-between">
                         <Link href="/" className="logo">
                             <img src="/images/LOGO/logo3.png" width="400px" alt="Logo" />
                         </Link>
 
-                        <nav className="navbar">
+                        <nav className={`navbar ${menuActive ? 'active' : ''}`}>
                             <ul className="menu">
                                 <li className={getActiveClass('/')}>
                                     <Link href="/">Home</Link>
@@ -35,7 +40,6 @@ const Header = () => {
                             </ul>
                         </nav>
 
-                        {/* Условный рендеринг кнопки */}
                         {pathname === '/' ? (
                             <Link href="https://www.linkedin.com/in/mrbondarenko/" target="_blank" className="theme-btn">
                                 Let's connect
@@ -46,7 +50,10 @@ const Header = () => {
                             </Link>
                         )}
 
-                        <div className="show-menu">
+                        <div
+                            className={`show-menu ${menuActive ? 'active' : ''}`}
+                            onClick={toggleMenu}
+                        >
                             <span></span>
                             <span></span>
                             <span></span>
