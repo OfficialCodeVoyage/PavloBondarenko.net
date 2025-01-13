@@ -3,11 +3,11 @@ import "./globals.css";
 import styles from './not-found.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from 'next/font/google';
-import Head from "next/head";
+
 
 const inter = Inter({
-    subsets: ['latin'], // Подмножества
-    weights: ['400', '500', '600', '700'], // Нужные веса
+    subsets: ['latin'],
+    weights: ['400', '500', '600', '700'],
 });
 
 const geistSans = Geist({
@@ -28,6 +28,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
     return (
         <html lang="en">
         <head>

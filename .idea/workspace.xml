@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="part_8">
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="check color">
+      <change afterPath="$PROJECT_DIR$/public/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(with-header)/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Preloader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/about/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/contact/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(with-header)/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/works/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/bg-about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/bg-contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/bg-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bg/bg-works.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bg/bg-works.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/MagicCanvs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/not-found.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/not-found.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useCanvasAnimation.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/components/MagicEffect" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/app/(with-header)" />
       <recent name="$PROJECT_DIR$/src/app/components/Form" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -89,7 +92,9 @@
       <workItem from="1736710229810" duration="1920000" />
       <workItem from="1736712234653" duration="361000" />
       <workItem from="1736716302518" duration="198000" />
-      <workItem from="1736717151820" duration="716000" />
+      <workItem from="1736717151820" duration="10783000" />
+      <workItem from="1736756136792" duration="2982000" />
+      <workItem from="1736767458686" duration="24440000" />
     </task>
     <task id="LOCAL-00001" summary="part_1">
       <option name="closed" value="true" />
@@ -163,7 +168,47 @@
       <option name="project" value="LOCAL" />
       <updated>1736711165667</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix background">
+      <option name="closed" value="true" />
+      <created>1736718163468</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736718163468</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix background 2">
+      <option name="closed" value="true" />
+      <created>1736769969478</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736769969478</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix background 2">
+      <option name="closed" value="true" />
+      <created>1736770093147</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736770093147</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add working burger">
+      <option name="closed" value="true" />
+      <created>1736771747476</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736771747476</updated>
+    </task>
+    <task id="LOCAL-00014" summary="check color">
+      <option name="closed" value="true" />
+      <created>1736796573988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736796573988</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +224,10 @@
     <MESSAGE value="part_7" />
     <MESSAGE value="part_7.1" />
     <MESSAGE value="fix git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix git ignore" />
+    <MESSAGE value="fix background" />
+    <MESSAGE value="fix background 2" />
+    <MESSAGE value="add working burger" />
+    <MESSAGE value="check color" />
+    <option name="LAST_COMMIT_MESSAGE" value="check color" />
   </component>
 </project>

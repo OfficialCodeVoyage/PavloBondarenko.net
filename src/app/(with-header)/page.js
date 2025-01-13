@@ -1,10 +1,19 @@
 'use client';
-import '../../bg/bg_style.css'
+import '../components/Background/bg_style.css'
 import '../globals.css'
 import Link from 'next/link';
+import { useEffect } from "react";
+import MagicEffect from "@/app/components/MagicEffect/MagicEffect";
 
 
 export default function HomePage() {
+
+  useEffect(() => {
+    const marqueeText = document.querySelectorAll('.marquee span, .marquee b');
+    marqueeText.forEach((el) => {
+      el.style.color = 'white';
+    });
+  }, []);
 
   return (
       <>
@@ -133,41 +142,38 @@ export default function HomePage() {
                     <div className="about-services-box info-box shadow-box h-full">
                       <img src="/images/bg1.png" alt="BG" className="bg-img"/>
 
-                      <div className="d-flex align-items-center justify-content-between">
+                      <div className="d-flex align-items-center justify-content-between magic-container">
 
 
-                        {/*<script type="x-shader/x-vertex" id="vertexshader">*/}
+          {/*              <script type="x-shader/x-vertex" id="vertexshader">*/}
+          {/*                {`*/}
+          {/*  attribute float size;*/}
+          {/*  attribute vec3 customColor;*/}
+          {/*  varying vec3 vColor;*/}
 
-                        {/*  attribute float size;*/}
-                        {/*  attribute vec3 customColor;*/}
-                        {/*  varying vec3 vColor;*/}
+          {/*  void main() {*/}
+          {/*    vColor = customColor;*/}
+          {/*    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );*/}
+          {/*    gl_PointSize = size * ( 300.0 / -mvPosition.z );*/}
+          {/*    gl_Position = projectionMatrix * mvPosition;*/}
+          {/*  }*/}
+          {/*`}*/}
+          {/*              </script>*/}
 
-                        {/*  void main() {*/}
+          {/*              <script type="x-shader/x-fragment" id="fragmentshader">*/}
+          {/*                {`*/}
+          {/*  uniform vec3 color;*/}
+          {/*  uniform sampler2D pointTexture;*/}
+          {/*  varying vec3 vColor;*/}
 
-                        {/*  vColor = customColor;*/}
-                        {/*  vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );*/}
-                        {/*  gl_PointSize = size * ( 300.0 / -mvPosition.z );*/}
-                        {/*  gl_Position = projectionMatrix * mvPosition;*/}
+          {/*  void main() {*/}
+          {/*    gl_FragColor = vec4( color * vColor, 1.0 );*/}
+          {/*    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );*/}
+          {/*  }*/}
+          {/*`}*/}
+          {/*              </script>*/}
 
-                        {/*}*/}
-
-                        {/*</script>*/}
-                        {/*<script type="x-shader/x-fragment" id="fragmentshader">*/}
-
-                        {/*  uniform vec3 color;*/}
-                        {/*  uniform sampler2D pointTexture;*/}
-
-                        {/*  varying vec3 vColor;*/}
-
-                        {/*  void main() {*/}
-
-                        {/*  gl_FragColor = vec4 (color * vColor, 1.0);*/}
-                        {/*  gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );*/}
-
-                        {/*}*/}
-                        {/*</script>*/}
-
-                        <div id="magic"></div>
+                          <MagicEffect/>
 
 
                       </div>
@@ -179,11 +185,11 @@ export default function HomePage() {
                       <img src="./images/bg1.png" alt="BG" className="bg-img"/>
                       <div className="inner-profile-icons shadow-box">
                         <Link target="_blank" rel="noopener noreferrer" className="linkedln"
-                           href="https://www.linkedin.com/in/mrbondarenko/">
+                              href="https://www.linkedin.com/in/mrbondarenko/">
                           <i className="iconoir-linkedin"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer"
-                           href="https://www.instagram.com/officialcodevoyage/">
+                              href="https://www.instagram.com/officialcodevoyage/">
                           <i className="iconoir-instagram"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer" href="https://github.com/OfficialCodeVoyage">

@@ -1,6 +1,6 @@
 'use client';
 import Form from '../../components/Form/Form'
-import '../../../bg/bg_style.css';
+import '../../components/Background/bg_style.css';
 import {useEffect} from "react";
 
 import AOS from 'aos';

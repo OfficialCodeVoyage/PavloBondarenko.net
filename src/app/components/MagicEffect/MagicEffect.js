@@ -1,4 +1,3 @@
-// MagicEffect.jsx
 'use client';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
@@ -7,10 +6,9 @@ import './style.css';
 
 export default function MagicEffect() {
     const magicRef = useRef(null);
-    const environmentRef = useRef(null); // To store the Environment instance
+    const environmentRef = useRef(null);
 
     useEffect(() => {
-        // Define shaders as string constants
         const vertexShader = `
             attribute float size;
             attribute vec3 customColor;
@@ -35,11 +33,12 @@ export default function MagicEffect() {
             }
         `;
 
-        // Preload function using async/await
         const preload = async () => {
             const manager = new THREE.LoadingManager();
-            // You can add loading progress callbacks here if needed
             return new Promise((resolve, reject) => {
+                let loadedFont = null;
+                let loadedParticle = null;
+
                 manager.onLoad = () => {
                     resolve({ font: loadedFont, particle: loadedParticle });
                 };
@@ -48,9 +47,7 @@ export default function MagicEffect() {
                     reject(new Error(`Error loading ${url}`));
                 };
 
-                // Load Font
                 const fontLoader = new FontLoader(manager);
-                let loadedFont = null;
                 fontLoader.load(
                     'https://res.cloudinary.com/dydre7amr/raw/upload/v1612950355/font_zsd4dr.json',
                     (font) => {
@@ -58,15 +55,13 @@ export default function MagicEffect() {
                     }
                 );
 
-                // Load Particle Texture
                 const textureLoader = new THREE.TextureLoader(manager);
-                const loadedParticle = textureLoader.load(
+                loadedParticle = textureLoader.load(
                     'https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png'
                 );
             });
         };
 
-        // Define Environment and CreateParticles outside of useEffect for better performance
         class Environment {
             constructor(font, particle) {
                 this.font = font;
@@ -129,7 +124,6 @@ export default function MagicEffect() {
             dispose() {
                 window.removeEventListener('resize', this.onWindowResize.bind(this));
                 this.renderer.dispose();
-                // Dispose other Three.js objects if necessary
             }
         }
 
@@ -152,7 +146,7 @@ export default function MagicEffect() {
                     text: 'FUTURE\nIS NOW',
                     amount: 1000,
                     particleSize: 1,
-                    particleColor: 0x00D04BA3,
+                    particleColor: 0xf172d1,
                     textSize: 35,
                     area: 250,
                     ease: 0.05,
@@ -170,12 +164,11 @@ export default function MagicEffect() {
                 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true });
                 this.planeArea = new THREE.Mesh(geometry, material);
                 this.planeArea.visible = false;
-                this.scene.add(this.planeArea); // Add to scene to enable raycasting
+                this.scene.add(this.planeArea);
                 this.createText();
             }
 
             bindEvents() {
-                // Bind methods to preserve 'this'
                 this.onMouseDown = this.onMouseDown.bind(this);
                 this.onMouseMove = this.onMouseMove.bind(this);
                 this.onMouseUp = this.onMouseUp.bind(this);
@@ -214,7 +207,6 @@ export default function MagicEffect() {
                 x *= scaleFactor;
                 y *= scaleFactor;
 
-                // Clamp the mouse coordinates to the range of -1 to 1
                 this.mouse.x = Math.max(-1, Math.min(1, x));
                 this.mouse.y = Math.max(-1, Math.min(1, y));
             }
@@ -246,7 +238,12 @@ export default function MagicEffect() {
                         let py = pos.getY(i);
                         let pz = pos.getZ(i);
 
-                        this.colorChange.setHSL(0.5, 1, 1);
+                        const isWhitePink = Math.random() > 0.5; // 50% вероятность
+                        if (isWhitePink) {
+                            this.colorChange.setHSL(0.9, 0.5, Math.min(1.0, 0.9 * 2)); // Светлее
+                        } else {
+                            this.colorChange.setHSL(0.9, 0.7, Math.min(1.0, 0.6 * 2)); // Светлее
+                        }
                         colors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b);
                         colors.needsUpdate = true;
 
@@ -270,12 +267,7 @@ export default function MagicEffect() {
                             colors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b);
                             colors.needsUpdate = true;
 
-                            if (
-                                px > initX + 70 ||
-                                px < initX - 70 ||
-                                py > initY + 70 ||
-                                py < initY - 70
-                            ) {
+                            if ((px > (initX + 10)) || (px < (initX - 10)) || (py > (initY + 10) || (py < (initY - 10)))) {
                                 this.colorChange.setHSL(0.15, 1.0, 0.5);
                                 colors.setXYZ(i, this.colorChange.r, this.colorChange.g, this.colorChange.b);
                                 colors.needsUpdate = true;
@@ -367,6 +359,13 @@ export default function MagicEffect() {
                     points.forEach((element) => {
                         const a = new THREE.Vector3(element.x, element.y, 0);
                         thePoints.push(a);
+
+                        const isWhitePink = Math.random() > 0.5;
+                        if (isWhitePink) {
+                            this.colorChange.setHSL(0.9, 0.5, Math.min(1.0, 0.9 * 2));
+                        } else {
+                            this.colorChange.setHSL(0.9, 0.7, Math.min(1.0, 0.6 * 2));
+                        }
                         colors.push(this.colorChange.r, this.colorChange.g, this.colorChange.b);
                         sizes.push(1);
                     });
@@ -383,12 +382,12 @@ export default function MagicEffect() {
 
                 const material = new THREE.ShaderMaterial({
                     uniforms: {
-                        color: { value: new THREE.Color(0x00d33675) },
+                        color: { value: new THREE.Color(0xf172d1) },
                         pointTexture: { value: this.particleImg },
                         opacity: { value: 0.5 },
                     },
-                    vertexShader: vertexShader, // Use the defined vertex shader
-                    fragmentShader: fragmentShader, // Use the defined fragment shader
+                    vertexShader: vertexShader,
+                    fragmentShader: fragmentShader,
                     blending: THREE.AdditiveBlending,
                     depthTest: false,
                     transparent: true,
@@ -421,19 +420,15 @@ export default function MagicEffect() {
             }
 
             dispose() {
-                // Remove event listeners
                 document.removeEventListener('mousedown', this.onMouseDown);
                 document.removeEventListener('mousemove', this.onMouseMove);
                 document.removeEventListener('mouseup', this.onMouseUp);
 
-                // Dispose Three.js objects
                 this.particles.geometry.dispose();
                 this.particles.material.dispose();
-                // Dispose other resources if necessary
             }
         }
 
-        // Execute the preload function and initialize Environment
         preload()
             .then(({ font, particle }) => {
                 const env = new Environment(font, particle);
@@ -443,7 +438,6 @@ export default function MagicEffect() {
                 console.error('Error during preload:', error);
             });
 
-        // Cleanup function
         return () => {
             if (environmentRef.current) {
                 environmentRef.current.dispose();
@@ -452,5 +446,5 @@ export default function MagicEffect() {
         };
     }, []);
 
-    return <div id="magic" ref={magicRef} style={{ width: '100%', height: '100%' }}></div>;
+    return <div id="magic" ref={magicRef} ></div>;
 }

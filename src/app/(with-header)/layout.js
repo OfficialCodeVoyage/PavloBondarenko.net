@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
-import Background from "@/app/components/Background";
+import Background from "@/app/components/Background/Background";
 
 const inter = Inter({
   subsets: ['latin'], // Подмножества

@@ -3,30 +3,38 @@
 import { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import styles from './not-found.module.css';
+import * as THREE from 'three';
 
 export default function NotFoundPage() {
-    // Создаём ref для элемента с классом bola
     const bolaRef = useRef(null);
 
     useEffect(() => {
-        // Проверяем, что реф не пустой
         if (!bolaRef.current) return;
-
-        const THREE = require('three'); // Импортируем three.js
 
         const container = bolaRef.current;
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        const camera = new THREE.PerspectiveCamera(80, 1, 0.1, 10000);
-        const scene = new THREE.Scene();
-
-        scene.add(camera);
-        renderer.setSize(300, 300);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor(0x000000, 0);
         container.appendChild(renderer.domElement);
 
-        // Camera
+        const camera = new THREE.PerspectiveCamera(80, 1, 0.1, 10000);
         camera.position.z = 200;
 
-        // Material
+        const scene = new THREE.Scene();
+
+        // Освещение
+        const L1 = new THREE.PointLight(0xffffff, 1);
+        L1.position.set(100, 100, 100);
+        scene.add(L1);
+
+        const L2 = new THREE.PointLight(0xffffff, 0.8);
+        L2.position.set(-100, 400, 200);
+        scene.add(L2);
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+        scene.add(ambientLight);
+
         const pinkMat = new THREE.MeshPhongMaterial({
             color: new THREE.Color('rgb(226,35,213)'),
             emissive: new THREE.Color('rgb(0,0,0)'),
@@ -37,33 +45,34 @@ export default function NotFoundPage() {
             opacity: 1,
         });
 
-
-        // Lights
-        const L1 = new THREE.PointLight(0xffffff, 1);
-        L1.position.set(100, 100, 100);
-        scene.add(L1);
-
-        const L2 = new THREE.PointLight(0xffffff, 0.8);
-        L2.position.set(-100, 400, 200);
-        scene.add(L2);
-
-        // IcoSphere
-        const Ico = new THREE.Mesh(new THREE.IcosahedronGeometry(75, 1), pinkMat);
+        const icoGeometry = new THREE.IcosahedronGeometry(75, 1);
+        const Ico = new THREE.Mesh(icoGeometry, pinkMat);
         Ico.rotation.z = 0.5;
         scene.add(Ico);
 
-        function update() {
-            Ico.rotation.x += 2 / 100;
-            Ico.rotation.y += 2 / 100;
-        }
-
-        function render() {
-            requestAnimationFrame(render);
+        const animate = () => {
+            requestAnimationFrame(animate);
+            Ico.rotation.x += 0.02;
+            Ico.rotation.y += 0.02;
             renderer.render(scene, camera);
-            update();
-        }
+        };
 
-        render();
+        animate();
+
+        const handleResize = () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            container.removeChild(renderer.domElement);
+        };
     }, []);
 
     return (
@@ -71,12 +80,12 @@ export default function NotFoundPage() {
             <Head>
                 <title>404 - Soon</title>
                 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
             </Head>
             <main className={styles.container_not_found}>
                 <p className={styles.mega}>
                     4<span className={styles.boom}>0</span>4
                 </p>
-                {/* Привязываем реф к div с классом bola */}
                 <div ref={bolaRef} className={styles.bola}></div>
                 <p className={styles.mini}>
                     I am working on it) <i>P.B.</i>

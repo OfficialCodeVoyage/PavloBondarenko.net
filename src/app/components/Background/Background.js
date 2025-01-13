@@ -3,23 +3,21 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Background() {
-    // const containerRef = useRef(null);
     const requestRef = useRef();
-    const pathname = usePathname(); // Получаем текущий путь страницы
+    const pathname = usePathname();
 
-    // Условно задаём значение rows
     const rows = (() => {
         switch (pathname) {
-            case '/': // Главная страница
+            case '/':
                 return 314;
-            case '/about': // Страница "Обо мне"
+            case '/about':
                 return 344;
-            case '/works': // Страница "Проекты"
+            case '/works':
                 return 354;
             case '/contact':
                 return 264
-            default: // Для других страниц
-                return 314; // Значение по умолчанию
+            default:
+                return 0;
         }
     })();
 
@@ -152,7 +150,6 @@ export default function Background() {
         step();
 
         return () => {
-            // Очистка: удаление canvas и слушателей событий
             cancelAnimationFrame(requestRef.current);
             container.removeEventListener("mousemove", handleMouseMove);
             container.removeEventListener("mouseout", handleMouseOut);
