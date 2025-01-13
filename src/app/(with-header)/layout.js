@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
+import Background from "@/app/components/Background";
 
 const inter = Inter({
   subsets: ['latin'], // Подмножества
@@ -24,17 +25,14 @@ export const metadata = {
     title: "Pavlo Bondarenko - Hello World!",
 };
 
-
 export default function RootLayout({ children }) {
-  return (
-      <>
-
-          <div id="container"></div>
-          <h3 id="coords"></h3>
-
-              <Header/>
-              {children}
-              <Footer/>
-      </>
-  )
+    return (
+        <>
+            <Background />
+            <h3 id="coords"></h3>
+            <Header />
+            {children}
+            <Footer />
+        </>
+    );
 }

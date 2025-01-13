@@ -1,16 +1,13 @@
 'use client';
 import '../../../bg/bg_style.css';
-import bgWorks from "@/bg/bg-works";
 import {useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link";
-import Background from "@/app/components/Background";
 
 const WorkPage = () => {
 
     useEffect(() => {
-        // bgWorks();
         AOS.init({
             duration: 1500,
             once: true,
@@ -19,7 +16,6 @@ const WorkPage = () => {
 
     return (
         <>
-            <Background rows={354} />
             <section className="projects-area">
                 <div className="container">
                     <h1 className="section-heading" data-aos="fade-up"><img src="/images/star-2.png"

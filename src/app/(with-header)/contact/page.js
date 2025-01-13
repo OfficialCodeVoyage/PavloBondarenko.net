@@ -1,18 +1,15 @@
 'use client';
 import Form from '../../components/Form/Form'
 import '../../../bg/bg_style.css';
-import bgContact from "@/bg/bg-contact";
 import {useEffect} from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Background from "@/app/components/Background";
 
 
 const ContactPage = () => {
 
     useEffect(() => {
-        // bgContact(); // Запускаем анимацию
         AOS.init({
             duration: 1500,
             once: true,
@@ -21,7 +18,6 @@ const ContactPage = () => {
 
     return (
         <>
-            <Background rows={264}/>
             <div>
                 <section className="contact-area">
                     <div className="container">

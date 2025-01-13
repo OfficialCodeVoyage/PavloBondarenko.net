@@ -1,26 +1,22 @@
 'use client';
 import '../../../bg/bg_style.css';
 import '../../globals.css'
-import bgAbout from "@/bg/bg-about";
 import {useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link";
-import Background from "@/app/components/Background";
 
 
-const Page = () => {
+const AboutPage = () => {
     useEffect(() => {
-        // bgAbout(); // Запускаем анимацию
         AOS.init({
-            duration: 1500, // Настройка длительности анимации
-            once: true,     // Выполнение анимации один раз
+            duration: 1500,
+            once: true,
         });
     }, []);
 
     return (
         <>
-            <Background rows={344} />
             <section className="about-area">
                 <div className="container">
                     <div className="d-flex about-me-wrap align-items-start gap-24">
@@ -181,4 +177,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default AboutPage;

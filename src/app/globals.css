@@ -530,7 +530,7 @@ ol {
 }
 
 .header-area .logo:hover img {
-    content: url('/assets/images/LOGO/logo_hover_2.png');
+    content: url('/images/LOGO/logo_hover_2.png');
 }
 
 .header-area .navbar .theme-btn {

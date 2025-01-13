@@ -1,27 +1,19 @@
 'use client';
-import { useEffect } from 'react';
-import bgMain from '../../bg/bg-main.js';
 import '../../bg/bg_style.css'
 import '../globals.css'
+import Link from 'next/link';
 
-import Background from "@/app/components/Background";
 
 export default function HomePage() {
 
-  // useEffect(() => {
-  //   bgMain(); // Запускаем анимацию
-  // }, []);
-
   return (
       <>
-
-        <Background rows={314}></Background>
         <section className="about-area">
           <div className="container">
             <div className="row">
               <div className="col-md-6" data-aos="zoom-in">
                 <div className="about-me-box shadow-box">
-                  <a className="overlay-link" href="about.html"></a>
+                  <Link className="overlay-link" href="/about"></Link>
                   <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                   <div className="img-box">
                     <img src="/images/LOGO/pavlopic.png" alt="About Me"/>
@@ -30,9 +22,9 @@ export default function HomePage() {
                     <h4></h4>
                     <h1>Pavlo Bondarenko</h1>
                     <p>Software Engineer</p>
-                    <a href="#" className="about-btn">
+                    <Link href="#" className="about-btn">
                       <img src="/images/icon.svg" alt="Button"/>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -73,7 +65,7 @@ export default function HomePage() {
                   <div className="gx-row d-flex gap-24">
                     <div data-aos="zoom-in">
                       <div className="about-crenditials-box info-box shadow-box h-full">
-                        <a className="overlay-link" href="about.html"></a>
+                        <Link className="overlay-link" href="/about"></Link>
                         <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                         <img src="/images/pbsignature.png" alt="Sign"/>
                         <div className="d-flex align-items-center justify-content-between">
@@ -82,9 +74,9 @@ export default function HomePage() {
                             <h1>More About Me</h1>
                           </div>
 
-                          <a href="./credentials.html" className="about-btn">
+                          <Link href="./credentials.html" className="about-btn">
                             <img src="/images/icon.svg" alt="Button"/>
-                          </a>
+                          </Link>
 
                         </div>
                       </div>
@@ -92,7 +84,7 @@ export default function HomePage() {
 
                     <div data-aos="zoom-in">
                       <div className="about-project-box info-box shadow-box h-full">
-                        <a className="overlay-link" href="works.html"></a>
+                        <Link className="overlay-link" href="/works"></Link>
                         <img src="./images/bg1.png" alt="BG" className="bg-img"/>
                         <img src="./images/1my-works.png" alt="My Works"/>
                         <div className="d-flex align-items-center justify-content-between">
@@ -101,9 +93,9 @@ export default function HomePage() {
                             <h1>Projects</h1>
                           </div>
 
-                          <a href="#" className="about-btn">
+                          <Link href="#" className="about-btn">
                             <img src="/images/icon.svg" alt="Button"/>
-                          </a>
+                          </Link>
 
                         </div>
                       </div>
@@ -119,8 +111,8 @@ export default function HomePage() {
                 <div className="blog-service-profile-wrap d-flex gap-24">
                   <div data-aos="zoom-in">
                     <div className="about-blog-box info-box shadow-box h-full">
-                      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@OfficialCodeVoyage"
-                         className="overlay-link"></a>
+                      <Link target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@OfficialCodeVoyage"
+                         className="overlay-link"></Link>
                       <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                       <img src="/images/yt1.png" height="126px" alt="GFonts" style={{opacity: '1'}}/>
                       <div className="d-flex align-items-center justify-content-between">
@@ -129,10 +121,9 @@ export default function HomePage() {
                           <h1>YouTube</h1>
                         </div>
 
-                        <a href="./blog.html" className="about-btn">
+                        <Link href="./blog.html" className="about-btn">
                           <img src="/images/icon.svg" alt="Button"/>
-
-                        </a>
+                        </Link>
 
                       </div>
                     </div>
@@ -187,17 +178,17 @@ export default function HomePage() {
                     <div className="about-profile-box info-box shadow-box h-full">
                       <img src="./images/bg1.png" alt="BG" className="bg-img"/>
                       <div className="inner-profile-icons shadow-box">
-                        <a target="_blank" rel="noopener noreferrer" className="linkedln"
+                        <Link target="_blank" rel="noopener noreferrer" className="linkedln"
                            href="https://www.linkedin.com/in/mrbondarenko/">
                           <i className="iconoir-linkedin"></i>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer"
+                        </Link>
+                        <Link target="_blank" rel="noopener noreferrer"
                            href="https://www.instagram.com/officialcodevoyage/">
                           <i className="iconoir-instagram"></i>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/OfficialCodeVoyage">
+                        </Link>
+                        <Link target="_blank" rel="noopener noreferrer" href="https://github.com/OfficialCodeVoyage">
                           <i className="iconoir-github"></i>
-                        </a>
+                        </Link>
 
                       </div>
                       <div className="d-flex align-items-center justify-content-between">
@@ -206,9 +197,9 @@ export default function HomePage() {
                           <h1>My Social Profiles</h1>
                         </div>
 
-                        <a href="contact.html" className="about-btn">
+                        <Link href="/contact" className="about-btn">
                           <img src="/images/icon.svg" alt="Button"/>
-                        </a>
+                        </Link>
 
                       </div>
                     </div>
@@ -246,13 +237,13 @@ export default function HomePage() {
               <div className="col-md-6" data-aos="zoom-in">
 
                 <div className="about-contact-box info-box shadow-box">
-                  <a className="overlay-link" href="contact.html"></a>
+                  <Link className="overlay-link" href="/contact"></Link>
                   <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                   <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
                   <h1>Let's <br/>work <span>together.</span></h1>
-                  <a href="#" className="about-btn">
+                  <Link href="#" className="about-btn">
                     <img src="/images/icon.svg" alt="Button"/>
-                  </a>
+                  </Link>
                 </div>
 
               </div>
