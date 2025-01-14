@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="check color">
-      <change afterPath="$PROJECT_DIR$/public/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(with-header)/loading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Preloader.js" afterDir="false" />
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="fix SRGBColorSpace and onMouseMove">
+      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog-details/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/credentials/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/MagicCanvs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/about/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/about/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/contact/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/contact/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(without-bg)/work-details/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/works/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/works/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/not-found.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/not-found.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useCanvasAnimation.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +66,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(without-bg)" />
+      <recent name="$PROJECT_DIR$/src/app/components/Background" />
       <recent name="$PROJECT_DIR$/src/app/components/MagicEffect" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/app/(with-header)" />
-      <recent name="$PROJECT_DIR$/src/app/components/Form" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -94,7 +98,8 @@
       <workItem from="1736716302518" duration="198000" />
       <workItem from="1736717151820" duration="10783000" />
       <workItem from="1736756136792" duration="2982000" />
-      <workItem from="1736767458686" duration="24440000" />
+      <workItem from="1736767458686" duration="25141000" />
+      <workItem from="1736855725665" duration="14689000" />
     </task>
     <task id="LOCAL-00001" summary="part_1">
       <option name="closed" value="true" />
@@ -208,7 +213,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736796573988</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="version 1">
+      <option name="closed" value="true" />
+      <created>1736804341985</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736804341985</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix SRGBColorSpace">
+      <option name="closed" value="true" />
+      <created>1736862497750</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736862497750</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix SRGBColorSpace and onMouseMove">
+      <option name="closed" value="true" />
+      <created>1736868094997</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736868094997</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +257,9 @@
     <MESSAGE value="fix background 2" />
     <MESSAGE value="add working burger" />
     <MESSAGE value="check color" />
-    <option name="LAST_COMMIT_MESSAGE" value="check color" />
+    <MESSAGE value="version 1" />
+    <MESSAGE value="fix SRGBColorSpace" />
+    <MESSAGE value="fix SRGBColorSpace and onMouseMove" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix SRGBColorSpace and onMouseMove" />
   </component>
 </project>

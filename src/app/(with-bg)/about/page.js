@@ -1,7 +1,7 @@
 'use client';
 import '../../components/Background/bg_style.css';
 import '../../globals.css'
-import {useEffect} from "react";
+import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link";

@@ -4,6 +4,11 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import './style.css';
 
+const resourceCache = {
+    font: null,
+    particle: null,
+};
+
 export default function MagicEffect() {
     const magicRef = useRef(null);
     const environmentRef = useRef(null);
@@ -34,13 +39,15 @@ export default function MagicEffect() {
         `;
 
         const preload = async () => {
-            const manager = new THREE.LoadingManager();
-            return new Promise((resolve, reject) => {
-                let loadedFont = null;
-                let loadedParticle = null;
+            if (resourceCache.font && resourceCache.particle) {
+                return { font: resourceCache.font, particle: resourceCache.particle };
+            }
 
+            const manager = new THREE.LoadingManager();
+
+            return new Promise((resolve, reject) => {
                 manager.onLoad = () => {
-                    resolve({ font: loadedFont, particle: loadedParticle });
+                    resolve({ font: resourceCache.font, particle: resourceCache.particle });
                 };
                 manager.onError = (url) => {
                     console.error(`Error loading ${url}`);
@@ -51,13 +58,16 @@ export default function MagicEffect() {
                 fontLoader.load(
                     'https://res.cloudinary.com/dydre7amr/raw/upload/v1612950355/font_zsd4dr.json',
                     (font) => {
-                        loadedFont = font;
+                        resourceCache.font = font; // Кэшируем шрифт
                     }
                 );
 
                 const textureLoader = new THREE.TextureLoader(manager);
-                loadedParticle = textureLoader.load(
-                    'https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png'
+                const particle = textureLoader.load(
+                    'https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png',
+                    () => {
+                        resourceCache.particle = particle; // Кэшируем текстуру
+                    }
                 );
             });
         };

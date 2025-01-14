@@ -11,15 +11,12 @@ export default function Loading() {
         div.innerHTML = '<div class="black_wall"></div><div class="loader"></div>';
         document.body.insertBefore(div, document.body.firstChild);
 
-        const timer = setTimeout(() => {
-            const preloaderEl = document.getElementById("preloader");
-            if (preloaderEl) {
-                preloaderEl.classList.add("off");
-            }
-        }, 1000);
+        const preloaderEl = document.getElementById("preloader");
+        if (preloaderEl) {
+            preloaderEl.classList.add("off");
+        }
 
         return () => {
-            clearTimeout(timer);
             const preloaderEl = document.getElementById("preloader");
             if (preloaderEl) {
                 preloaderEl.remove();
