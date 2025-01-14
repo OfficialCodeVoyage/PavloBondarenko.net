@@ -107,7 +107,7 @@ export default function MagicEffect() {
                 this.renderer = new THREE.WebGLRenderer({ alpha: true });
                 this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
                 this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                this.renderer.outputEncoding = THREE.sRGBEncoding;
+                this.renderer.outputColorSpace = THREE.SRGBColorSpace;
                 this.container.appendChild(this.renderer.domElement);
                 this.renderer.setAnimationLoop(() => {
                     this.render();
