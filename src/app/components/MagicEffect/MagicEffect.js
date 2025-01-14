@@ -200,6 +200,7 @@ export default function MagicEffect() {
             onMouseMove(event) {
                 const scaleFactor = 0.7;
 
+                if (!magicRef.current) return;
                 const box = magicRef.current.getBoundingClientRect();
                 let x = ((event.clientX - box.left) / box.width) * 2 - 1;
                 let y = -((event.clientY - box.top) / box.height) * 2 + 1;
