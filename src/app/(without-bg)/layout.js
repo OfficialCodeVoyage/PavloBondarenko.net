@@ -25,7 +25,7 @@ export const metadata = {
     title: "Pavlo Bondarenko - Hello World!",
 };
 
-export default function RootLayout({ children }) {
+export default function WithoutBgLayout({ children }) {
     return (
         <>
             <Header />

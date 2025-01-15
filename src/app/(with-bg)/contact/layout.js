@@ -16,7 +16,7 @@ export const metadata = {
     title: "Pavlo Bondarenko - Let's Connect",
 };
 
-export default function RootLayout({ children }) {
+export default function ContactLayout({ children }) {
     return (
             <main className="main-aboutpage">
                 {children}

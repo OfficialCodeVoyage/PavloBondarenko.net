@@ -16,7 +16,7 @@ export const metadata = {
     title: "Projects",
 };
 
-export default function WorkLayout({ children }) {
+export default function WorksLayout({ children }) {
     return (
         <main className="main-workspage">
             {children}
