@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
 import Background from "@/app/components/Background/Background";
+import AppWrapper from "@/app/components/Preloader/AppWrapper";
 
 const inter = Inter({
   subsets: ['latin'], // Подмножества
@@ -27,12 +28,12 @@ export const metadata = {
 
 export default function WithBgLayout({ children }) {
     return (
-        <>
+        <AppWrapper>
             <Background />
             <h3 id="coords"></h3>
             <Header />
             {children}
             <Footer />
-        </>
+        </AppWrapper>
     );
 }

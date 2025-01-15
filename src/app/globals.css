@@ -60,6 +60,38 @@ a {
 }
 
 /* # Preloader */
+@keyframes loader_running {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left
+    }
+
+    49% {
+        transform: scaleX(1);
+        transform-origin: left
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: right
+    }
+
+    100% {
+        transform-origin: right;
+        transform: scaleX(0)
+    }
+}
+
+@keyframes preloader_slide {
+    from {
+        transform: scaleY(0)
+    }
+
+    to {
+        transform: scaleY(1)
+    }
+}
+
 .preloader {
     position: fixed;
     top: 0;
@@ -95,6 +127,9 @@ a {
 .preloader.off {
     animation: preloader_slide 0.5s ease-in-out 0s 1 reverse both
 }
+
+
+
 
 
 
@@ -1662,37 +1697,7 @@ ol {
     to { transform: translateX(-65.3%); }
 }
 
-@keyframes loader_running {
-    0% {
-        transform: scaleX(0);
-        transform-origin: left
-    }
 
-    49% {
-        transform: scaleX(1);
-        transform-origin: left
-    }
-
-    50% {
-        transform: scaleX(1);
-        transform-origin: right
-    }
-
-    100% {
-        transform-origin: right;
-        transform: scaleX(0)
-    }
-}
-
-@keyframes preloader_slide {
-    from {
-        transform: scaleY(0)
-    }
-
-    to {
-        transform: scaleY(1)
-    }
-}
 
 
 

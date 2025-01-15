@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="fix SRGBColorSpace and onMouseMove">
-      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog-details/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/blog/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/credentials/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(without-bg)/layout.js" afterDir="false" />
+    <list default="true" id="0c128875-d9e1-49da-9555-2b6d30c24e8c" name="Changes" comment="change names of layout">
+      <change afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/font_zsd4dr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Preloader/AppWrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Preloader/Preloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Preloader/Preloader.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/about/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/about/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/contact/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/contact/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/work-details/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(without-bg)/work-details/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/works/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(with-header)/works/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/works/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/MagicEffect/MagicEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-bg)/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(with-bg)/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(with-bg)/loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Preloader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +58,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/components/Preloader" />
+      <recent name="$PROJECT_DIR$/src/app/(with-bg)" />
+      <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/app/(without-bg)" />
       <recent name="$PROJECT_DIR$/src/app/components/Background" />
-      <recent name="$PROJECT_DIR$/src/app/components/MagicEffect" />
-      <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -99,7 +91,8 @@
       <workItem from="1736717151820" duration="10783000" />
       <workItem from="1736756136792" duration="2982000" />
       <workItem from="1736767458686" duration="25141000" />
-      <workItem from="1736855725665" duration="14689000" />
+      <workItem from="1736855725665" duration="21912000" />
+      <workItem from="1736934565341" duration="14082000" />
     </task>
     <task id="LOCAL-00001" summary="part_1">
       <option name="closed" value="true" />
@@ -237,11 +230,38 @@
       <option name="project" value="LOCAL" />
       <updated>1736868094997</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix">
+      <option name="closed" value="true" />
+      <created>1736871272380</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736871272380</updated>
+    </task>
+    <task id="LOCAL-00019" summary="change names of layout">
+      <option name="closed" value="true" />
+      <created>1736939008811</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736939008812</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="part_1" />
@@ -260,6 +280,8 @@
     <MESSAGE value="version 1" />
     <MESSAGE value="fix SRGBColorSpace" />
     <MESSAGE value="fix SRGBColorSpace and onMouseMove" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix SRGBColorSpace and onMouseMove" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="change names of layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="change names of layout" />
   </component>
 </project>
