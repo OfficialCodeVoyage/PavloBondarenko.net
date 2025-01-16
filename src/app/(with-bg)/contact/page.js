@@ -49,7 +49,7 @@ const ContactPage = () => {
                                 <ul className="social-links d-flex align-center" data-aos="zoom-in">
                                     <li><a className="shadow-box" href="https://www.linkedin.com/in/mrbondarenko/"
                                            target="_blank"><i className="iconoir-linkedin"></i></a></li>
-                                    <li><a className="shadow-box" href="https://www.instagram.com/officialcodevoyage/"
+                                    <li><a className="shadow-box" href="https://www.instagram.com/pasha___bond/"
                                            target="_blank"><i className="iconoir-instagram"></i></a></li>
                                     <li><a className="shadow-box" href="https://github.com/OfficialCodeVoyage"
                                            target="_blank"><i className="iconoir-github"></i></a></li>

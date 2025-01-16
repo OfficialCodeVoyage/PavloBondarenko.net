@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import styles from './Preloader.module.css';
 
 const Preloader = ({ isActive }) => {
-    const [shouldRender, setShouldRender] = useState(isActive);
+    const [shouldRender, setShouldRender] = useState(true);
 
     useEffect(() => {
         let timeout;
         if (!isActive) {
-            timeout = setTimeout(() => setShouldRender(false), 150);
+            timeout = setTimeout(() => setShouldRender(false), 500); // Длительность совпадает с анимацией
         } else {
             setShouldRender(true);
         }
@@ -22,6 +22,7 @@ const Preloader = ({ isActive }) => {
     return (
         <div className={`${styles.preloader} ${!isActive ? styles.off : ''}`}>
             <div className={styles.black_wall}></div>
+            <div className={styles.loader}></div>
         </div>
     );
 };

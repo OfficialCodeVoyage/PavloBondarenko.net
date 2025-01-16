@@ -189,7 +189,7 @@ export default function HomePage() {
                           <i className="iconoir-linkedin"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer"
-                              href="https://www.instagram.com/officialcodevoyage/">
+                              href="https://www.instagram.com/pasha___bond/">
                           <i className="iconoir-instagram"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer" href="https://github.com/OfficialCodeVoyage">
