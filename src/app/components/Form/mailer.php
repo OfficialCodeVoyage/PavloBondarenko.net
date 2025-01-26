@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $mail_to = "olechka1997.1997@gmail.com";
+    $mail_to = "bondarenkopavloua@yahoo.com";
 
     # Получаем данные из формы
     $name = str_replace(array("\r", "\n"), array(" ", " "), strip_tags(trim($_POST["full-name"])));

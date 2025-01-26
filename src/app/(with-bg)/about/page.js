@@ -36,14 +36,8 @@ const AboutPage = () => {
                             <div className="about-details-inner shadow-box">
                                 <img src="/images/icon2.png" alt="Star"/>
                                 <h1 style={{marginTop: '-35px'}}><span>Pavlo Bondarenko</span></h1>
-                                <p>Experienced software engineer with over 5 years specializing in backend development
-                                    and
-                                    cloud solutions, with a proven track
-                                    record in enhancing system performance and driving digital transformations. Skilled
-                                    in
-                                    developing scalable architectures and
-                                    engaging digital content, committed to leveraging technology to solve real-world
-                                    problems.</p>
+                                <p>Passionate Associate Product Manager with a rich foundation in Software Engineering and over 5 years of experience in backend development and cloud solutions. Excited to drive innovation, create impactful digital products, and deliver real-world solutions!</p>
+
                             </div>
 
                         </div>
@@ -53,23 +47,22 @@ const AboutPage = () => {
                         <div className="col-md-6" data-aos="zoom-in">
                             <div className="about-edc-exp about-experience shadow-box">
                                 <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                                <h3>EXPERIENCE</h3>
+                                <h3>WORK EXPERIENCE</h3>
 
                                 <ul>
+                                    <li>
+                                        <p className="date">01/2025</p>
+                                        <h2>Associate Product Manager</h2>
+                                        <p className="type"><Link href="https://www.xe.com/"
+                                                                  style={{color: '#98D2E6', fontSize: '18px'}}>XE.com</Link>
+                                        </p>
+                                    </li>
                                     <li>
                                         <p className="date">01/2021 - 04/2024</p>
                                         <h2>Software Engineer & Cloud Solutions Engineer</h2>
                                         <p className="type"><Link href="https://qit.software/"
                                                                   style={{color: '#98D2E6', fontSize: '18px'}}>QIT
                                             Software</Link></p>
-                                    </li>
-                                    <li>
-                                        <p className="date">09/2016 - 05/2018</p>
-                                        <h2>Full Stack Developer</h2>
-                                        <p className="type"><Link href="https://123remodeling.com/"
-                                                                  style={{color: '#98D2E6', fontSize: '18px'}}>123
-                                            Remodeling</Link>
-                                        </p>
                                     </li>
                                 </ul>
                             </div>
