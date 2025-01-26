@@ -1,0 +1,53 @@
+.container_not_found {
+    background: radial-gradient(circle at 52.1% -29.6%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mega {
+    line-height: 1.65em;
+    font-weight: bold;
+    font-size: 11em;
+    color: #3f003d;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.boom {
+    color: #f5f5f5;
+}
+
+.mini {
+    font-size: 1em;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.mini2 {
+    font-size: 1em;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.bola {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
