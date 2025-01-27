@@ -12,7 +12,7 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-# Install system dependencies required for build
+# Install system dependencies required for builds
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
     build-essential \
@@ -22,36 +22,33 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy package files
-COPY package.json package-lock.json ./
-
-# Install production dependencies
-RUN npm install --production
-
-# Build stage
+# Stage 1: Build the application
 FROM base AS build
 
-# Install all dependencies (including devDependencies for build)
+# Copy dependency files
+COPY package.json package-lock.json ./
+
+# Install dependencies (including devDependencies for the build process)
 RUN npm install
 
 # Copy the application code
 COPY . .
 
-# Build the Next.js application
+# Build the Next.js app
 RUN npm run build
 
-# Final stage: runtime image
+# Stage 2: Final image for production
 FROM base
 
-# Copy only the necessary files from the build stage
-COPY --from=build /app/next.config.js ./
-COPY --from=build /app/package.json ./
+# Copy only necessary files from the build stage
+COPY --from=build /app/next.config.mjs ./
 COPY --from=build /app/public ./public
 COPY --from=build /app/.next ./.next
+COPY --from=build /app/package.json ./
 COPY --from=build /app/node_modules ./node_modules
 
-# Expose the application port
+# Expose the port Next.js will run on
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
