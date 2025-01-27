@@ -1,45 +1,57 @@
 # syntax = docker/dockerfile:1
 
-# Adjust NODE_VERSION as desired
+# Set the Node.js version
 ARG NODE_VERSION=20.18.0
 FROM node:${NODE_VERSION}-slim AS base
 
 LABEL fly_launch_runtime="Next.js"
 
-# Next.js app lives here
+# Set working directory
 WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
 
+# Install system dependencies required for build
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    build-essential \
+    node-gyp \
+    pkg-config \
+    python-is-python3 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Throw-away build stage to reduce size of final image
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install production dependencies
+RUN npm install --production
+
+# Build stage
 FROM base AS build
 
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+# Install all dependencies (including devDependencies for build)
+RUN npm install
 
-# Install node modules
-COPY package-lock.json package.json ./
-RUN npm ci
-
-# Copy application code
+# Copy the application code
 COPY . .
 
-# Build application
-RUN npx next build --experimental-build-mode compile
+# Build the Next.js application
+RUN npm run build
 
-
-# Final stage for app image
+# Final stage: runtime image
 FROM base
 
-# Copy built application
-COPY --from=build /app /app
+# Copy only the necessary files from the build stage
+COPY --from=build /app/next.config.js ./
+COPY --from=build /app/package.json ./
+COPY --from=build /app/public ./public
+COPY --from=build /app/.next ./.next
+COPY --from=build /app/node_modules ./node_modules
 
-# Entrypoint sets up the container.
-ENTRYPOINT [ "/app/docker-entrypoint.js" ]
-
-# Start the server by default, this can be overwritten at runtime
+# Expose the application port
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+
+# Start the application
+CMD ["npm", "start"]
