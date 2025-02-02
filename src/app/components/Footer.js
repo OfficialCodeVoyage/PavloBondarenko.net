@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer-area col-md-6">
+            <footer className="footer-area col-md-6 mx-auto">
                 <div className="container">
                     <div className="footer-content text-center">
                         <ul className="footer-menu">
