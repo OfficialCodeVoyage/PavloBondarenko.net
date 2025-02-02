@@ -30,7 +30,8 @@ export default function HomePage() {
                   <div className="infos">
                     <h4></h4>
                     <h1>Pavlo Bondarenko</h1>
-                    <p>Product Manager</p>
+                    <p>Associate Product Manager</p>
+                    <p> @ XE.com</p>
                     <Link href="#" className="about-btn">
                       <img src="/images/icon.svg" alt="Button"/>
                     </Link>
