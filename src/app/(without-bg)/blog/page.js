@@ -1,15 +1,30 @@
 'use client'
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const BlogPage = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    }, []);
+
     return (
         <>
             <section className="breadcrumb-area">
                 <div className="container">
                     <div className="breadcrumb-content" data-aos="fade-up">
                         <p>HOME - BLOG</p>
-                        <h1 className="section-heading"><img src="/images/star-2.png" alt="Star"/> Blog with
-                            rightsidebar <img src="/images/star-2.png" alt="Star"/></h1>
+                        <h1 className="section-heading">
+                            <span className="star-icon">★</span> 
+                            Blog with rightsidebar 
+                            <span className="star-icon">★</span>
+                        </h1>
                     </div>
                 </div>
             </section>
@@ -21,7 +36,15 @@ const BlogPage = () => {
                             <div className="blog-items">
                                 <div className="blog-item" data-aos="zoom-in">
                                     <div className="img-box">
-                                        <img src="/images/blog1.jpeg" alt="Blog"/>
+                                        <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                                            <Image 
+                                                src="/images/blog1.jpeg" 
+                                                alt="Blog"
+                                                fill
+                                                style={{ objectFit: 'cover' }}
+                                                priority
+                                            />
+                                        </div>
                                     </div>
                                     <div className="content">
                                         <span className="meta">25 March 2022 - Comments (4) - Share (7)</span>
@@ -37,7 +60,14 @@ const BlogPage = () => {
 
                                 <div className="blog-item" data-aos="zoom-in">
                                     <div className="img-box">
-                                        <img src="/images/blog2.jpeg" alt="Blog"/>
+                                        <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                                            <Image 
+                                                src="/images/blog2.jpeg" 
+                                                alt="Blog"
+                                                fill
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        </div>
                                     </div>
                                     <div className="content">
                                         <span className="meta">25 March 2022 - Comments (4) - Share (7)</span>
@@ -54,7 +84,14 @@ const BlogPage = () => {
 
                                 <div className="blog-item" data-aos="zoom-in">
                                     <div className="img-box">
-                                        <img src="/images/blog1.jpeg" alt="Blog"/>
+                                        <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                                            <Image 
+                                                src="/images/blog1.jpeg" 
+                                                alt="Blog"
+                                                fill
+                                                style={{ objectFit: 'cover' }}
+                                            />
+                                        </div>
                                     </div>
                                     <div className="content">
                                         <span className="meta">25 March 2022 - Comments (4) - Share (7)</span>
