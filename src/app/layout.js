@@ -28,15 +28,24 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
     return (
-        <html lang="en">
+      <html lang="en">
         <head>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+          />
+          {/* Bootstrap JS bundle */}
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka07A0dnnN7lAiHR2LgK+qVw1y4myv4sS6KME6bj2y0e5lwPq5La5lb7RVN5cw5N"
+            crossOrigin="anonymous"
+            defer
+          ></script>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+          {children}
         </body>
-        </html>
+      </html>
     );
-}
+  }
