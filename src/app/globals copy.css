@@ -1,5 +1,5 @@
 
-/* 
+/*
     -- Table of Content --
 
     * # Preloader
@@ -47,6 +47,7 @@ a {
 .text-right {
     text-align: right;
 }
+
 .container {
     max-width: 1170px;
 }
@@ -59,6 +60,38 @@ a {
 }
 
 /* # Preloader */
+@keyframes loader_running {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left
+    }
+
+    49% {
+        transform: scaleX(1);
+        transform-origin: left
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: right
+    }
+
+    100% {
+        transform-origin: right;
+        transform: scaleX(0)
+    }
+}
+
+@keyframes preloader_slide {
+    from {
+        transform: scaleY(0)
+    }
+
+    to {
+        transform: scaleY(1)
+    }
+}
+
 .preloader {
     position: fixed;
     top: 0;
@@ -94,6 +127,9 @@ a {
 .preloader.off {
     animation: preloader_slide 0.5s ease-in-out 0s 1 reverse both
 }
+
+
+
 
 
 
@@ -249,7 +285,7 @@ ol {
     opacity: 0;
     position: absolute;
     z-index: 9;
-    
+
 }
 .credential-area .credential-sidebar .bg-img,
 .contact-area .contact-form .bg-img,
@@ -529,7 +565,7 @@ ol {
 }
 
 .header-area .logo:hover img {
-    content: url('/assets/images/LOGO/logo_hover_2.png');
+    content: url('/images/LOGO/logo_hover_2.png');
 }
 
 .header-area .navbar .theme-btn {
@@ -662,7 +698,7 @@ ol {
 }
 
 .marquee div {
-    
+
     position: absolute;
     white-space: nowrap;
     will-change: transform;
@@ -1656,42 +1692,12 @@ ol {
 
 
 @keyframes marquee {
-    
+
     from { transform: translateX(0); }
     to { transform: translateX(-65.3%); }
 }
 
-@keyframes loader_running {
-    0% {
-        transform: scaleX(0);
-        transform-origin: left
-    }
 
-    49% {
-        transform: scaleX(1);
-        transform-origin: left
-    }
-
-    50% {
-        transform: scaleX(1);
-        transform-origin: right
-    }
-
-    100% {
-        transform-origin: right;
-        transform: scaleX(0)
-    }
-}
-
-@keyframes preloader_slide {
-    from {
-        transform: scaleY(0)
-    }
-
-    to {
-        transform: scaleY(1)
-    }
-}
 
 
 
@@ -2092,7 +2098,7 @@ ol {
         width: 70px;
         height: 70px;
     }
-    
+
 }
 @media (max-width: 425px) {
     .about-area .about-me-box .infos h1 {
@@ -2149,3 +2155,36 @@ ol {
         /* Your CSS rules go here */
     }
 }
+
+/*#magic {*/
+/*    position: fixed;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: block;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: -9;*/
+/*    background-color: transparent;*/
+/*    opacity: 0.9;*/
+/*}*/
+
+/*.playground{*/
+
+/*    position: fixed;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: block;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    display: flex;*/
+/*    flex-wrap: nowrap;*/
+/*    flex-direction: column;*/
+/*    justify-content: flex-end;*/
+/*    align-items: center;*/
+
+
+/*}*/
+
+/*.marquee span, .marquee b {*/
+/*    color: white !important;*/
+/*}*/
