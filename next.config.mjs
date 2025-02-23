@@ -2,4 +2,3 @@
 const nextConfig = {};
 
 export default nextConfig;
-scrollbars
