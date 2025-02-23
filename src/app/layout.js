@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import styles from './not-found.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './not-found.module.css'
 import { Inter } from 'next/font/google';
 
 
@@ -35,13 +35,6 @@ export default function RootLayout({ children }) {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
           />
-          {/* Bootstrap JS bundle */}
-          <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka07A0dnnN7lAiHR2LgK+qVw1y4myv4sS6KME6bj2y0e5lwPq5La5lb7RVN5cw5N"
-            crossOrigin="anonymous"
-            defer
-          ></script>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           {children}
