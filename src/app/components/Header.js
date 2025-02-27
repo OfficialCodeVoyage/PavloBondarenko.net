@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { Raleway_Dots } from 'next/font/google';
+
+const ralewayDots = Raleway_Dots({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 const Header = () => {
     const pathname = usePathname(); // Текущий путь
@@ -20,7 +27,7 @@ const Header = () => {
                 <div className="container">
                     <div className="gx-row d-flex align-items-center justify-content-between">
                         <Link href="/" className="logo">
-                            <img src="/images/LOGO/logo3.png" width="400px" alt="Logo" />
+                            <span className={`logo-text ${ralewayDots.className}`}>Hello World!</span>
                         </Link>
 
                         <nav className={`navbar ${menuActive ? 'active' : ''}`}>
@@ -40,15 +47,19 @@ const Header = () => {
                             </ul>
                         </nav>
 
-                        {pathname === '/' ? (
-                            <Link href="https://www.linkedin.com/in/mrbondarenko/" target="_blank" className="theme-btn">
-                                Let's connect
-                            </Link>
-                        ) : (
-                            <Link href="/contact" className="theme-btn">
-                                Let's talk
-                            </Link>
-                        )}
+                        <Link 
+                            href="https://www.linkedin.com/in/mrbondarenko/" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="theme-btn linkedin-btn flex items-center gap-2 group transition-all duration-300"
+                            aria-label="My LinkedIn"
+                        >
+                            <i className="iconoir-linkedin text-xl" aria-hidden="true"></i>
+                            <span className="relative">
+                                Let's Connect!
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-300"></span>
+                            </span>
+                        </Link>
 
                         <div
                             className={`show-menu ${menuActive ? 'active' : ''}`}

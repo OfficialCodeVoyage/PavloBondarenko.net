@@ -1,4 +1,3 @@
-
 /* 
     -- Table of Content --
 
@@ -338,7 +337,13 @@ ol {
 }
 
 .inner-profile-icons a.linkedln:hover {
-    background: linear-gradient(109.6deg, rgb(31, 179, 237) 11.2%, rgb(17, 106, 197) 91.1%);
+    background: linear-gradient(135deg, #0077B5 0%, #0073b1 25%, #006097 50%, #004b7c 75%, #00364a 100%);
+    opacity: 0.8;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-color: transparent;
+    background-size: 101% 101%;
+    background-position: center;
 }
 
 /*.inner-profile-icons a.linkedln:hover i {*/
@@ -346,7 +351,13 @@ ol {
 /*}*/
 
 .inner-profile-icons a[href*="instagram"]:hover {
-    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    background: linear-gradient(-225deg, #405DE6 0%, #5851DB 20%, #833AB4 40%, #C13584 60%, #E1306C 70%, #FD1D1D 80%, #F56040 90%, #FCAF45 100%);
+    opacity: 0.8;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-color: transparent;
+    background-size: 101% 101%;
+    background-position: center;
 }
 
 /*.inner-profile-icons a[href*="instagram"]:hover i {*/
@@ -355,6 +366,12 @@ ol {
 
 .inner-profile-icons a[href*="github"]:hover {
     background: linear-gradient(to right, #333, #6e5494);
+    opacity: 0.8;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-color: transparent;
+    background-size: 101% 101%;
+    background-position: center;
 }
 
 /*.inner-profile-icons a[href*="github"]:hover i {*/
@@ -543,15 +560,25 @@ ol {
     padding: 0;
 }
 .header-area .navbar .menu li a {
-    font-size: 16px;
+    font-size: 20px;
     color: #676767;
     transition: .3s;
     display: block;
     padding: 26px 0px;
+    position: relative;
 }
+
+/* Removed the ::after pseudo-element to eliminate the underline effect */
+
 .header-area .navbar .menu li.active a,
 .header-area .navbar .menu li a:hover {
     color: #ffffff;
+    opacity: 0.8;
+}
+
+.header-area .navbar .menu li a:hover::after,
+.header-area .navbar .menu li.active a::after {
+    width: 100%;
 }
 .header-area .show-menu {
     display: none;
@@ -705,7 +732,7 @@ ol {
 }
 
 .about-details h1 span {
-    background: linear-gradient(155deg, rgb(229, 176, 134) 0%, rgb(129, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(196, 170, 151) 24%, rgb(196, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(322deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(33deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(298, 117, 193) 41%, rgb(298, 257, 233) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(315deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(298, 257, 233) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(41deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(90deg, rgb(192, 100, 79),rgb(56, 158, 172));
+    background: linear-gradient(155deg, rgb(229, 176, 134) 0%, rgb(129, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(196, 170, 151) 24%, rgb(196, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(322deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(33deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(315deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(41deg, rgb(229, 176, 124) 0%, rgb(229, 176, 124) 41%,rgb(198, 157, 133) 41%, rgb(198, 157, 133) 42%,rgb(167, 139, 142) 42%, rgb(167, 139, 142) 44%,rgb(136, 120, 151) 44%, rgb(136, 120, 151) 45%,rgb(105, 101, 159) 45%, rgb(105, 101, 159) 61%,rgb(74, 83, 168) 61%, rgb(74, 83, 168) 78%,rgb(43, 64, 177) 78%, rgb(43, 64, 177) 100%),linear-gradient(90deg, rgb(192, 100, 79),rgb(56, 158, 172));
     background-blend-mode:overlay,overlay,overlay,overlay,overlay,normal;; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 
 
@@ -2147,5 +2174,116 @@ ol {
     .shadow-box,
     .h-full {
         /* Your CSS rules go here */
+    }
+}
+
+/* LinkedIn Button Styles */
+.linkedin-btn {
+    background: var(--button-primary, #323232);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.linkedin-btn i {
+    font-size: 23px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    top: -1px;
+}
+
+.linkedin-btn:hover {
+    background: radial-gradient(
+        circle at center,
+        #3C58E3 -15%,
+        #C2EBFF 58%,
+        #5AB5E2 97%,
+        #2979FF 125%,
+        #7B1FA2 150%,
+        #0D47A1 180%
+    );
+    background-size: 300% 300%;
+    animation: pulseGradient 3s ease infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 25px rgba(41, 121, 255, 0.45);
+    border-color: transparent;
+}
+
+@keyframes pulseGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.linkedin-btn:active {
+    transform: translateY(0);
+}
+
+.linkedin-btn:hover i {
+    transform: scale(1.2);
+}
+
+.logo-text {
+    font-family: 'Raleway Dots', cursive;
+    font-size: 2.8rem;  /* Increased from 2.5rem */
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    
+    /* Static gradient with vibrant colors */
+    background: linear-gradient(
+        90deg,
+        #5B78F6 0%,
+        #FF3366 25%,
+        #bd0e0e 50%,
+        #FF3366 75%,
+        #5B78F6 100%
+    );
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Simple hover effect */
+.logo-text:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.2);
+    text-shadow: 
+        0 10px 20px rgba(91, 120, 246, 0.2),
+        0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments - increased all sizes proportionally */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 2.5rem;  /* Increased from 2rem */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 2.5rem;  /* Increased from 1.75rem */
+        
     }
 }

@@ -30,7 +30,9 @@ export default function HomePage() {
                   <div className="infos">
                     <h4></h4>
                     <h1>Pavlo Bondarenko</h1>
-                    <p>Software Engineer</p>
+                    <p className="text-lg">
+                      <i style={{fontSize: '0.95rem'}}>Product @ Xe.com</i>
+                    </p>
                     <Link href="#" className="about-btn">
                       <img src="/images/icon.svg" alt="Button"/>
                     </Link>
@@ -44,31 +46,30 @@ export default function HomePage() {
                     <div className="banner shadow-box">
                       <div className="marquee">
                         <div>
-                      <span><img src="/images/html_icon.png" height="17px" alt="Python"/><img
-                          src="/images/css_logo.png" height="17px" alt="Python"/>  <b>HTML/CSS</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/cpp_logo.png"
-                                                                   height="17px" alt="C++"/> <b>C++</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/Git_icon.png"
-                                                                   height="17px" alt="GIT"/> <b>GIT</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/python-logo-only.png"
-                                                                   height="17px"
-                                                                   alt="Python"/> <b>PYTHON</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/azure.png" height="17px"
-                                                                   alt="Bootstrap"/> <b>AZURE</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/linux.png" height="17px"
-                                                                   alt="Linux"/> <b>LINUX</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/GCP.png" height="17px"
-                                                                   alt="Linux"/> <b>GCP</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/aws.png" height="17px"
-                                                                   alt="AWS"/> <b>AWS</b> <img
-                          src="/images/star1.svg" alt="Star"/><img src="/images/davinciresolve.png"
-                                                                   height="17px" alt="davinciresolve"/> <b>DAVINCI RESOLVE</b> <img
-                          src="/images/star1.svg" alt="Star"/></span>
+                          <span>
+                            {/* PM/Business Tools */}
+                            <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/figma.png" height="17px" alt="Figma"/> <b>FIGMA</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/powerbi.png" height="17px" alt="PowerBI"/> <b>POWER BI</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/Amplitude.png" height="17px" alt="Amplitude"/> <b>AMplitude</b> <img src="/images/star1.svg" alt="Star"/>
+                            
+                            {/* Technical Skills */}
+                            <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/python-logo-only.png" height="17px" alt="Python"/> <b>PYTHON</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/Git_icon.png" height="17px" alt="GIT"/> <b>GIT</b> <img src="/images/star1.svg" alt="Star"/>
+                            
+                            {/* Cloud/Infrastructure */}
+                            <img src="/images/azure.png" height="17px" alt="Azure"/> <b>AZURE</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/aws.png" height="17px" alt="AWS"/> <b>AWS</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/GCP.png" height="17px" alt="GCP"/> <b>GCP</b> <img src="/images/star1.svg" alt="Star"/>
+                            
+                            {/* Other Relevant Skills */}
+                            <img src="/images/linux.png" height="17px" alt="Linux"/> <b>LINUX</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/davinciresolve.png" height="17px" alt="DaVinci Resolve"/> <b>DAVINCI RESOLVE</b> <img src="/images/star1.svg" alt="Star"/>
+                          </span>
                         </div>
                       </div>
-
                     </div>
-
                   </div>
 
                   <div className="gx-row d-flex gap-24">
@@ -189,7 +190,7 @@ export default function HomePage() {
                           <i className="iconoir-linkedin"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer"
-                              href="https://www.instagram.com/pasha___bond/">
+                              href="https://www.instagram.com/pasha.369.bond/">
                           <i className="iconoir-instagram"></i>
                         </Link>
                         <Link target="_blank" rel="noopener noreferrer" href="https://github.com/OfficialCodeVoyage">
@@ -223,7 +224,7 @@ export default function HomePage() {
                   <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                   <div className="clients d-flex align-items-start gap-24 justify-content-center">
                     <div className="client-item client-item-bg1">
-                      <h1>03</h1>
+                      <h1>04</h1>
                       <p>Years <br/>Experience</p>
                     </div>
 
@@ -233,7 +234,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="client-item client-item-bg3">
-                      <h1>+56</h1>
+                      <h1>+76</h1>
                       <p>Total <br/>Projects</p>
                     </div>
                   </div>
