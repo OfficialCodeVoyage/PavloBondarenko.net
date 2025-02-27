@@ -31,8 +31,8 @@ const Header = () => {
                                 <li className={getActiveClass('/about')}>
                                     <Link href="/about">About</Link>
                                 </li>
-                                <li className={getActiveClass('/works')}>
-                                    <Link href="/works">Works</Link>
+                                <li className={getActiveClass('/projects')}>
+                                    <Link href="/projects">My Projects</Link>
                                 </li>
                                 <li className={getActiveClass('/contact')}>
                                     <Link href="/contact">Contact</Link>
