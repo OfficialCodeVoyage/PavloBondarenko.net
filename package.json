@@ -12,7 +12,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "next": "15.1.4",
+    "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "^0.172.0"
