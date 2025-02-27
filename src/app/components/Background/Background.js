@@ -1,28 +1,14 @@
 'use client';
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-const ANIMATION_CONFIG = {
-  COLS: 290,
-  THICKNESS: Math.pow(80, 2),
-  MARGIN: 1,
-  DRAG: 0.95,
-  EASE: 0.25,
-  DEFAULT_COLOR: 50,
-  ACTIVE_COLOR: {
-    RED: 255,
-    GREEN: 0,
-    BLUE: 0
-  }
-};
-
 export default function Background() {
-  const requestRef = useRef(null);
-  const containerRef = useRef(null);
+  const requestRef = useRef();
   const pathname = usePathname();
+  const containerRef = useRef(null);
 
-  // Determine rows based on current route
-  const rows = useMemo(() => {
+  // Path-based row logic (as before)
+  const rows = (() => {
     switch (pathname) {
       case '/':
         return 314;
@@ -35,26 +21,55 @@ export default function Background() {
       default:
         return 0;
     }
-  }, [pathname]);
+  })();
 
   useEffect(() => {
-    const ROWS = rows;
-    const { COLS, THICKNESS, MARGIN, DRAG, EASE, DEFAULT_COLOR, ACTIVE_COLOR } = ANIMATION_CONFIG;
-    const NUM_PARTICLES = ROWS * COLS;
+    const COLS = 300;
+    const THICKNESS = Math.pow(80, 2);
+    const MARGIN = 1;
+    const DRAG = 0.95;
+    const EASE = 0.25;
+    const DEFAULT_COLOR = 220;
     
-    const container = containerRef.current;
-    if (!container || ROWS === 0) return; // Don't render if no rows or no container
+    // Extra space to add at the bottom (tweak as needed)
+    const EXTRA_HEIGHT = window.innerHeight * 1;
 
-    // Setup canvas
+    let mx = 0, my = 0;
+    let isMouseActive = false;
+    let simulateStep = true;
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Create canvas
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-    const list = [];
-    let isToggled = true;
-    let isMouseControlled = false;
-    let mouseX = 0;
-    let mouseY = 0;
 
-    // Template for particle properties
+    // Calculate spacing
+    const SPACING = (window.innerWidth - MARGIN * 2) / COLS;
+
+    // Rows needed to fill the screen, plus an extra offset
+    const neededRowsToFill = Math.ceil(
+      ((window.innerHeight + EXTRA_HEIGHT) - MARGIN * 2) / SPACING
+    );
+
+    // Use whichever is larger: path-based rows or the rows needed to fill
+    const finalRows = Math.max(rows, neededRowsToFill);
+    const NUM_PARTICLES = finalRows * COLS;
+
+    // Canvas width/height
+    const width = COLS * SPACING + MARGIN * 2;
+    const height = finalRows * SPACING + MARGIN * 2;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    // Center container
+    container.style.marginLeft = `${Math.round(width * -0.5)}px`;
+    container.style.marginTop = `${Math.round(height * -0.5)}px`;
+    container.appendChild(canvas);
+
+    // Particle template
     const particleTemplate = {
       vx: 0,
       vy: 0,
@@ -63,120 +78,87 @@ export default function Background() {
       c1: DEFAULT_COLOR,
       c2: DEFAULT_COLOR,
       c3: DEFAULT_COLOR,
-      ox: 0, // Original x position
-      oy: 0  // Original y position
     };
 
-    // Calculate dimensions
-    const SPACING = (window.innerWidth - MARGIN * 2) / COLS;
-    const width = COLS * SPACING + MARGIN * 2;
-    const height = ROWS * SPACING + MARGIN * 2;
-
-    // Setup canvas dimensions and position
-    canvas.width = width;
-    canvas.height = height;
-    container.style.marginLeft = `${Math.round(width * -0.5)}px`;
-    container.style.marginTop = `${Math.round(height * -0.5)}px`;
-    container.appendChild(canvas);
-
     // Generate particles
+    const particles = [];
     for (let i = 0; i < NUM_PARTICLES; i++) {
       const p = { ...particleTemplate };
       p.x = p.ox = MARGIN + SPACING * (i % COLS);
       p.y = p.oy = MARGIN + SPACING * Math.floor(i / COLS);
-      list[i] = p;
+      particles.push(p);
     }
 
     // Mouse event handlers
     const handleMouseMove = (e) => {
       const bounds = container.getBoundingClientRect();
-      mouseX = e.clientX - bounds.left;
-      mouseY = e.clientY - bounds.top;
-      isMouseControlled = true;
+      mx = e.clientX - bounds.left;
+      my = e.clientY - bounds.top;
+      isMouseActive = true;
     };
-
     const handleMouseOut = () => {
-      isMouseControlled = false;
+      isMouseActive = false;
     };
 
-    // Add event listeners
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseout", handleMouseOut);
 
-    // Animation step function
+    // Animation loop
     const step = () => {
-      if (isToggled) {
-        // Calculate particle positions and colors
-        if (!isMouseControlled) {
-          // Occasional random movement when mouse isn't controlling
-          if (Math.random() > 0.9) {
-            const t = Date.now() * 0.001;
-            mouseX = Math.floor(canvas.width * 0.5 + Math.cos(t) * canvas.width * 0.3);
-            mouseY = Math.floor(canvas.height * 0.5 + Math.sin(t) * canvas.height * 0.3);
-          }
+      if (simulateStep) {
+        if (!isMouseActive && Math.random() * 10 > 9) {
+          const t = Date.now() * 0.001;
+          mx = Math.floor(canvas.width * 0.5 + Math.cos(t) * canvas.width * 0.3);
+          my = Math.floor(canvas.height * 0.5 + Math.sin(t) * canvas.height * 0.3);
         }
+        // Update physics
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          const dx = mx - p.x;
+          const dy = my - p.y;
+          const d = dx * dx + dy * dy;
+          const f = -THICKNESS / d;
 
-        // Update all particles
-        for (let i = 0; i < NUM_PARTICLES; i++) {
-          const p = list[i];
-          const dx = mouseX - p.x;
-          const dy = mouseY - p.y;
-          const distanceSquared = dx * dx + dy * dy;
-          const force = -THICKNESS / distanceSquared;
-
-          // Apply force and change color if particle is close to mouse
-          if (distanceSquared < THICKNESS) {
+          if (d < THICKNESS) {
             const angle = Math.atan2(dy, dx);
-            p.vx += force * Math.cos(angle);
-            p.vy += force * Math.sin(angle);
-            p.c1 = ACTIVE_COLOR.RED;
-            p.c2 = ACTIVE_COLOR.GREEN;
-            p.c3 = ACTIVE_COLOR.BLUE;
+            p.vx += f * Math.cos(angle);
+            p.vy += f * Math.sin(angle);
+            p.c1 = 255;
+            p.c2 = 0;
+            p.c3 = 0;
           } else {
-            p.c1 = p.c2 = p.c3 = DEFAULT_COLOR;
+            p.c1 = p.c2 = p.c3 = 50;
           }
 
-          // Add color effects based on velocity
-          if (p.vx > 10) {
-            p.c2 = 255; // Green
-          }
-          if (p.vy > 10) {
-            p.c3 = 255; // Blue
-          }
+          if (p.vx > 10) p.c2 = 255;
+          if (p.vy > 10) p.c3 = 255;
 
-          // Update position with velocity and ease back to original position
           p.x += (p.vx *= DRAG) + (p.ox - p.x) * EASE;
           p.y += (p.vy *= DRAG) + (p.oy - p.y) * EASE;
         }
-
-        isToggled = false;
       } else {
-        // Render particles to canvas
+        // Render
         const imgData = ctx.createImageData(canvas.width, canvas.height);
         const data = imgData.data;
 
-        for (let i = 0; i < NUM_PARTICLES; i++) {
-          const p = list[i];
-          // ~~ is a faster Math.floor for positive numbers
-          const n = (~~p.x + ~~p.y * canvas.width) * 4;
-          data[n] = p.c1;     // Red
-          data[n + 1] = p.c2; // Green
-          data[n + 2] = p.c3; // Blue
-          data[n + 3] = 255;  // Alpha (fully opaque)
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          const n = ((~~p.x) + (~~p.y) * canvas.width) * 4;
+          data[n] = p.c1;
+          data[n + 1] = p.c2;
+          data[n + 2] = p.c3;
+          data[n + 3] = 255;
         }
-
         ctx.putImageData(imgData, 0, 0);
-        isToggled = true;
       }
 
-      // Request next animation frame
+      simulateStep = !simulateStep;
       requestRef.current = requestAnimationFrame(step);
     };
 
-    // Start animation
     step();
 
-    // Cleanup function
+    // Cleanup
     return () => {
       cancelAnimationFrame(requestRef.current);
       container.removeEventListener("mousemove", handleMouseMove);
@@ -185,14 +167,7 @@ export default function Background() {
         container.removeChild(canvas);
       }
     };
-  }, [rows]);
+  }, [pathname]);
 
-  return (
-    <div 
-      id="container" 
-      ref={containerRef} 
-      className="particle-background"
-      aria-hidden="true" // Mark as hidden for screen readers since it's decorative
-    />
-  );
+  return <div id="container" ref={containerRef} />;
 }
