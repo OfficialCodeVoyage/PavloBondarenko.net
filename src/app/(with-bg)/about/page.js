@@ -36,14 +36,10 @@ const AboutPage = () => {
                             <div className="about-details-inner shadow-box">
                                 <img src="/images/icon2.png" alt="Star"/>
                                 <h1 style={{marginTop: '-35px'}}><span>Pavlo Bondarenko</span></h1>
-                                <p>Experienced software engineer with over 5 years specializing in backend development
-                                    and
-                                    cloud solutions, with a proven track
-                                    record in enhancing system performance and driving digital transformations. Skilled
-                                    in
-                                    developing scalable architectures and
-                                    engaging digital content, committed to leveraging technology to solve real-world
-                                    problems.</p>
+                                <p>
+  I swapped my code wizard cape for a product manager hat—mixing tech savvy with a splash of fun to build awesome, scalable solutions.
+ Always ready to innovate and create next-level products. Always smiling :)
+</p>
                             </div>
 
                         </div>
@@ -56,20 +52,19 @@ const AboutPage = () => {
                                 <h3>EXPERIENCE</h3>
 
                                 <ul>
+                                <li>
+                                        <p className="date">01/2025 - Present</p>
+                                        <h2>Associate Product Manager</h2>
+                                        <p className="type"><Link href="hhttps://www.xe.com"
+                                                                  style={{color: '#98D2E6', fontSize: '18px'}}>Xe.com</Link>
+                                        </p>
+                                    </li>
                                     <li>
                                         <p className="date">01/2021 - 04/2024</p>
                                         <h2>Software Engineer & Cloud Solutions Engineer</h2>
                                         <p className="type"><Link href="https://qit.software/"
                                                                   style={{color: '#98D2E6', fontSize: '18px'}}>QIT
                                             Software</Link></p>
-                                    </li>
-                                    <li>
-                                        <p className="date">09/2016 - 05/2018</p>
-                                        <h2>Full Stack Developer</h2>
-                                        <p className="type"><Link href="https://123remodeling.com/"
-                                                                  style={{color: '#98D2E6', fontSize: '18px'}}>123
-                                            Remodeling</Link>
-                                        </p>
                                     </li>
                                 </ul>
                             </div>
@@ -150,7 +145,7 @@ const AboutPage = () => {
 
                                 <div data-aos="zoom-in" className="h-full">
                                     <div className="about-crenditials-box info-box shadow-box">
-                                        <Link className="overlay-link" href="PavloBondarenkoResume.pdf" download></Link>
+                                        <Link className="overlay-link" href="#" download ></Link>
                                         <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                         <img src="/images/resume.png" style={{height: '124px'}} alt="Sign"/>
                                         <div className="d-flex align-items-center justify-content-between">

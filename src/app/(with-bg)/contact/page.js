@@ -40,7 +40,7 @@ const ContactPage = () => {
                                         </div>
                                         <div className="right">
                                             <span>Live in</span>
-                                            <h4>Dallas, Texas</h4>
+                                            <h4>Denver, Colorado</h4>
                                         </div>
                                     </li>
                                 </ul>

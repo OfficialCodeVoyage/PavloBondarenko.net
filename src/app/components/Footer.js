@@ -9,7 +9,7 @@ const Footer = () => {
                         <ul className="footer-menu">
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/about">About</Link></li>
-                            <li><Link href="/works">Works</Link></li>
+                            <li><Link href="/projects">My Projects</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
                         </ul>
                         <p className="copyright" style={{marginTop: '-20px'}}>

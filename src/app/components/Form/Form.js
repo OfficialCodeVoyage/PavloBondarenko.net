@@ -76,7 +76,8 @@ const Form = () => {
                 <img src="/images/bg1.png" alt="BG" className="bg-img" />
                 <img src="/images/icon3.png" alt="Icon" />
                 <h1>
-                    Let’s work <span>together.</span>
+                    Let’s get in <span>touch.</span> 
+                    {/* got you - who uses email form in 2025? - add me on linked in  */}
                 </h1>
                 <form method="POST" action="mailer.php" ref={formRef}>
                     <div
