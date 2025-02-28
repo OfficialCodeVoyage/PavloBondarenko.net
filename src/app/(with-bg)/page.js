@@ -51,7 +51,7 @@ export default function HomePage() {
                             <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
                             <img src="/images/figma.png" height="17px" alt="Figma"/> <b>FIGMA</b> <img src="/images/star1.svg" alt="Star"/>
                             <img src="/images/powerbi.png" height="17px" alt="PowerBI"/> <b>POWER BI</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/Amplitude.png" height="17px" alt="Amplitude"/> <b>Amplitude</b> <img src="/images/star1.svg" alt="Star"/>
+                            <img src="/images/amplitude.png" height="17px" alt="Amplitude"/> <b>Amplitude</b> <img src="/images/star1.svg" alt="Star"/>
                             
                             {/* Technical Skills */}
                             <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
