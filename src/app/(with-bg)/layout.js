@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
 import Background from "@/app/components/Background/Background";
 import AppWrapper from "@/app/components/Preloader/AppWrapper";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   subsets: ['latin'], // Подмножества
@@ -34,6 +35,7 @@ export default function WithBgLayout({ children }) {
             <Header />
             {children}
             <Footer />
+            <Analytics />
         </AppWrapper>
     );
 }
