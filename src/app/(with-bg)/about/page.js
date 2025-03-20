@@ -145,7 +145,7 @@ const AboutPage = () => {
 
                                 <div data-aos="zoom-in" className="h-full">
                                     <div className="about-crenditials-box info-box shadow-box">
-                                        <Link className="overlay-link" href="#" download ></Link>
+                                        <Link className="overlay-link" href="public/Pavlo_Bondarenko_Resume.pdf" download ></Link>
                                         <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                         <img src="/images/resume.png" style={{height: '124px'}} alt="Sign"/>
                                         <div className="d-flex align-items-center justify-content-between">
@@ -154,7 +154,7 @@ const AboutPage = () => {
                                                 <h1>Updated Resume</h1>
                                             </div>
 
-                                            <a href="/PavloBondarenkoResume.pdf" download className="about-btn">
+                                            <a href="public/Pavlo_Bondarenko_Resume.pdf" download className="about-btn">
                                                 <img src="/images/icon.svg" alt="Button"/>
                                             </a>
 
