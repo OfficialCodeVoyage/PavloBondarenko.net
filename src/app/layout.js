@@ -6,7 +6,6 @@ import { Inter } from 'next/font/google';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import JsonLd from './components/JsonLd';
 
-
 const inter = Inter({
     subsets: ['latin'],
     weights: ['400', '500', '600', '700'],
