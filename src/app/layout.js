@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-    title: "Pavlo Bondarenko - Hello World!",
+    title: "Pavlo Bondarenko - Product & AI",
     description: "Personal website of Pavlo Bondarenko - Full-stack developer & tech enthusiast. Explore my projects, skills, and professional journey.",
     keywords: ["Pavlo Bondarenko", "full-stack developer", "software engineer", "web development", "portfolio", "projects"],
     authors: [{ name: "Pavlo Bondarenko" }],
