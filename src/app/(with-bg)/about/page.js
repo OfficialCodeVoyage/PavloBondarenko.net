@@ -55,7 +55,7 @@ const AboutPage = () => {
                                 <li>
                                         <p className="date">01/2025 - Present</p>
                                         <h2>Associate Product Manager</h2>
-                                        <p className="type"><Link href="hhttps://www.xe.com"
+                                        <p className="type"><Link href="https://www.xe.com"
                                                                   style={{color: '#98D2E6', fontSize: '18px'}}>Xe.com</Link>
                                         </p>
                                     </li>
