@@ -25,7 +25,7 @@ export default function HomePage() {
                   <Link className="overlay-link" href="/about"></Link>
                   <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                   <div className="img-box">
-                    <img src="/images/LOGO/pavlopic.png" alt="About Me"/>
+                    <img src="/images/LOGO/pavlopic3.png" alt="About Me"/>
                   </div>
                   <div className="infos">
                     <h4></h4>

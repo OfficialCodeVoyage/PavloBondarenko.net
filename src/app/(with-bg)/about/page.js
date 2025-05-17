@@ -24,7 +24,7 @@ const AboutPage = () => {
                             <div className="about-image-box shadow-box">
                                 <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                 <div className="image-inner">
-                                    <img src="/images/about_me_profile_pic.png" alt="About Me"/>
+                                    <img src="/images/LOGO/aboutme.png" alt="About Me"/>
                                 </div>
                             </div>
                         </div>
