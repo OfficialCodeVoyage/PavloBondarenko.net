@@ -13,7 +13,7 @@ const Footer = () => {
                             <li><Link href="/contact">Contact</Link></li>
                         </ul>
                         <p className="copyright" style={{marginTop: '-20px'}}>
-                            369 &copy; Created with love by <span><a href="https://www.linkedin.com/in/mrbondarenko/"
+                            3.6.9 &copy; Created with love by <span><a href="https://www.linkedin.com/in/mrbondarenko/"
                                                                  target="_blank">Pavlo Bondarenko</a></span>
                         </p>
                     </div>
