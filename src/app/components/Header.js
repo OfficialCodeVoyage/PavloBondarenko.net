@@ -30,10 +30,31 @@ const Header = () => {
         }
     }, [menuActive]);
 
+    // Close menu on escape key press
+    useEffect(() => {
+        const handleEscKey = (e) => {
+            if (e.key === 'Escape' && menuActive) {
+                setMenuActive(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleEscKey);
+        return () => {
+            window.removeEventListener('keydown', handleEscKey);
+        };
+    }, [menuActive]);
+
     const getActiveClass = (path) => (pathname === path ? 'active' : '');
 
-    const toggleMenu = () => {
+    const handleToggleMenu = () => {
         setMenuActive(!menuActive);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleToggleMenu();
+        }
     };
 
     return (
@@ -48,16 +69,16 @@ const Header = () => {
                         <nav className={`navbar ${menuActive ? 'active' : ''}`}>
                             <ul className="menu">
                                 <li className={getActiveClass('/')}>
-                                    <Link href="/" onClick={toggleMenu}>Home</Link>
+                                    <Link href="/" onClick={handleToggleMenu}>Home</Link>
                                 </li>
                                 <li className={getActiveClass('/about')}>
-                                    <Link href="/about" onClick={toggleMenu}>About</Link>
+                                    <Link href="/about" onClick={handleToggleMenu}>About</Link>
                                 </li>
                                 <li className={getActiveClass('/projects')}>
-                                    <Link href="/projects" onClick={toggleMenu}>My Projects</Link>
+                                    <Link href="/projects" onClick={handleToggleMenu}>My Projects</Link>
                                 </li>
                                 <li className={getActiveClass('/contact')}>
-                                    <Link href="/contact" onClick={toggleMenu}>Contact</Link>
+                                    <Link href="/contact" onClick={handleToggleMenu}>Contact</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -78,7 +99,13 @@ const Header = () => {
 
                         <div
                             className={`show-menu ${menuActive ? 'active' : ''}`}
-                            onClick={toggleMenu}
+                            onClick={handleToggleMenu}
+                            onKeyDown={handleKeyDown}
+                            tabIndex="0"
+                            role="button"
+                            aria-label="Toggle navigation menu"
+                            aria-expanded={menuActive}
+                            aria-controls="navigation-menu"
                         >
                             <span></span>
                             <span></span>
