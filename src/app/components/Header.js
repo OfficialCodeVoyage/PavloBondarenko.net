@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Raleway_Dots } from 'next/font/google';
 
 const ralewayDots = Raleway_Dots({
@@ -14,6 +14,21 @@ const ralewayDots = Raleway_Dots({
 const Header = () => {
     const pathname = usePathname(); // Текущий путь
     const [menuActive, setMenuActive] = useState(false);
+
+    // Close the mobile menu whenever the route changes
+    useEffect(() => {
+        // Whenever pathname updates (i.e., a new route is pushed), close the menu
+        setMenuActive(false);
+    }, [pathname]);
+
+    // Prevent body from scrolling while the mobile menu is open
+    useEffect(() => {
+        if (menuActive) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [menuActive]);
 
     const getActiveClass = (path) => (pathname === path ? 'active' : '');
 
@@ -33,16 +48,16 @@ const Header = () => {
                         <nav className={`navbar ${menuActive ? 'active' : ''}`}>
                             <ul className="menu">
                                 <li className={getActiveClass('/')}>
-                                    <Link href="/">Home</Link>
+                                    <Link href="/" onClick={toggleMenu}>Home</Link>
                                 </li>
                                 <li className={getActiveClass('/about')}>
-                                    <Link href="/about">About</Link>
+                                    <Link href="/about" onClick={toggleMenu}>About</Link>
                                 </li>
                                 <li className={getActiveClass('/projects')}>
-                                    <Link href="/projects">My Projects</Link>
+                                    <Link href="/projects" onClick={toggleMenu}>My Projects</Link>
                                 </li>
                                 <li className={getActiveClass('/contact')}>
-                                    <Link href="/contact">Contact</Link>
+                                    <Link href="/contact" onClick={toggleMenu}>Contact</Link>
                                 </li>
                             </ul>
                         </nav>
