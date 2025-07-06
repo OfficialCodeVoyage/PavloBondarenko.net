@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from './not-found.module.css';
 import * as THREE from 'three';
 
@@ -93,9 +94,9 @@ export default function NotFoundPage() {
                 <p className={styles.mini2}>
                     Go Back to the{' '}
                     <i>
-                        <a href="/" style={{ color: 'white' }}>
+                        <Link href="/" style={{ color: 'white' }}>
                             Main Page
-                        </a>
+                        </Link>
                     </i>
                 </p>
             </main>

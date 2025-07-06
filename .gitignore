@@ -40,3 +40,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .idea
+
+# Claude
+.claude
+CLAUDE.md
+
+# BMAD-METHOD files
+.bmad/
+bmad-method/
+bmad-fullstack.txt
+*.bmad
+/web-bundles
+/.bmad-core

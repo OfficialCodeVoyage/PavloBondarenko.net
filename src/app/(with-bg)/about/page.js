@@ -119,7 +119,7 @@ const AboutPage = () => {
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="infos">
-                                                <h4>LET'S CONNECT</h4>
+                                                <h4>LET&apos;S CONNECT</h4>
                                                 <h1>My Social Profiles</h1>
                                             </div>
 
@@ -136,7 +136,7 @@ const AboutPage = () => {
                                         <Link className="overlay-link" href='../contact'></Link>
                                         <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                         <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
-                                        <h1>Let's <br/>work <span>together.</span></h1>
+                                        <h1>Let&apos;s <br/>work <span>together.</span></h1>
                                         <Link href='../contact' className="about-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
                                         </Link>

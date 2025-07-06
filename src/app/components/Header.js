@@ -92,7 +92,7 @@ const Header = () => {
                         >
                             <i className="iconoir-linkedin text-xl" aria-hidden="true"></i>
                             <span className="relative">
-                                Let's Connect!
+                                Let&apos;s Connect!
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white/20 group-hover:w-full transition-all duration-300"></span>
                             </span>
                         </Link>
