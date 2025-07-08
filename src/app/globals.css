@@ -1534,6 +1534,25 @@ ol {
     border-radius: 10px;
     font-size: 14px;
     padding: 16px 30px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-area .contact-form form .input-group button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.contact-area .contact-form form .input-group input.invalid,
+.contact-area .contact-form form .input-group textarea.invalid {
+    border: 2px solid #ff4444;
+    background: linear-gradient(120deg, rgba(255,68,68,0.1), rgba(255,68,68,0.05));
+}
+
+.contact-area .contact-form form .input-group .error-message {
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
 }
 .contact-area .contact-infos {
     width: 290px;
