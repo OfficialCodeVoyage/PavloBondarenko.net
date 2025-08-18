@@ -2,15 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
-import styles from './not-found.module.css'
-import { Inter } from 'next/font/google';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import JsonLd from './components/JsonLd';
-
-const inter = Inter({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-});
 
 const geistSans = Geist({
     variable: "--font-geist-sans",

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <div>
             <footer className="footer-area col-md-6">

@@ -11,9 +11,9 @@ const ralewayDots = Raleway_Dots({
     display: 'swap',
 });
 
-const Header = () => {
-    const pathname = usePathname(); // Текущий путь
-    const [menuActive, setMenuActive] = useState(false);
+const Header: React.FC = () => {
+    const pathname = usePathname(); // Current path
+    const [menuActive, setMenuActive] = useState<boolean>(false);
 
     // Close the mobile menu whenever the route changes
     useEffect(() => {
@@ -32,7 +32,7 @@ const Header = () => {
 
     // Close menu on escape key press
     useEffect(() => {
-        const handleEscKey = (e) => {
+        const handleEscKey = (e: KeyboardEvent) => {
             if (e.key === 'Escape' && menuActive) {
                 setMenuActive(false);
             }
@@ -44,13 +44,13 @@ const Header = () => {
         };
     }, [menuActive]);
 
-    const getActiveClass = (path) => (pathname === path ? 'active' : '');
+    const getActiveClass = (path: string): string => (pathname === path ? 'active' : '');
 
-    const handleToggleMenu = () => {
+    const handleToggleMenu = (): void => {
         setMenuActive(!menuActive);
     };
 
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): void => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             handleToggleMenu();
@@ -98,7 +98,7 @@ const Header = () => {
                             className={`show-menu ${menuActive ? 'active' : ''}`}
                             onClick={handleToggleMenu}
                             onKeyDown={handleKeyDown}
-                            tabIndex="0"
+                            tabIndex={0}
                             role="button"
                             aria-label="Toggle navigation menu"
                             aria-expanded={menuActive}
