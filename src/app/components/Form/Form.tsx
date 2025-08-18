@@ -1,17 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Form = () => {
-    const formRef = useRef(null);
-    const messageRef = useRef(null);
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [errors, setErrors] = useState({});
+interface FormErrors {
+    fullName?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+}
+
+interface ApiResponse {
+    message?: string;
+    error?: string;
+}
+
+const Form: React.FC = () => {
+    const formRef = useRef<HTMLFormElement>(null);
+    const messageRef = useRef<HTMLDivElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [errors, setErrors] = useState<FormErrors>({});
 
     useEffect(() => {
         const form = formRef.current;
         const message = messageRef.current;
 
+        if (!form || !message) return;
+
         // Success function
-        function done_func(response) {
+        function done_func(response: ApiResponse): void {
             message.style.display = 'block';
             message.classList.remove('alert-danger');
             message.classList.add('alert-success');
@@ -24,7 +38,7 @@ const Form = () => {
         }
 
         // Fail function
-        function fail_func(errorData) {
+        function fail_func(errorData: ApiResponse): void {
             message.style.display = 'block';
             message.classList.remove('alert-success');
             message.classList.add('alert-danger');
@@ -35,13 +49,13 @@ const Form = () => {
         }
 
         // Validation function
-        function validateForm() {
-            const fullName = form.querySelector('#full-name');
-            const email = form.querySelector('#email');
-            const subject = form.querySelector('#subject');
-            const messageInput = form.querySelector('#message');
+        function validateForm(): boolean {
+            const fullName = form.querySelector('#full-name') as HTMLInputElement;
+            const email = form.querySelector('#email') as HTMLInputElement;
+            const subject = form.querySelector('#subject') as HTMLInputElement;
+            const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
             
-            const newErrors = {};
+            const newErrors: FormErrors = {};
 
             // Clear previous validation styles
             [fullName, email, subject, messageInput].forEach(field => {
@@ -81,7 +95,7 @@ const Form = () => {
         }
 
         // Form submission handler
-        const handleSubmit = async (e) => {
+        const handleSubmit = async (e: Event): Promise<void> => {
             e.preventDefault();
             
             if (!validateForm()) {
@@ -97,7 +111,7 @@ const Form = () => {
                     body: formData,
                 });
 
-                const data = await response.json();
+                const data: ApiResponse = await response.json();
 
                 if (response.ok) {
                     done_func(data);
@@ -124,7 +138,7 @@ const Form = () => {
                 <img src="/images/bg1.png" alt="BG" className="bg-img" />
                 <img src="/images/icon3.png" alt="Icon" />
                 <h1>
-                    Let’s get in <span>touch.</span> 
+                    Let's get in <span>touch.</span> 
                     {/* got you - who uses email form in 2025? - add me on linked in  */}
                 </h1>
                 <form method="POST" ref={formRef}>
