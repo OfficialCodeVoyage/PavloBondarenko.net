@@ -56,7 +56,6 @@ export default function HomePage() {
                             <img src="/images/amplitude.png" height="17px" alt="Amplitude"/> <b>Amplitude</b> <img src="/images/star1.svg" alt="Star"/>
                             
                             {/* Technical Skills */}
-                            <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
                             <img src="/images/python-logo-only.png" height="17px" alt="Python"/> <b>PYTHON</b> <img src="/images/star1.svg" alt="Star"/>
                             <img src="/images/Git_icon.png" height="17px" alt="GIT"/> <b>GIT</b> <img src="/images/star1.svg" alt="Star"/>
                             
