@@ -25,6 +25,7 @@
     "three": "^0.178.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/three": "^0.178.1",

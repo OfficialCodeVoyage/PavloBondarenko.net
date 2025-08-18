@@ -23,15 +23,18 @@ const Form: React.FC = () => {
         const message = messageRef.current;
 
         if (!form || !message) return;
+        
+        // TypeScript now knows form and message are not null below this point
 
         // Success function
         function done_func(response: ApiResponse): void {
+            if (!message || !form) return;
             message.style.display = 'block';
             message.classList.remove('alert-danger');
             message.classList.add('alert-success');
             message.textContent = response.message || 'Message sent successfully!';
             setTimeout(() => {
-                message.style.display = 'none';
+                if (message) message.style.display = 'none';
             }, 3000);
             form.reset();
             setErrors({});
@@ -39,21 +42,22 @@ const Form: React.FC = () => {
 
         // Fail function
         function fail_func(errorData: ApiResponse): void {
+            if (!message) return;
             message.style.display = 'block';
             message.classList.remove('alert-success');
             message.classList.add('alert-danger');
             message.textContent = errorData.error || 'An error occurred. Please try again.';
             setTimeout(() => {
-                message.style.display = 'none';
+                if (message) message.style.display = 'none';
             }, 3000);
         }
 
         // Validation function
         function validateForm(): boolean {
-            const fullName = form.querySelector('#full-name') as HTMLInputElement;
-            const email = form.querySelector('#email') as HTMLInputElement;
-            const subject = form.querySelector('#subject') as HTMLInputElement;
-            const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
+            const fullName = form!.querySelector('#full-name') as HTMLInputElement;
+            const email = form!.querySelector('#email') as HTMLInputElement;
+            const subject = form!.querySelector('#subject') as HTMLInputElement;
+            const messageInput = form!.querySelector('#message') as HTMLTextAreaElement;
             
             const newErrors: FormErrors = {};
 

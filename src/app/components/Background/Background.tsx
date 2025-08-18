@@ -15,7 +15,7 @@ interface Particle {
 }
 
 const Background: React.FC = () => {
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | undefined>(undefined);
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 

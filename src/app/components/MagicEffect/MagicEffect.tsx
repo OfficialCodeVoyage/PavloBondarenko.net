@@ -363,7 +363,7 @@ class CreateParticles {
       const colorAttr = this.particles.geometry.attributes.customColor as THREE.BufferAttribute;
       const sizeAttr = this.particles.geometry.attributes.size as THREE.BufferAttribute;
 
-      const { x: mx, y: my, z: mz } = intersects[0].point;
+      const { x: mx, y: my } = intersects[0].point;
 
       for (let i = 0, l = posAttr.count; i < l; i++) {
         const initX = copyAttr.getX(i);
