@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// Import only required Bootstrap components (saves ~85KB)
+import 'bootstrap/dist/css/bootstrap-reboot.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import 'bootstrap/dist/css/bootstrap-utilities.min.css';
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import JsonLd from './components/JsonLd';
