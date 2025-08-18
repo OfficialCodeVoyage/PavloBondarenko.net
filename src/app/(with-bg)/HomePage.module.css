@@ -1,0 +1,32 @@
+/* HomePage specific styles to replace inline styles */
+
+/* Background images with cover */
+.bgImageCover {
+  object-fit: cover;
+}
+
+/* Responsive images */
+.responsiveImage {
+  width: 100%;
+  height: auto;
+}
+
+.autoSizeImage {
+  width: auto;
+  height: auto;
+}
+
+/* Marquee skill icons */
+.marqueeIcon {
+  display: inline-block;
+}
+
+/* Text styles */
+.subtitleText {
+  font-size: 0.95rem;
+}
+
+/* YouTube thumbnail */
+.youtubeThumbnail {
+  opacity: 1;
+}
