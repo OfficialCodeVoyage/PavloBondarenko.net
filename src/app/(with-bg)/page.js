@@ -96,7 +96,7 @@ export default function HomePage() {
 
                     <div data-aos="zoom-in">
                       <div className="about-project-box info-box shadow-box h-full">
-                        <Link className="overlay-link" href="/works"></Link>
+                        <Link className="overlay-link" href="/projects"></Link>
                         <img src="./images/bg1.png" alt="BG" className="bg-img"/>
                         <img src="./images/1my-works.png" alt="My Works"/>
                         <div className="d-flex align-items-center justify-content-between">
