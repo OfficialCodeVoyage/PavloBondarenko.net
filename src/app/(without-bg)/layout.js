@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
 import Background from "@/app/components/Background/Background";
+import ErrorBoundary from "@/app/components/ErrorBoundary";
 
 const inter = Inter({
     subsets: ['latin'], // Подмножества
@@ -27,10 +28,10 @@ export const metadata = {
 
 export default function WithoutBgLayout({ children }) {
     return (
-        <>
+        <ErrorBoundary>
             <Header />
             {children}
             <Footer />
-        </>
+        </ErrorBoundary>
     );
 }

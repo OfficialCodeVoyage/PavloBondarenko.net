@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Inter } from 'next/font/google';
 import Background from "@/app/components/Background/Background";
 import AppWrapper from "@/app/components/Preloader/AppWrapper";
+import ErrorBoundary from "@/app/components/ErrorBoundary";
 import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
@@ -30,12 +31,14 @@ export const metadata = {
 export default function WithBgLayout({ children }) {
     return (
         <AppWrapper>
-            <Background />
-            <h3 id="coords"></h3>
-            <Header />
-            {children}
-            <Footer />
-            <Analytics />
+            <ErrorBoundary>
+                <Background />
+                <h3 id="coords"></h3>
+                <Header />
+                {children}
+                <Footer />
+                <Analytics />
+            </ErrorBoundary>
         </AppWrapper>
     );
 }
