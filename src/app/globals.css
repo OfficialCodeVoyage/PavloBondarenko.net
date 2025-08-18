@@ -600,12 +600,14 @@ ol {
 }
 .header-area .show-menu.active span:first-child {
     transform: translate3d(0px, 6px, 0px) scale(1, 1) rotate(45deg) scale(1, 1);
+    background: linear-gradient(135deg, #e879f9 0%, #c084fc 50%, #a855f7 100%); /* Pink-purple gradient */
 }
 .header-area .show-menu span:last-child {
     transform-origin: left;
 }
 .header-area .show-menu.active span:last-child {
     transform: translate3d(4px, -2px, 0px) scale(1, 1) rotate(-45deg) scale(1, 1);
+    background: linear-gradient(135deg, #e879f9 0%, #c084fc 50%, #a855f7 100%); /* Pink-purple gradient */
 }
 .header-area .show-menu.active span:nth-child(2) {
     transform: scale(0);
@@ -685,7 +687,7 @@ ol {
     height: 19px;
     overflow-x: hidden;
     overflow-y: hidden;
-    z-index: 10;
+    z-index: 50;
 }
 
 .marquee div {
@@ -1534,25 +1536,6 @@ ol {
     border-radius: 10px;
     font-size: 14px;
     padding: 16px 30px;
-    transition: opacity 0.3s ease;
-}
-
-.contact-area .contact-form form .input-group button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.contact-area .contact-form form .input-group input.invalid,
-.contact-area .contact-form form .input-group textarea.invalid {
-    border: 2px solid #ff4444;
-    background: linear-gradient(120deg, rgba(255,68,68,0.1), rgba(255,68,68,0.05));
-}
-
-.contact-area .contact-form form .input-group .error-message {
-    color: #ff4444;
-    font-size: 12px;
-    margin-top: 5px;
-    display: block;
 }
 .contact-area .contact-infos {
     width: 290px;
@@ -1901,255 +1884,296 @@ ol {
 @media (max-width: 767px) {
     .header-area {
         padding: 20px 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 30;
-        background: rgba(15, 15, 15, 0.9);
-        backdrop-filter: blur(10px);
-        height: 90px; /* Set fixed height for header */
     }
 
-    /* === CONTENT SPACING TO AVOID HEADER OVERLAP === */
-    .projects-area,
-    .about-area,
-    .contact-area,
-    .credential-area,
-    .service-area,
-    .blog-area,
-    .blog-details-area {
-        padding-top: 0px !important; /* Reduced to match header */
-    }
-
-    .breadcrumb-area {
-        padding-top: 110px !important;
-    }
-
-    /* === MOBILE LOGO === */
-    .header-area .logo {
-        position: fixed;
-        top: 45px;
-        left: 60px;
-        z-index: 25;
-        font-size: 1.6rem;
-    }
-
-    /* === MOBILE TOGGLE BUTTON === */
-    .header-area .show-menu {
-        display: flex;
-        position: fixed;
-        right: 25px;
-        top: 48px;
-        z-index: 25;
-        width: 25px;
-        height: 17px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    /* === MOBILE NAVBAR === */
     .header-area .navbar {
         position: fixed;
+        width: 100%;
+        background: #0F0F0F;
+        z-index: 15;
+        overflow-x: hidden;
+        /* height: 80px; */
+        transform-origin: 50% 50% 0px;
+        top: 0;
+        left: 0;
+        padding-top: 140px; /* Increased spacing from logo */
+        padding-bottom: 40px; /* More bottom padding */
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        /* max-height: 0; */
+        will-change: transform;
+
+        /* transform: translate3d(0px, -11.4272px, 0px) scale(1, 1) scale(1, 0.945615); */
+        transform: translate3d(0px, -300px, 0px) scale(1, 1) scale(1, 0.945615);
+        transform: translate3d(0px, -300px, 0px) scale(1, 0.5) scale(1, 0.5);
+        transition: .5s
+    }
+    .header-area .navbar.active {
+        opacity: 1;
+        visibility: visible;
+        /* height: min-content; */
+        transform: translate3d(0px, 0, 0px) scale(1, 1) scale(1, 1);
+        /* max-height: 90vh; */
+    }
+    .header-area .navbar .menu {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        gap: 20px; /* Optimized spacing for new button design */
+        padding: 20px;
+    }
+    .header-area .navbar .menu li a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 32px;
+        font-size: 20px;
+        font-weight: 400;
+        color: white;
+        text-decoration: none;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-width: 180px;
+        min-height: 56px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    /* Pink-Purple Gradient Border Effect */
+    .header-area .navbar .menu li a::before {
+        content: '';
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: auto;
-        z-index: 20;
-        
-        /* Transform and transition */
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        
-        /* Visual styling */
-        background: rgba(15, 15, 15, 0.95);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        
-        /* Layout - extended background by 10px */
-        padding: 105px 20px 30px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        bottom: 0;
+        border-radius: 16px;
+        padding: 1px;
+        background: linear-gradient(135deg, #ff6bc9, #e879f9, #c084fc, #a855f7);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: xor;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        opacity: 0.7;
+        transition: opacity 0.4s ease;
+        z-index: 2;
     }
 
-    .header-area .navbar.active {
-        transform: translateY(0);
+    /* Triangle patterns for each menu button - consistent theme with variations */
+    
+    /* Home Button - Minimal Triangle Pattern */
+    .header-area .navbar .menu li:nth-child(1) a::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-image:
+            conic-gradient(from 0deg at 30% 30%, transparent 60deg, rgba(255, 255, 255, 0.025) 60deg, rgba(255, 255, 255, 0.025) 120deg, transparent 120deg),
+            conic-gradient(from 180deg at 70% 70%, transparent 60deg, rgba(255, 255, 255, 0.03) 60deg, rgba(255, 255, 255, 0.03) 120deg, transparent 120deg);
+        background-size: 60px 60px, 50px 50px;
+        border-radius: 14px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* About Button - Sparse Triangle Pattern */
+    .header-area .navbar .menu li:nth-child(2) a::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-image:
+            conic-gradient(from 60deg at 25% 40%, transparent 60deg, rgba(255, 255, 255, 0.02) 60deg, rgba(255, 255, 255, 0.02) 120deg, transparent 120deg),
+            conic-gradient(from 240deg at 75% 60%, transparent 60deg, rgba(255, 255, 255, 0.035) 60deg, rgba(255, 255, 255, 0.035) 120deg, transparent 120deg);
+        background-size: 55px 55px, 45px 45px;
+        border-radius: 14px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Projects Button - Subtle Large Triangles */
+    .header-area .navbar .menu li:nth-child(3) a::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-image:
+            conic-gradient(from 120deg at 40% 25%, transparent 60deg, rgba(255, 255, 255, 0.03) 60deg, rgba(255, 255, 255, 0.03) 120deg, transparent 120deg),
+            conic-gradient(from 300deg at 60% 75%, transparent 60deg, rgba(255, 255, 255, 0.025) 60deg, rgba(255, 255, 255, 0.025) 120deg, transparent 120deg);
+        background-size: 70px 70px, 65px 65px;
+        border-radius: 14px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Contact Button - Minimal Double Triangle */
+    .header-area .navbar .menu li:nth-child(4) a::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-image:
+            conic-gradient(from 45deg at 20% 35%, transparent 60deg, rgba(255, 255, 255, 0.028) 60deg, rgba(255, 255, 255, 0.028) 120deg, transparent 120deg),
+            conic-gradient(from 225deg at 80% 65%, transparent 60deg, rgba(255, 255, 255, 0.022) 60deg, rgba(255, 255, 255, 0.022) 120deg, transparent 120deg);
+        background-size: 52px 52px, 48px 48px;
+        border-radius: 14px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+
+    /* Hover Effects */
+    .header-area .navbar .menu li a:hover {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 
+            0 12px 40px rgba(255, 107, 201, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .header-area .navbar .menu li a:hover::before {
         opacity: 1;
-        visibility: visible;
     }
 
-    /* === MENU STYLING === */
-    .header-area .navbar .menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 280px;
-    }
 
-    .header-area .navbar .menu li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-area .navbar .menu li a {
-        display: block;
-        padding: 14px 24px;
-        font-size: 16px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        transition: all 0.2s ease;
-        background: rgba(168, 12, 12, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .header-area .navbar .menu li a:hover,
+    /* Active Page Styling */
     .header-area .navbar .menu li.active a {
-        color: #ffffff;
-        background: rgba(91, 120, 246, 0.15);
-        border-color: rgba(91, 120, 246, 0.3);
+        background: linear-gradient(135deg, rgba(255, 107, 201, 0.15), rgba(232, 121, 249, 0.15), rgba(192, 132, 252, 0.15));
+        border: 1px solid rgba(255, 107, 201, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 
+            0 8px 32px rgba(255, 107, 201, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(255, 107, 201, 0.1);
     }
 
-    /* === HAMBURGER BUTTON STYLING === */
-    .header-area .show-menu span {
-        width: 100%;
-        height: 2px;
-        background: #fff;
-        border-radius: 1px;
-        transition: all 0.3s ease;
-        display: block;
+    .header-area .navbar .menu li.active a::before {
+        opacity: 1;
+        background: linear-gradient(135deg, #ff6bc9, #e879f9, #c084fc, #a855f7);
+        animation: pinkPurpleGradientShift 3s ease infinite;
     }
 
-    .header-area .show-menu.active span:first-child {
-        transform: translate3d(0px, 8px, 0px) rotate(45deg);
+    /* Pink-Purple Active gradient animation */
+    @keyframes pinkPurpleGradientShift {
+        0% { background: linear-gradient(135deg, #ff6bc9, #e879f9, #c084fc, #a855f7); }
+        25% { background: linear-gradient(135deg, #e879f9, #c084fc, #a855f7, #ff6bc9); }
+        50% { background: linear-gradient(135deg, #c084fc, #a855f7, #ff6bc9, #e879f9); }
+        75% { background: linear-gradient(135deg, #a855f7, #ff6bc9, #e879f9, #c084fc); }
+        100% { background: linear-gradient(135deg, #ff6bc9, #e879f9, #c084fc, #a855f7); }
     }
 
-    .header-area .show-menu.active span:nth-child(2) {
-        opacity: 0;
-        transform: scale(0);
+    /* Focus State for Accessibility */
+    .header-area .navbar .menu li a:focus {
+        outline: 2px solid #3B82F6;
+        outline-offset: 2px;
     }
-
-    .header-area .show-menu.active span:last-child {
-        transform: translate3d(0px, -8px, 0px) rotate(-45deg);
-    }
-
-    /* === HIDE LINKEDIN BUTTON IN MOBILE MENU === */
     .header-area .navbar .theme-btn {
-        display: none;
+        display: inline-block;
+        margin-top: 48px;
     }
-
     .header-area .gx-row > .theme-btn {
         display: none;
     }
 
-    /* === SIMPLE BACKDROP === */
-    .header-area .navbar::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background: linear-gradient(180deg, 
-            rgba(91, 120, 246, 0.1) 0%, 
-            rgba(255, 51, 102, 0.05) 100%);
-    }
 
-    /* === ESSENTIAL MOBILE LAYOUT FIXES === */
+    .header-area .show-menu {
+        display: flex;
+    }
     .contact-area .gx-row,
-    .credential-area .container .gx-row {
+    .credential-area .container .gx-row  {
         flex-direction: column;
     }
-    
     .contact-area .contact-form {
         margin-top: 50px;
     }
-    
     .project-details-wrap .project-about-2 .left-details,
     .contact-area .contact-form,
     .credential-area .credential-sidebar {
         width: 100%;
     }
-    
     .about-area .about-experience {
         margin-bottom: 24px;
     }
-    
-    /* === FIXED PROJECTS GRID ON MOBILE === */
     .projects-area .container > .row {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
     }
-
-    .projects-area .container > .row .col-md-4,
-    .projects-area .container > .row .col-md-8 {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .projects-area .container > .row .col-md-8 > .d-flex {
-        flex-direction: column;
-        gap: 24px;
-    }
-    
     .project-details-wrap .project-about-2,
     .projects-area .container > .row .col-md-8 > .d-flex {
         flex-direction: column;
     }
-    
     .project-details-wrap .project-details-img {
         height: 300px;
     }
-    
     .breadcrumb-area .breadcrumb-content .section-heading {
         font-size: 36px;
     }
-    
+
     .service-area .service-sidebar .service-sidebar-inner {
         padding: 50px 24px;
         width: 100%;
         margin: auto auto 30px auto;
     }
-    
     .service-area .service-sidebar .service-sidebar-inner ul {
         gap: 50px;
         max-width: 220px;
         margin: auto;
     }
-    
     .service-area .col-md-8 > .section-heading {
         display: none;
     }
-    
     .service-area .container > .section-heading {
         display: flex;
         margin-bottom: 30px;
     }
-    
+
     .blog-details-area,
     .blog-area {
         padding-top: 40px;
     }
-    
     .blog-details-area .blog-details-content,
     .blog-area .blog-items {
         padding-right: 0;
     }
-    
     .blog-area .blog-items .blog-item .img-box {
         margin-bottom: 50px;
     }
-    
     .blog-sidebar {
         margin-top: 50px;
     }
+
+    /* Mobile projects spacing - 15px between all cards */
+    .projects-area .project-item {
+        margin-bottom: 15px !important;
+    }
+    
+    .projects-area .d-flex.gap-24 {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
 }
 @media (max-width: 585px) {
     .about-area .about-me-box {
@@ -2209,7 +2233,8 @@ ol {
 
     .projects-area .container > .row,
     .profile-contact-credentials-wrap {
-        grid-template-columns: 1fr;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
     }
     .about-area .about-image-box {
         max-width: 370px;
@@ -2227,7 +2252,9 @@ ol {
     }
     .projects-area .container > .section-heading {
         display: flex;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        font-size: 36px;
+        margin-top: -60px;
     }
     .projects-area .col-md-8 .section-heading {
         display: none;
@@ -2255,6 +2282,31 @@ ol {
     .about-area .container > .row:nth-child(2) .blog-service-profile-wrap > div,
     .projects-area .project-item .project-img img {
         width: 100%;
+    }
+    
+    /* Force all project containers to display as column on mobile */
+    .projects-area .d-flex.gap-24 {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+    
+    /* Apply 15px spacing to ALL project containers and items */
+    .projects-area .project-item,
+    .projects-area .col-md-4 > div[data-aos],
+    .projects-area .col-md-8 .d-flex.gap-24,
+    .projects-area .col-md-8 .d-flex.gap-24 > div {
+        margin-bottom: 15px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Also target any flex items within project containers */
+    .projects-area .flex-1 {
+        margin-bottom: 15px !important;
+    }
+    
+    /* Remove last item margin to prevent extra space */
+    .projects-area .project-item:last-child {
+        margin-bottom: 0 !important;
     }
     .blog-area .blog-items .blog-item .img-box {
         height: 300px;
@@ -2313,10 +2365,7 @@ ol {
 }
 
 @media only screen and (max-width: 600px) {
-    /* Show project cards that were hidden previously */
-    .flex-1 {
-        display: block !important;
-    }
+    /* Removed .flex-1 display:none - was hiding projects on mobile */
 }
 
 @media (max-width: 800px) {
@@ -2328,7 +2377,62 @@ ol {
     }
 }
 
-/* LinkedIn Button Styles */
+/* LinkedIn Glassmorphism Button Styles */
+.linkedin-btn-glass {
+    background: rgba(0, 119, 181, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 119, 181, 0.3);
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0, 119, 181, 0.2);
+    gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin-btn-glass i {
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-2px);
+}
+
+.linkedin-btn-glass:hover {
+    background: rgba(0, 119, 181, 0.25);
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.5),
+                0 0 30px rgba(0, 119, 181, 0.3),
+                0 0 45px rgba(0, 119, 181, 0.15);
+    border-color: rgba(0, 119, 181, 0.6);
+    color: white;
+}
+
+.linkedin-btn-glass:hover i {
+    transform: translateY(-2px) scale(1.05) rotate(3deg);
+}
+
+.linkedin-btn-glass:active {
+    background: rgba(0, 119, 181, 0.35);
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.7),
+                0 0 30px rgba(0, 119, 181, 0.5);
+}
+
+/* Legacy LinkedIn Button Styles (keeping for fallback) */
 .linkedin-btn {
     background: var(--button-primary, #323232);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2394,7 +2498,7 @@ ol {
 
 .logo-text {
     font-family: 'Raleway Dots', cursive;
-    font-size: 2.8rem;  /* Increased from 2.5rem */
+    font-size: 2.8rem;
     font-weight: 700;
     text-transform: uppercase;
     padding: 0.5rem 0;
@@ -2402,145 +2506,95 @@ ol {
     transition: all 0.4s ease;
     cursor: pointer;
     
-    /* Static gradient with vibrant colors */
-    background: linear-gradient(
-        90deg,
-        #5B78F6 0%,
-        #FF3366 25%,
-        #bd0e0e 50%,
-        #FF3366 75%,
-        #5B78F6 100%
-    );
-    
+    /* Subtle gradient on static text */
+    background: linear-gradient(135deg, #ffffff 0%, #e6e6ff 50%, #d4d4ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 5px rgba(91, 120, 246, 0.2);
 }
 
-/* Simple hover effect */
+/* Purple pink gradient on hover */
 .logo-text:hover {
     transform: translateY(-2px) scale(1.02);
-    filter: brightness(1.2);
+    background: linear-gradient(135deg, #c084fc 0%, #e879f9 30%, #ec4899 70%, #be185d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow: 
-        0 10px 20px rgba(91, 120, 246, 0.2),
-        0 6px 6px rgba(0, 0, 0, 0.1);
+        0 0 10px rgba(192, 132, 252, 0.4),
+        0 0 20px rgba(236, 72, 153, 0.3),
+        0 0 30px rgba(190, 24, 93, 0.2);
 }
 
-/* Responsive adjustments - increased all sizes proportionally */
+/* Responsive adjustments - bigger centered logo */
 @media (max-width: 768px) {
     .logo-text {
-        font-size: 2.5rem;  /* Increased from 2rem */
+        font-size: 3.2rem;  /* Bigger centered logo */
+        white-space: nowrap; /* Prevent text wrapping */
     }
 }
 
 @media (max-width: 480px) {
     .logo-text {
-        font-size: 2.5rem;  /* Increased from 1.75rem */
-        
+        font-size: 2.8rem;  /* Bigger for small screens */
+        white-space: nowrap; /* Prevent text wrapping */
     }
 }
 
-/* === ESSENTIAL MOBILE LAYOUT FIXES === */
-.contact-area .gx-row,
-.credential-area .container .gx-row {
-    flex-direction: column;
+@media (max-width: 375px) {
+    .logo-text {
+        font-size: 2.5rem;  /* Bigger for very small screens */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
 }
 
-.contact-area .contact-form {
-    margin-top: 50px;
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .logo-text {
+        background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+    }
+    
+    .logo-text:hover {
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    }
 }
 
-.project-details-wrap .project-about-2 .left-details,
-.contact-area .contact-form,
-.credential-area .credential-sidebar {
-    width: 100%;
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .logo-text {
+        transition: color 0.3s ease;
+        animation: none;
+    }
+    
+    .logo-text:hover {
+        animation: none;
+        transform: none;
+        filter: none;
+    }
 }
 
-.about-area .about-experience {
-    margin-bottom: 24px;
+/* Mobile header - aligned logo and burger menu */
+@media (max-width: 767px) {
+    .linkedin-btn-glass {
+        display: none !important; /* Hide LinkedIn button on mobile */
+    }
+    
+    .header-area .gx-row {
+        justify-content: space-between; /* Logo left, menu on right */
+        align-items: center; /* Vertically align logo and menu */
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center; /* Center logo text vertically */
+    }
+    
+    .show-menu {
+        margin-left: auto; /* Push hamburger menu to the right */
+        display: flex;
+        align-items: center; /* Center burger menu vertically */
+        transform: translateY(-5px); /* Move burger icon 5px up */
+    }
 }
 
-.projects-area .container > .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.project-details-wrap .project-about-2,
-.projects-area .container > .row .col-md-8 > .d-flex {
-    flex-direction: column;
-}
-
-.project-details-wrap .project-details-img {
-    height: 300px;
-}
-
-.breadcrumb-area .breadcrumb-content .section-heading {
-    font-size: 36px;
-}
-
-.service-area .service-sidebar .service-sidebar-inner {
-    padding: 50px 24px;
-    width: 100%;
-    margin: auto auto 30px auto;
-}
-
-.service-area .service-sidebar .service-sidebar-inner ul {
-    gap: 50px;
-    max-width: 220px;
-    margin: auto;
-}
-
-.service-area .col-md-8 > .section-heading {
-    display: none;
-}
-
-.service-area .container > .section-heading {
-    display: flex;
-    margin-bottom: 30px;
-}
-
-.blog-details-area,
-.blog-area {
-    padding-top: 40px;
-}
-
-.blog-details-area .blog-details-content,
-.blog-area .blog-items {
-    padding-right: 0;
-}
-
-.blog-area .blog-items .blog-item .img-box {
-    margin-bottom: 50px;
-}
-
-.blog-sidebar {
-    margin-top: 50px;
-}
-
-/* === FIXED PROJECTS GRID ON MOBILE === */
-.projects-area .container > .row {
-    display: flex;
-    flex-direction: column;
-}
-
-.projects-area .container > .row .col-md-4,
-.projects-area .container > .row .col-md-8 {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Force all project containers to single column */
-.projects-area .container > .row .col-md-8 > .d-flex {
-    flex-direction: column;
-    gap: 24px !important;
-}
-
-.projects-area .d-flex {
-    flex-direction: column !important;
-    gap: 24px !important;
-}
-
-.projects-area .flex-1 {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: none !important;
-}
