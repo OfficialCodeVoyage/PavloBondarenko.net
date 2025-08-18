@@ -86,7 +86,7 @@ export default function HomePage() {
                             <h1>More About Me</h1>
                           </div>
 
-                          <Link href="./credentials.html" className="about-btn">
+                          <Link href="/about" className="about-btn">
                             <img src="/images/icon.svg" alt="Button"/>
                           </Link>
 
