@@ -1,6 +1,7 @@
 'use client';
 import '../components/Background/bg_style.css'
 import '../globals.css'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from "react";
 import MagicEffect from "@/app/components/MagicEffect/MagicEffect";
@@ -24,9 +25,9 @@ const HomePage: React.FC = () => {
               <div className="col-md-6" data-aos="zoom-in">
                 <div className="about-me-box shadow-box">
                   <Link className="overlay-link" href="/about"></Link>
-                  <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                  <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
                   <div className="img-box">
-                    <img src="/images/LOGO/pavlopic3.png" alt="About Me"/>
+                    <Image src="/images/LOGO/pavlopic3.png" alt="About Me" width={300} height={300} style={{ width: '100%', height: 'auto' }} />
                   </div>
                   <div className="infos">
                     <h4></h4>
@@ -76,8 +77,8 @@ const HomePage: React.FC = () => {
                     <div data-aos="zoom-in">
                       <div className="about-crenditials-box info-box shadow-box h-full">
                         <Link className="overlay-link" href="/about"></Link>
-                        <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                        <img src="/images/pbsignature.png" alt="Sign"/>
+                        <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
+                        <Image src="/images/pbsignature.png" alt="Sign" width={200} height={100} style={{ width: 'auto', height: 'auto' }} />
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="infos">
                             <h4>Credentials</h4>
@@ -95,8 +96,8 @@ const HomePage: React.FC = () => {
                     <div data-aos="zoom-in">
                       <div className="about-project-box info-box shadow-box h-full">
                         <Link className="overlay-link" href="/projects"></Link>
-                        <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                        <img src="/images/1my-works.png" alt="My Works"/>
+                        <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
+                        <Image src="/images/1my-works.png" alt="My Works" width={250} height={200} style={{ width: 'auto', height: 'auto' }} />
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="infos">
                             <h4>SHOWCASE</h4>
@@ -245,8 +246,8 @@ const HomePage: React.FC = () => {
 
                 <div className="about-contact-box info-box shadow-box">
                   <Link className="overlay-link" href="/contact"></Link>
-                  <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                  <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
+                  <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
+                  <Image src="/images/icon2.png" alt="Icon" className="star-icon" width={100} height={100} style={{ width: 'auto', height: 'auto' }} />
                   <h1>Let's <br/>work <span>together.</span></h1>
                   <Link href="#" className="about-btn" onClick={(e) => e.preventDefault()}>
                     <img src="/images/icon.svg" alt="Button"/>
