@@ -2,10 +2,22 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-export default function Background() {
-  const requestRef = useRef();
+interface Particle {
+    vx: number;
+    vy: number;
+    x: number;
+    y: number;
+    ox: number;
+    oy: number;
+    c1: number;
+    c2: number;
+    c3: number;
+}
+
+const Background: React.FC = () => {
+  const requestRef = useRef<number>();
   const pathname = usePathname();
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Path-based row logic (as before)
   const rows = (() => {
@@ -44,6 +56,7 @@ export default function Background() {
     // Create canvas
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     // Calculate spacing
     const SPACING = (window.innerWidth - MARGIN * 2) / COLS;
@@ -70,33 +83,35 @@ export default function Background() {
     container.appendChild(canvas);
 
     // Particle template
-    const particleTemplate = {
+    const particleTemplate: Particle = {
       vx: 0,
       vy: 0,
       x: 0,
       y: 0,
+      ox: 0,
+      oy: 0,
       c1: DEFAULT_COLOR,
       c2: DEFAULT_COLOR,
       c3: DEFAULT_COLOR,
     };
 
     // Generate particles
-    const particles = [];
+    const particles: Particle[] = [];
     for (let i = 0; i < NUM_PARTICLES; i++) {
-      const p = { ...particleTemplate };
+      const p: Particle = { ...particleTemplate };
       p.x = p.ox = MARGIN + SPACING * (i % COLS);
       p.y = p.oy = MARGIN + SPACING * Math.floor(i / COLS);
       particles.push(p);
     }
 
     // Mouse event handlers
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent): void => {
       const bounds = container.getBoundingClientRect();
       mx = e.clientX - bounds.left;
       my = e.clientY - bounds.top;
       isMouseActive = true;
     };
-    const handleMouseOut = () => {
+    const handleMouseOut = (): void => {
       isMouseActive = false;
     };
 
@@ -104,7 +119,7 @@ export default function Background() {
     container.addEventListener("mouseout", handleMouseOut);
 
     // Animation loop
-    const step = () => {
+    const step = (): void => {
       if (simulateStep) {
         if (!isMouseActive && Math.random() * 10 > 9) {
           const t = Date.now() * 0.001;
@@ -160,14 +175,18 @@ export default function Background() {
 
     // Cleanup
     return () => {
-      cancelAnimationFrame(requestRef.current);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseout", handleMouseOut);
       if (canvas && container.contains(canvas)) {
         container.removeChild(canvas);
       }
     };
-  }, [pathname]);
+  }, [pathname, rows]);
 
   return <div id="container" ref={containerRef} />;
 }
+
+export default Background;
