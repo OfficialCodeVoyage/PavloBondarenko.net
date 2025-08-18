@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import "../globals.css";
-// Bootstrap is imported in root layout
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorBoundary from "@/app/components/ErrorBoundary";
