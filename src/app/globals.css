@@ -17,6 +17,13 @@
     * Responsive
 
 */
+
+/* Marquee text colors - fixes DOM manipulation anti-pattern */
+.marquee span,
+.marquee b {
+    color: white !important;
+}
+
 :root {
     --primary_color: #5B78F6;
     --dark: #323232;

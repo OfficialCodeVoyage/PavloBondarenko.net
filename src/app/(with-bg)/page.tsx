@@ -3,18 +3,11 @@ import '../components/Background/bg_style.css'
 import '../globals.css'
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from "react";
 import MagicEffect from "@/app/components/MagicEffect/MagicEffect";
 
 const HomePage: React.FC = () => {
-
-  useEffect(() => {
-    const marqueeText = document.querySelectorAll<HTMLElement>('.marquee span, .marquee b');
-    marqueeText.forEach((el) => {
-      el.style.color = 'white';
-    });
-  }, []);
-
+  // Removed DOM manipulation - now handled by CSS
+  
   return (
       <>
         <section className="about-area">
