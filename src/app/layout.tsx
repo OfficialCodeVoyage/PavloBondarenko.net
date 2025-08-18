@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
@@ -8,7 +9,7 @@ import JsonLd from './components/JsonLd';
 
 const inter = Inter({
     subsets: ['latin'],
-    weights: ['400', '500', '600', '700'],
+    weight: ['400', '500', '600', '700'],
 });
 
 const geistSans = Geist({
@@ -21,7 +22,7 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "Pavlo Bondarenko - Product & AI",
     description: "Personal website of Pavlo Bondarenko - Full-stack developer & tech enthusiast. Explore my projects, skills, and professional journey.",
     keywords: ["Pavlo Bondarenko", "full-stack developer", "software engineer", "web development", "portfolio", "projects"],
@@ -46,7 +47,11 @@ export const metadata = {
     metadataBase: new URL("https://pavlobondarenko.net"),
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
     return (
       <html lang="en">
         <head>
