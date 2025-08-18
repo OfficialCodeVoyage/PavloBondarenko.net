@@ -7,11 +7,10 @@ import MagicEffect from "@/app/components/MagicEffect/MagicEffect";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-
-export default function HomePage() {
+const HomePage: React.FC = () => {
 
   useEffect(() => {
-    const marqueeText = document.querySelectorAll('.marquee span, .marquee b');
+    const marqueeText = document.querySelectorAll<HTMLElement>('.marquee span, .marquee b');
     marqueeText.forEach((el) => {
       el.style.color = 'white';
     });
@@ -262,3 +261,5 @@ export default function HomePage() {
 
   );
 }
+
+export default HomePage;
