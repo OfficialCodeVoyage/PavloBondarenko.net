@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
 
     useEffect(() => {
         AOS.init({
