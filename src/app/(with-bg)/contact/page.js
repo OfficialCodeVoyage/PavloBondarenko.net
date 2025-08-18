@@ -48,13 +48,13 @@ const ContactPage = () => {
                                 <h3 data-aos="fade-up">Social Info</h3>
                                 <ul className="social-links d-flex align-center" data-aos="zoom-in">
                                     <li><a className="shadow-box" href="https://www.linkedin.com/in/mrbondarenko/"
-                                           target="_blank"><i className="iconoir-linkedin"></i></a></li>
+                                           target="_blank" rel="noopener noreferrer"><i className="iconoir-linkedin"></i></a></li>
                                     <li><a className="shadow-box" href="https://www.instagram.com/pasha___bond/"
-                                           target="_blank"><i className="iconoir-instagram"></i></a></li>
+                                           target="_blank" rel="noopener noreferrer"><i className="iconoir-instagram"></i></a></li>
                                     <li><a className="shadow-box" href="https://github.com/OfficialCodeVoyage"
-                                           target="_blank"><i className="iconoir-github"></i></a></li>
+                                           target="_blank" rel="noopener noreferrer"><i className="iconoir-github"></i></a></li>
                                     <li><a className="shadow-box" href="https://www.youtube.com/@OfficialCodeVoyage"
-                                           target="_blank"><i className="iconoir-youtube"></i></a></li>
+                                           target="_blank" rel="noopener noreferrer"><i className="iconoir-youtube"></i></a></li>
 
                                 </ul>
 

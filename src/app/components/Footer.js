@@ -14,7 +14,7 @@ const Footer = () => {
                         </ul>
                         <p className="copyright" style={{marginTop: '-20px'}}>
                             3.6.9 &copy; Created with love by <span><a href="https://www.linkedin.com/in/mrbondarenko/"
-                                                                 target="_blank">Pavlo Bondarenko</a></span>
+                                                                 target="_blank" rel="noopener noreferrer">Pavlo Bondarenko</a></span>
                         </p>
                     </div>
                 </div>
