@@ -2404,7 +2404,8 @@ ol {
 .linkedin-btn-glass i {
     font-size: 20px;
     transition: all 0.3s ease;
-    margin-right: 8px;
+    margin-right: 2px;
+    margin-left: 2px; /* Same spacing on both sides */
 }
 
 .linkedin-btn-glass:hover {
@@ -2418,6 +2419,14 @@ ol {
 
 .linkedin-btn-glass:hover i {
     transform: scale(1.05) rotate(3deg);
+}
+
+/* Adjust only text position on desktop */
+@media (min-width: 768px) {
+    .linkedin-btn-glass span {
+        position: relative;
+        top: 2px; /* Move only the text down 2px */
+    }
 }
 
 .linkedin-btn-glass:active {
