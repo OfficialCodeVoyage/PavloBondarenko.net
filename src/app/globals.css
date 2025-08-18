@@ -2404,13 +2404,7 @@ ol {
 .linkedin-btn-glass i {
     font-size: 20px;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-    transform: translateY(-2px);
+    margin-right: 8px;
 }
 
 .linkedin-btn-glass:hover {
@@ -2423,7 +2417,7 @@ ol {
 }
 
 .linkedin-btn-glass:hover i {
-    transform: translateY(-2px) scale(1.05) rotate(3deg);
+    transform: scale(1.05) rotate(3deg);
 }
 
 .linkedin-btn-glass:active {

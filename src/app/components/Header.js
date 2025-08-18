@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Raleway_Dots } from 'next/font/google';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const ralewayDots = Raleway_Dots({
     weight: '400',
@@ -92,7 +90,7 @@ const Header = () => {
                             className="linkedin-btn-glass"
                             aria-label="My LinkedIn"
                         >
-                            <FontAwesomeIcon icon={faLinkedin} />
+                            <i className="iconoir-linkedin"></i>
                             <span>Let&apos;s Connect!</span>
                         </Link>
 
