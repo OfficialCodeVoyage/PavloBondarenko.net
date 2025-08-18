@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link";
 
-const WorkPage = () => {
+const WorkPage: React.FC = () => {
 
     useEffect(() => {
         AOS.init({
