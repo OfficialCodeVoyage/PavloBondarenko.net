@@ -1,11 +1,27 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
+import { FontLoader, Font } from 'three/examples/jsm/loaders/FontLoader';
 import './style.css';
 
+// Type definitions
+interface ResourceCache {
+  font: Font | null;
+  particle: THREE.Texture | null;
+}
+
+interface ConfigData {
+  text: string;
+  amount: number;
+  particleSize: number;
+  particleColor: number;
+  textSize: number;
+  area: number;
+  ease: number;
+}
+
 // Cache resources to avoid reloading
-const resourceCache = {
+const resourceCache: ResourceCache = {
   font: null,
   particle: null,
 };
@@ -51,55 +67,64 @@ const CONFIG = {
 };
 
 // Helper functions
-const calculateVisibleHeightAtZDepth = (depth, camera) => {
+const calculateVisibleHeightAtZDepth = (depth: number, camera: THREE.PerspectiveCamera): number => {
   const cameraOffset = camera.position.z;
   const adjustedDepth = depth < cameraOffset ? depth - cameraOffset : depth + cameraOffset;
   const vFOV = (camera.fov * Math.PI) / 180;
   return 2 * Math.tan(vFOV / 2) * Math.abs(adjustedDepth);
 };
 
-const calculateVisibleWidthAtZDepth = (depth, camera) => {
+const calculateVisibleWidthAtZDepth = (depth: number, camera: THREE.PerspectiveCamera): number => {
   return calculateVisibleHeightAtZDepth(depth, camera) * camera.aspect;
 };
 
-const calculateDistance = (x1, y1, x2, y2) => {
+const calculateDistance = (x1: number, y1: number, x2: number, y2: number): number => {
   return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 };
 
 // Environment class manages the 3D scene
 class Environment {
-  constructor(font, particle, container) {
+  font: Font;
+  particle: THREE.Texture;
+  container: HTMLDivElement;
+  scene: THREE.Scene;
+  camera: THREE.PerspectiveCamera;
+  renderer: THREE.WebGLRenderer;
+  createParticles: CreateParticles | null = null;
+  handleResize: () => void;
+
+  constructor(font: Font, particle: THREE.Texture, container: HTMLDivElement) {
     this.font = font;
     this.particle = particle;
     this.container = container;
     this.scene = new THREE.Scene();
-    this.initCamera();
-    this.initRenderer();
-    this.setup();
-    this.bindEvents();
-  }
-
-  bindEvents() {
-    this.handleResize = this.onWindowResize.bind(this);
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  unbindEvents() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  initCamera() {
     this.camera = new THREE.PerspectiveCamera(
       65,
       this.container.clientWidth / this.container.clientHeight,
       1,
       10000
     );
+    this.renderer = new THREE.WebGLRenderer({ alpha: true });
+    this.handleResize = this.onWindowResize.bind(this);
+    this.initCamera();
+    this.initRenderer();
+    this.setup();
+    this.bindEvents();
+  }
+
+  bindEvents(): void {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  unbindEvents(): void {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  initCamera(): void {
     this.camera.position.set(0, 0, 100);
   }
 
-  initRenderer() {
-    this.renderer = new THREE.WebGLRenderer({ alpha: true });
+  initRenderer(): void {
     this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -108,30 +133,31 @@ class Environment {
     this.renderer.setClearColor(0x000000, 0); // Transparent background
   }
 
-  setup() {
+  setup(): void {
     this.createParticles = new CreateParticles(
       this.scene,
       this.font,
       this.particle,
       this.camera,
-      this.renderer
+      this.renderer,
+      this.container
     );
   }
 
-  render() {
+  render(): void {
     if (this.createParticles) {
       this.createParticles.render();
     }
     this.renderer.render(this.scene, this.camera);
   }
 
-  onWindowResize() {
+  onWindowResize(): void {
     this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
   }
 
-  dispose() {
+  dispose(): void {
     this.unbindEvents();
     this.renderer.dispose();
     if (this.createParticles) {
@@ -142,16 +168,42 @@ class Environment {
 
 // CreateParticles class handles the particle system
 class CreateParticles {
-  constructor(scene, font, particleImg, camera, renderer) {
+  scene: THREE.Scene;
+  font: Font;
+  particleImg: THREE.Texture;
+  camera: THREE.PerspectiveCamera;
+  renderer: THREE.WebGLRenderer;
+  container: HTMLDivElement;
+  raycaster: THREE.Raycaster;
+  mouse: THREE.Vector2;
+  colorChange: THREE.Color;
+  isMouseDown: boolean = false;
+  data: ConfigData;
+  planeArea: THREE.Mesh | null = null;
+  particles: THREE.Points | null = null;
+  geometryCopy: THREE.BufferGeometry | null = null;
+  currentPosition: THREE.Vector3 | null = null;
+  handleMouseDown: (event: MouseEvent) => void;
+  handleMouseMove: (event: MouseEvent) => void;
+  handleMouseUp: () => void;
+
+  constructor(
+    scene: THREE.Scene, 
+    font: Font, 
+    particleImg: THREE.Texture, 
+    camera: THREE.PerspectiveCamera, 
+    renderer: THREE.WebGLRenderer,
+    container: HTMLDivElement
+  ) {
     this.scene = scene;
     this.font = font;
     this.particleImg = particleImg;
     this.camera = camera;
     this.renderer = renderer;
+    this.container = container;
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2(-200, 200);
     this.colorChange = new THREE.Color();
-    this.isMouseDown = false;
     this.data = {
       text: CONFIG.PARTICLES.TEXT,
       amount: CONFIG.PARTICLES.AMOUNT,
@@ -161,27 +213,26 @@ class CreateParticles {
       area: CONFIG.PARTICLES.AREA,
       ease: CONFIG.PARTICLES.EASE,
     };
+    this.handleMouseDown = this.onMouseDown.bind(this);
+    this.handleMouseMove = this.onMouseMove.bind(this);
+    this.handleMouseUp = this.onMouseUp.bind(this);
     this.bindEvents();
     this.setup();
   }
 
-  bindEvents() {
-    this.handleMouseDown = this.onMouseDown.bind(this);
-    this.handleMouseMove = this.onMouseMove.bind(this);
-    this.handleMouseUp = this.onMouseUp.bind(this);
-
+  bindEvents(): void {
     document.addEventListener('mousedown', this.handleMouseDown);
     document.addEventListener('mousemove', this.handleMouseMove);
     document.addEventListener('mouseup', this.handleMouseUp);
   }
 
-  unbindEvents() {
+  unbindEvents(): void {
     document.removeEventListener('mousedown', this.handleMouseDown);
     document.removeEventListener('mousemove', this.handleMouseMove);
     document.removeEventListener('mouseup', this.handleMouseUp);
   }
 
-  setup() {
+  setup(): void {
     const geometry = new THREE.PlaneGeometry(
       calculateVisibleWidthAtZDepth(100, this.camera),
       calculateVisibleHeightAtZDepth(100, this.camera)
@@ -193,7 +244,7 @@ class CreateParticles {
     this.createText();
   }
 
-  onMouseDown(event) {
+  onMouseDown(event: MouseEvent): void {
     // Calculate mouse position relative to the container
     const container = this.renderer.domElement.parentElement;
     if (!container) return;
@@ -217,12 +268,12 @@ class CreateParticles {
     this.data.ease = 0.01;
   }
 
-  onMouseUp() {
+  onMouseUp(): void {
     this.isMouseDown = false;
     this.data.ease = 0.05;
   }
 
-  onMouseMove(event) {
+  onMouseMove(event: MouseEvent): void {
     const scaleFactor = 0.7;
     const container = this.renderer.domElement.parentElement;
     if (!container) return;
@@ -234,25 +285,29 @@ class CreateParticles {
     this.mouse.y = Math.max(-1, Math.min(1, y * scaleFactor));
   }
 
-  createText() {
-    const points = [];
+  createText(): void {
+    const points: THREE.Vector3[] = [];
     const shapes = this.font.generateShapes(this.data.text, this.data.textSize);
     const geometry = new THREE.ShapeGeometry(shapes);
     geometry.computeBoundingBox();
-    const xMid = -0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
-    const yMid = (geometry.boundingBox.max.y - geometry.boundingBox.min.y) / 8;
+    
+    const boundingBox = geometry.boundingBox;
+    if (!boundingBox) return;
+    
+    const xMid = -0.5 * (boundingBox.max.x - boundingBox.min.x);
+    const yMid = (boundingBox.max.y - boundingBox.min.y) / 8;
     geometry.center();
 
-    const holeShapes = [];
+    const holeShapes: THREE.Shape[] = [];
     shapes.forEach((shape) => {
       if (shape.holes && shape.holes.length > 0) {
-        shape.holes.forEach((hole) => holeShapes.push(hole));
+        shape.holes.forEach((hole) => holeShapes.push(hole as THREE.Shape));
       }
     });
     shapes.push(...holeShapes);
 
-    const colors = [];
-    const sizes = [];
+    const colors: number[] = [];
+    const sizes: number[] = [];
     shapes.forEach((shape) => {
       const amountPoints = shape.type === 'Path' ? this.data.amount / 2 : this.data.amount;
       const shapePoints = shape.getSpacedPoints(amountPoints);
@@ -293,7 +348,9 @@ class CreateParticles {
     this.geometryCopy.copy(this.particles.geometry);
   }
 
-  render() {
+  render(): void {
+    if (!this.particles || !this.geometryCopy || !this.planeArea) return;
+    
     const time = ((0.001 * performance.now()) % 12) / 12;
     const zigzagTime = (1 + Math.sin(time * 2 * Math.PI)) / 6;
 
@@ -301,10 +358,10 @@ class CreateParticles {
     const intersects = this.raycaster.intersectObject(this.planeArea);
 
     if (intersects.length > 0) {
-      const posAttr = this.particles.geometry.attributes.position;
-      const copyAttr = this.geometryCopy.attributes.position;
-      const colorAttr = this.particles.geometry.attributes.customColor;
-      const sizeAttr = this.particles.geometry.attributes.size;
+      const posAttr = this.particles.geometry.attributes.position as THREE.BufferAttribute;
+      const copyAttr = this.geometryCopy.attributes.position as THREE.BufferAttribute;
+      const colorAttr = this.particles.geometry.attributes.customColor as THREE.BufferAttribute;
+      const sizeAttr = this.particles.geometry.attributes.size as THREE.BufferAttribute;
 
       const { x: mx, y: my, z: mz } = intersects[0].point;
 
@@ -400,17 +457,17 @@ class CreateParticles {
     }
   }
 
-  dispose() {
+  dispose(): void {
     this.unbindEvents();
     if (this.particles) {
       this.particles.geometry.dispose();
-      this.particles.material.dispose();
+      (this.particles.material as THREE.Material).dispose();
     }
   }
 }
 
 // Preload resources function
-const preloadResources = () => {
+const preloadResources = (): Promise<{ font: Font; particle: THREE.Texture }> => {
   if (resourceCache.font && resourceCache.particle) {
     return Promise.resolve({
       font: resourceCache.font,
@@ -421,13 +478,15 @@ const preloadResources = () => {
   const manager = new THREE.LoadingManager();
   return new Promise((resolve, reject) => {
     manager.onLoad = () => {
-      resolve({
-        font: resourceCache.font,
-        particle: resourceCache.particle,
-      });
+      if (resourceCache.font && resourceCache.particle) {
+        resolve({
+          font: resourceCache.font,
+          particle: resourceCache.particle,
+        });
+      }
     };
     
-    manager.onError = (url) => {
+    manager.onError = (url: string) => {
       console.error(`Error loading ${url}`);
       reject(new Error(`Error loading ${url}`));
     };
@@ -435,7 +494,7 @@ const preloadResources = () => {
     const fontLoader = new FontLoader(manager);
     fontLoader.load(
       CONFIG.RESOURCES.FONT_URL,
-      (font) => {
+      (font: Font) => {
         resourceCache.font = font;
       }
     );
@@ -443,16 +502,16 @@ const preloadResources = () => {
     const textureLoader = new THREE.TextureLoader(manager);
     textureLoader.load(
       CONFIG.RESOURCES.PARTICLE_URL,
-      (particle) => {
+      (particle: THREE.Texture) => {
         resourceCache.particle = particle;
       }
     );
   });
 };
 
-export default function MagicEffect() {
-  const magicRef = useRef(null);
-  const environmentRef = useRef(null);
+const MagicEffect: React.FC = () => {
+  const magicRef = useRef<HTMLDivElement>(null);
+  const environmentRef = useRef<Environment | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -478,3 +537,5 @@ export default function MagicEffect() {
 
   return <div id="magic" ref={magicRef} />;
 }
+
+export default MagicEffect;
