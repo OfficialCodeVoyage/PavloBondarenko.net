@@ -91,9 +91,9 @@ const WorkPage = () => {
 
                         </div>
                         <div className="col-md-8">
-                            <h1 className="section-heading" data-aos="fade-up"><img src="/images/star-2.png"
+                            <h2 className="section-heading" data-aos="fade-up"><img src="/images/star-2.png"
                                                                                     alt="Star"/> All Projects <img
-                                src="/images/star-2.png" alt="Star"/></h1>
+                                src="/images/star-2.png" alt="Star"/></h2>
 
                             <div className="d-flex align-items-start gap-24">
                                 <div data-aos="zoom-in" className="flex-1">
