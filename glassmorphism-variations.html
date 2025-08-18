@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Button Variations</title>
+    <link rel="stylesheet" href="https://unpkg.com/iconoir@6.1.0/css/iconoir.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .option h3 {
+            margin-bottom: 15px;
+            color: #a8a8a8;
+            font-size: 1.2rem;
+        }
+
+        .option p {
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Base button styles */
+        .btn-base {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+
+        /* Original Glassmorphism (for reference) */
+        .btn-glass-original {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .btn-glass-original:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Variation 1: Enhanced Glassmorphism with LinkedIn Blue Tint */
+        .btn-glass-v1 {
+            background: rgba(0, 119, 181, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 119, 181, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 119, 181, 0.2);
+        }
+
+        .btn-glass-v1:hover {
+            background: rgba(0, 119, 181, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 119, 181, 0.4);
+            border-color: rgba(0, 119, 181, 0.5);
+        }
+
+        /* Variation 2: Frosted Glass with Gradient Border */
+        .btn-glass-v2 {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-glass-v2::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, rgba(0, 119, 181, 0.8), rgba(255, 255, 255, 0.3), rgba(0, 119, 181, 0.8));
+            border-radius: 12px;
+            z-index: -1;
+            background-size: 300% 300%;
+            animation: gradientBorder 3s ease infinite;
+        }
+
+        .btn-glass-v2:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 119, 181, 0.3);
+        }
+
+        @keyframes gradientBorder {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Variation 3: Double Layer Glassmorphism */
+        .btn-glass-v3 {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                        0 8px 32px rgba(31, 38, 135, 0.15);
+            position: relative;
+        }
+
+        .btn-glass-v3::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-glass-v3:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                        0 12px 40px rgba(31, 38, 135, 0.25);
+        }
+
+        .btn-glass-v3:hover::after {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Variation 4: Professional Corporate Glass */
+        .btn-glass-v4 {
+            background: linear-gradient(135deg, 
+                        rgba(255, 255, 255, 0.1), 
+                        rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 119, 181, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 119, 181, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-glass-v4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                        transparent, 
+                        rgba(255, 255, 255, 0.1), 
+                        transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-glass-v4:hover::before {
+            left: 100%;
+        }
+
+        .btn-glass-v4:hover {
+            background: linear-gradient(135deg, 
+                        rgba(0, 119, 181, 0.15), 
+                        rgba(255, 255, 255, 0.1));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 119, 181, 0.25),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(0, 119, 181, 0.4);
+        }
+
+        /* Variation 5: Subtle Glass with Ripple Effect */
+        .btn-glass-v5 {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 6px 25px rgba(31, 38, 135, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-glass-v5::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .btn-glass-v5:hover::after {
+            width: 200%;
+            height: 200%;
+        }
+
+        .btn-glass-v5:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 35px rgba(31, 38, 135, 0.2);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Icon animations */
+        .btn-base i {
+            transition: all 0.3s ease;
+        }
+
+        .btn-base:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .option {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Glassmorphism Button Variations</h1>
+        
+        <div class="options-grid">
+            <!-- Original for reference -->
+            <div class="option">
+                <h3>Original Glassmorphism</h3>
+                <p>The original clean glass effect with blur and transparency for reference.</p>
+                <a href="#" class="btn-base btn-glass-original">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Variation 1 -->
+            <div class="option">
+                <h3>Variation 1: LinkedIn Blue Tint</h3>
+                <p>Enhanced glassmorphism with LinkedIn blue tinting and stronger blur effect.</p>
+                <a href="#" class="btn-base btn-glass-v1">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Variation 2 -->
+            <div class="option">
+                <h3>Variation 2: Gradient Border Glass</h3>
+                <p>Frosted glass with animated gradient border and enhanced blur backdrop.</p>
+                <a href="#" class="btn-base btn-glass-v2">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Variation 3 -->
+            <div class="option">
+                <h3>Variation 3: Double Layer Glass</h3>
+                <p>Multi-layered glassmorphism with inner glass element for added depth.</p>
+                <a href="#" class="btn-base btn-glass-v3">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Variation 4 -->
+            <div class="option">
+                <h3>Variation 4: Professional Corporate</h3>
+                <p>Sophisticated glass effect with sliding shine animation and corporate styling.</p>
+                <a href="#" class="btn-base btn-glass-v4">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Variation 5 -->
+            <div class="option">
+                <h3>Variation 5: Ripple Effect Glass</h3>
+                <p>Subtle glass with expanding ripple effect on hover for interactive feedback.</p>
+                <a href="#" class="btn-base btn-glass-v5">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

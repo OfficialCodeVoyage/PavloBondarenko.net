@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Connect Button - Style Options</title>
+    <link rel="stylesheet" href="https://unpkg.com/iconoir@6.1.0/css/iconoir.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .option h3 {
+            margin-bottom: 15px;
+            color: #a8a8a8;
+            font-size: 1.2rem;
+        }
+
+        .option p {
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Base button styles */
+        .btn-base {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+
+        /* Option 1: Glassmorphism */
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-glass:active {
+            transform: translateY(0);
+        }
+
+        /* Option 2: Neon Glow */
+        .btn-neon {
+            background: transparent;
+            border: 2px solid #0077b5;
+            color: #0077b5;
+            text-shadow: 0 0 5px #0077b5;
+            box-shadow: inset 0 0 10px rgba(0, 119, 181, 0.2),
+                        0 0 10px rgba(0, 119, 181, 0.2);
+        }
+
+        .btn-neon:hover {
+            background: #0077b5;
+            color: white;
+            box-shadow: inset 0 0 10px rgba(0, 119, 181, 0.4),
+                        0 0 20px rgba(0, 119, 181, 0.6),
+                        0 0 40px rgba(0, 119, 181, 0.4);
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Option 3: Gradient Border */
+        .btn-gradient-border {
+            background: #1a1a1a;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            border-radius: 12px;
+            z-index: -1;
+            animation: gradientShift 3s ease infinite;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .btn-gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        .btn-gradient-border:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Option 4: Liquid Fill */
+        .btn-liquid {
+            background: #1a1a1a;
+            border: 2px solid #0077b5;
+            overflow: hidden;
+        }
+
+        .btn-liquid::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0077b5, #00a8e8);
+            transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn-liquid:hover::before {
+            top: 0;
+        }
+
+        .btn-liquid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+        }
+
+        /* Option 5: Morph Animation */
+        .btn-morph {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-morph:hover {
+            border-radius: 10px;
+            transform: scale(1.08) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-morph:active {
+            transform: scale(1.02) rotate(0deg);
+        }
+
+        /* Option 6: Neumorphism */
+        .btn-neumorphism {
+            background: linear-gradient(145deg, #2a2a2a, #232323);
+            box-shadow: 5px 5px 10px #1a1a1a,
+                       -5px -5px 10px #333333;
+        }
+
+        .btn-neumorphism:hover {
+            background: linear-gradient(145deg, #232323, #2a2a2a);
+            box-shadow: inset 5px 5px 10px #1a1a1a,
+                        inset -5px -5px 10px #333333;
+        }
+
+        .btn-neumorphism:active {
+            box-shadow: inset 2px 2px 5px #1a1a1a,
+                        inset -2px -2px 5px #333333;
+        }
+
+        /* Option 7: Cyberpunk */
+        .btn-cyberpunk {
+            background: #000;
+            border: 2px solid #ff00ff;
+            color: #ff00ff;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%);
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        .btn-cyberpunk::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-cyberpunk:hover::before {
+            left: 100%;
+        }
+
+        .btn-cyberpunk:hover {
+            background: rgba(255, 0, 255, 0.1);
+            box-shadow: 0 0 20px #ff00ff,
+                        inset 0 0 20px rgba(255, 0, 255, 0.2);
+            color: white;
+        }
+
+        /* Option 8: Split Color */
+        .btn-split {
+            background: linear-gradient(90deg, #0077b5 50%, #1a1a1a 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            border: 2px solid #0077b5;
+            transition: all 0.4s ease;
+        }
+
+        .btn-split:hover {
+            background-position: 0 0;
+            transform: translateX(5px);
+            box-shadow: -5px 0 20px rgba(0, 119, 181, 0.4);
+        }
+
+        /* Option 9: Aurora Effect */
+        .btn-aurora {
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: auroraShift 8s ease infinite;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-aurora:hover {
+            animation-duration: 2s;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        @keyframes auroraShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Option 10: Minimalist Line */
+        .btn-minimal {
+            background: transparent;
+            border: none;
+            color: #888;
+            padding: 12px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .btn-minimal::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #0077b5, #00a8e8);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-minimal:hover {
+            color: #0077b5;
+        }
+
+        .btn-minimal:hover::after {
+            width: 100%;
+        }
+
+        /* Option 11: 3D Depth */
+        .btn-3d {
+            background: linear-gradient(135deg, #0077b5, #005885);
+            box-shadow: 0 6px 0 #003d5c,
+                        0 8px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+            transition: all 0.1s ease;
+        }
+
+        .btn-3d:hover {
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #003d5c,
+                        0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-3d:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #003d5c,
+                        0 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Option 12: Holographic */
+        .btn-holographic {
+            background: linear-gradient(135deg, 
+                        rgba(255, 0, 150, 0.3),
+                        rgba(0, 255, 255, 0.3),
+                        rgba(255, 255, 0, 0.3),
+                        rgba(150, 0, 255, 0.3));
+            background-size: 200% 200%;
+            animation: holographicShift 3s linear infinite;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-holographic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                        transparent 30%,
+                        rgba(255, 255, 255, 0.1) 50%,
+                        transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes holographicShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-holographic:hover {
+            transform: perspective(100px) rotateX(-5deg);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Icon animations */
+        .btn-base i {
+            transition: all 0.3s ease;
+        }
+
+        .btn-base:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .option {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Let's Connect! Button Style Options</h1>
+        
+        <div class="options-grid">
+            <!-- Option 1 -->
+            <div class="option">
+                <h3>Option 1: Glassmorphism</h3>
+                <p>Modern glass effect with blur and transparency. Clean and professional.</p>
+                <a href="#" class="btn-base btn-glass">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="option">
+                <h3>Option 2: Neon Glow</h3>
+                <p>LinkedIn blue neon effect with glowing borders and text shadow.</p>
+                <a href="#" class="btn-base btn-neon">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="option">
+                <h3>Option 3: Animated Gradient Border</h3>
+                <p>Colorful animated gradient border with smooth transitions.</p>
+                <a href="#" class="btn-base btn-gradient-border">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 4 -->
+            <div class="option">
+                <h3>Option 4: Liquid Fill</h3>
+                <p>Smooth liquid fill animation on hover from bottom to top.</p>
+                <a href="#" class="btn-base btn-liquid">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 5 -->
+            <div class="option">
+                <h3>Option 5: Morph Animation</h3>
+                <p>Shape morphing effect with rotation and scaling.</p>
+                <a href="#" class="btn-base btn-morph">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 6 -->
+            <div class="option">
+                <h3>Option 6: Neumorphism</h3>
+                <p>Soft UI design with inner and outer shadows creating depth.</p>
+                <a href="#" class="btn-base btn-neumorphism">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 7 -->
+            <div class="option">
+                <h3>Option 7: Cyberpunk</h3>
+                <p>Futuristic design with angular edges and scan line effect.</p>
+                <a href="#" class="btn-base btn-cyberpunk">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 8 -->
+            <div class="option">
+                <h3>Option 8: Split Color</h3>
+                <p>Two-tone design with sliding color transition on hover.</p>
+                <a href="#" class="btn-base btn-split">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 9 -->
+            <div class="option">
+                <h3>Option 9: Aurora Effect</h3>
+                <p>Continuous color flow animation like northern lights.</p>
+                <a href="#" class="btn-base btn-aurora">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 10 -->
+            <div class="option">
+                <h3>Option 10: Minimalist Line</h3>
+                <p>Ultra-clean design with animated underline effect.</p>
+                <a href="#" class="btn-base btn-minimal">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 11 -->
+            <div class="option">
+                <h3>Option 11: 3D Depth</h3>
+                <p>Classic 3D button with depth and press animation.</p>
+                <a href="#" class="btn-base btn-3d">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+
+            <!-- Option 12 -->
+            <div class="option">
+                <h3>Option 12: Holographic</h3>
+                <p>Iridescent holographic effect with shimmer animation.</p>
+                <a href="#" class="btn-base btn-holographic">
+                    <i class="iconoir-linkedin"></i>
+                    <span>Let's Connect!</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -54,6 +54,10 @@ export default function RootLayout({ children }) {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
           />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
+          />
           <link rel="canonical" href="https://pavlobondarenko.net" />
           <meta name="google-site-verification" content="your-verification-code" />
         </head>

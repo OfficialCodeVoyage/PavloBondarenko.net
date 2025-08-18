@@ -81,7 +81,7 @@ const WorkPage = () => {
                                             <h1>NurseAI</h1>
                                             <p style={{fontSize: '14px'}}>Emergency Button with AI features</p>
                                         </div>
-                                        <Link href="https://example.com/taskmasterpro" target="_blank"
+                                        <Link href="https://devpost.com/software/nurseai-gr7p84" target="_blank"
                                               className="project-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
                                         </Link>
@@ -204,7 +204,7 @@ const WorkPage = () => {
                                         <div className="project-img">
                                             <img src="/images/projects/update5172025/v1/restoreio.png"
                                                  style={{width: '350px', height: '300px'}}
-                                                 alt="LearnSphere"/>
+                                                 alt="RestoreIO"/>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="project-info">
@@ -228,7 +228,7 @@ const WorkPage = () => {
                                         <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                                         <div className="project-img">
                                             <img src="/images/projects/update5172025/v1/memorypalace.png"
-                                                 style={{width: '350px', height: '300px'}} alt="ConnectVerse"/>
+                                                 style={{width: '350px', height: '300px'}} alt="MemoryPalace"/>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="project-info">

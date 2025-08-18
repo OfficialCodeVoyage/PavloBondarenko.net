@@ -4,6 +4,8 @@ import '../globals.css'
 import Link from 'next/link';
 import { useEffect } from "react";
 import MagicEffect from "@/app/components/MagicEffect/MagicEffect";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 
 export default function HomePage() {
