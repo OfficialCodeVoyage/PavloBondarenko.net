@@ -133,7 +133,7 @@ export default function HomePage() {
                           <h1>YouTube</h1>
                         </div>
 
-                        <Link href="./blog.html" className="about-btn">
+                        <Link href="https://www.youtube.com/@OfficialCodeVoyage" target="_blank" rel="noopener noreferrer" className="about-btn">
                           <img src="/images/icon.svg" alt="Button"/>
                         </Link>
 
