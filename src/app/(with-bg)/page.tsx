@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
                   <Link className="overlay-link" href="/about"></Link>
                   <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
                   <div className="img-box">
-                    <Image src="/images/LOGO/pavlopic3.png" alt="About Me" width={300} height={300} style={{ width: '100%', height: 'auto' }} />
+                    <Image src="/images/LOGO/pavlopic3.png" alt="About Me" width={300} height={300} style={{ width: '100%', height: 'auto' }} loading="lazy" />
                   </div>
                   <div className="infos">
                     <h4></h4>
@@ -48,23 +48,23 @@ const HomePage: React.FC = () => {
                         <div>
                           <span>
                             {/* PM/Business Tools */}
-                            <img src="/images/jira.png" height="17px" alt="Jira"/> <b>JIRA</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/figma.png" height="17px" alt="Figma"/> <b>FIGMA</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/powerbi.png" height="17px" alt="PowerBI"/> <b>POWER BI</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/amplitude.png" height="17px" alt="Amplitude"/> <b>Amplitude</b> <img src="/images/star1.svg" alt="Star"/>
+                            <Image src="/images/jira.png" height={17} width={17} alt="Jira" loading="lazy" style={{ display: 'inline-block' }}/> <b>JIRA</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/figma.png" height={17} width={17} alt="Figma" loading="lazy" style={{ display: 'inline-block' }}/> <b>FIGMA</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/powerbi.png" height={17} width={17} alt="PowerBI" loading="lazy" style={{ display: 'inline-block' }}/> <b>POWER BI</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/amplitude.png" height={17} width={17} alt="Amplitude" loading="lazy" style={{ display: 'inline-block' }}/> <b>Amplitude</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
                             
                             {/* Technical Skills */}
-                            <img src="/images/python-logo-only.png" height="17px" alt="Python"/> <b>PYTHON</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/Git_icon.png" height="17px" alt="GIT"/> <b>GIT</b> <img src="/images/star1.svg" alt="Star"/>
+                            <Image src="/images/python-logo-only.png" height={17} width={17} alt="Python" loading="lazy" style={{ display: 'inline-block' }}/> <b>PYTHON</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/Git_icon.png" height={17} width={17} alt="GIT" loading="lazy" style={{ display: 'inline-block' }}/> <b>GIT</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
                             
                             {/* Cloud/Infrastructure */}
-                            <img src="/images/azure.png" height="17px" alt="Azure"/> <b>AZURE</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/aws.png" height="17px" alt="AWS"/> <b>AWS</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/GCP.png" height="17px" alt="GCP"/> <b>GCP</b> <img src="/images/star1.svg" alt="Star"/>
+                            <Image src="/images/azure.png" height={17} width={17} alt="Azure" loading="lazy" style={{ display: 'inline-block' }}/> <b>AZURE</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/aws.png" height={17} width={17} alt="AWS" loading="lazy" style={{ display: 'inline-block' }}/> <b>AWS</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/GCP.png" height={17} width={17} alt="GCP" loading="lazy" style={{ display: 'inline-block' }}/> <b>GCP</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
                             
                             {/* Other Relevant Skills */}
-                            <img src="/images/linux.png" height="17px" alt="Linux"/> <b>LINUX</b> <img src="/images/star1.svg" alt="Star"/>
-                            <img src="/images/davinciresolve.png" height="17px" alt="DaVinci Resolve"/> <b>DAVINCI RESOLVE</b> <img src="/images/star1.svg" alt="Star"/>
+                            <Image src="/images/linux.png" height={17} width={17} alt="Linux" loading="lazy" style={{ display: 'inline-block' }}/> <b>LINUX</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
+                            <Image src="/images/davinciresolve.png" height={17} width={17} alt="DaVinci Resolve" loading="lazy" style={{ display: 'inline-block' }}/> <b>DAVINCI RESOLVE</b> <Image src="/images/star1.svg" height={17} width={17} alt="Star" loading="lazy" style={{ display: 'inline-block' }}/>
                           </span>
                         </div>
                       </div>
@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
                       <div className="about-crenditials-box info-box shadow-box h-full">
                         <Link className="overlay-link" href="/about"></Link>
                         <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
-                        <Image src="/images/pbsignature.png" alt="Sign" width={200} height={100} style={{ width: 'auto', height: 'auto' }} />
+                        <Image src="/images/pbsignature.png" alt="Sign" width={200} height={100} style={{ width: 'auto', height: 'auto' }} loading="lazy" />
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="infos">
                             <h4>Credentials</h4>
@@ -95,7 +95,7 @@ const HomePage: React.FC = () => {
                       <div className="about-project-box info-box shadow-box h-full">
                         <Link className="overlay-link" href="/projects"></Link>
                         <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
-                        <Image src="/images/1my-works.png" alt="My Works" width={250} height={200} style={{ width: 'auto', height: 'auto' }} />
+                        <Image src="/images/1my-works.png" alt="My Works" width={250} height={200} style={{ width: 'auto', height: 'auto' }} loading="lazy" />
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="infos">
                             <h4>SHOWCASE</h4>
@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
                       <Link target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@OfficialCodeVoyage"
                          className="overlay-link"></Link>
                       <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                      <img src="/images/yt1.png" height="126px" alt="GFonts" style={{opacity: '1'}}/>
+                      <Image src="/images/yt1.png" height={126} width={200} alt="YouTube" style={{opacity: '1'}} loading="lazy" />
                       <div className="d-flex align-items-center justify-content-between">
                         <div className="infos">
                           <h4>My hobby</h4>
@@ -182,7 +182,7 @@ const HomePage: React.FC = () => {
 
                   <div data-aos="zoom-in">
                     <div className="about-profile-box info-box shadow-box h-full">
-                      <img src="./images/bg1.png" alt="BG" className="bg-img"/>
+                      <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                       <div className="inner-profile-icons shadow-box">
                         <Link target="_blank" rel="noopener noreferrer" className="linkedln"
                               href="https://www.linkedin.com/in/mrbondarenko/">
@@ -245,7 +245,7 @@ const HomePage: React.FC = () => {
                 <div className="about-contact-box info-box shadow-box">
                   <Link className="overlay-link" href="/contact"></Link>
                   <Image src="/images/bg1.png" alt="BG" className="bg-img" fill style={{ objectFit: 'cover' }} />
-                  <Image src="/images/icon2.png" alt="Icon" className="star-icon" width={100} height={100} style={{ width: 'auto', height: 'auto' }} />
+                  <Image src="/images/icon2.png" alt="Icon" className="star-icon" width={100} height={100} style={{ width: 'auto', height: 'auto' }} loading="lazy" />
                   <h1>Let's <br/>work <span>together.</span></h1>
                   <Link href="#" className="about-btn" onClick={(e) => e.preventDefault()}>
                     <img src="/images/icon.svg" alt="Button"/>
