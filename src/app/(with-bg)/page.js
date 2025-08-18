@@ -35,7 +35,7 @@ export default function HomePage() {
                     <p className="text-lg">
                       <i style={{fontSize: '0.95rem'}}>Product @ Xe.com</i>
                     </p>
-                    <Link href="#" className="about-btn">
+                    <Link href="#" className="about-btn" onClick={(e) => e.preventDefault()}>
                       <img src="/images/icon.svg" alt="Button"/>
                     </Link>
                   </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
                             <h1>Projects</h1>
                           </div>
 
-                          <Link href="#" className="about-btn">
+                          <Link href="#" className="about-btn" onClick={(e) => e.preventDefault()}>
                             <img src="/images/icon.svg" alt="Button"/>
                           </Link>
 
@@ -250,7 +250,7 @@ export default function HomePage() {
                   <img src="/images/bg1.png" alt="BG" className="bg-img"/>
                   <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
                   <h1>Let's <br/>work <span>together.</span></h1>
-                  <Link href="#" className="about-btn">
+                  <Link href="#" className="about-btn" onClick={(e) => e.preventDefault()}>
                     <img src="/images/icon.svg" alt="Button"/>
                   </Link>
                 </div>
