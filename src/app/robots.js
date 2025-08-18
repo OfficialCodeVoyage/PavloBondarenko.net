@@ -3,7 +3,13 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/credentials/admin'],
+      disallow: [
+        '/blog',
+        '/blog-details',
+        '/credentials',
+        '/work-details',
+        '/credentials/admin'
+      ],
     },
     sitemap: 'https://pavlobondarenko.net/sitemap.xml',
   }

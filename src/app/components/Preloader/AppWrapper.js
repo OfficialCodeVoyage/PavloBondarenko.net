@@ -1,25 +1,39 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import Preloader from './Preloader';
 
 const AppWrapper = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
-    const pathname = usePathname();
+    const [shouldShowPreloader, setShouldShowPreloader] = useState(false);
 
     useEffect(() => {
-        setIsLoading(true);
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 150);
+        // Check if this is the first visit in the session
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        
+        if (!hasVisited) {
+            // First visit - show preloader
+            setShouldShowPreloader(true);
+            setIsLoading(true);
+            
+            const timer = setTimeout(() => {
+                setIsLoading(false);
+                sessionStorage.setItem('hasVisited', 'true');
+                // Hide preloader after animation completes
+                setTimeout(() => setShouldShowPreloader(false), 500);
+            }, 1000);
 
-        return () => clearTimeout(timer);
-    }, [pathname]);
+            return () => clearTimeout(timer);
+        } else {
+            // Already visited - don't show preloader
+            setShouldShowPreloader(false);
+            setIsLoading(false);
+        }
+    }, []); // Empty dependency array - only runs once on mount
 
     return (
         <>
-            <Preloader isActive={isLoading} />
+            {shouldShowPreloader && <Preloader isActive={isLoading} />}
             {children}
         </>
     );
