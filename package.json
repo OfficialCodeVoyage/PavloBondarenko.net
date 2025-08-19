@@ -23,7 +23,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.7",
-    "next": "^15.3.5",
+    "next": "^15.4.7",
     "next-seo": "^6.7.0",
     "nodemailer": "^7.0.4",
     "react": "^19.1.0",
