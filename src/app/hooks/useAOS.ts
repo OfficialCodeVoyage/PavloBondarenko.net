@@ -2,18 +2,11 @@
 // This hook centralizes AOS initialization to avoid code duplication
 
 import { useEffect } from 'react';
-import AOS from 'aos';
+import AOS, { AosOptions } from 'aos';
 import 'aos/dist/aos.css';
 
-interface AOSOptions {
-  duration?: number;
-  once?: boolean;
-  offset?: number;
-  delay?: number;
-  easing?: string;
-  mirror?: boolean;
-  anchorPlacement?: string;
-}
+// Use AOS's own type definition instead of creating our own
+type AOSOptions = AosOptions;
 
 /**
  * Custom hook to initialize AOS (Animate On Scroll)
@@ -22,14 +15,14 @@ interface AOSOptions {
  */
 export const useAOS = (options?: AOSOptions, deps: any[] = []): void => {
   useEffect(() => {
-    // Default options
+    // Default options with correct type
     const defaultOptions: AOSOptions = {
       duration: 1500,
       once: true,
       offset: 100,
       easing: 'ease-in-out',
       mirror: false,
-      anchorPlacement: 'top-bottom',
+      anchorPlacement: 'top-bottom' as any, // Type assertion needed due to AOS type definitions
     };
 
     // Merge default options with provided options
@@ -65,5 +58,5 @@ export const DEFAULT_AOS_CONFIG: AOSOptions = {
   offset: 100,
   easing: 'ease-in-out',
   mirror: false,
-  anchorPlacement: 'top-bottom',
+  anchorPlacement: 'top-bottom' as any, // Type assertion needed due to AOS type definitions
 };
