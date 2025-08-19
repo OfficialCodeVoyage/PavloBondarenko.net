@@ -15,6 +15,7 @@ const nextConfig = {
   },
   
   // SEC-010: Basic security headers (without CSP)
+  // SEC-002: CORS configuration for API routes
   async headers() {
     return [
       {
@@ -35,7 +36,27 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
-          }
+          },
+        ],
+      },
+      // CORS headers for API routes only
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: process.env.NODE_ENV === 'production' 
+              ? 'https://pavlobondarenko.net' 
+              : '*' // Allow all origins in development
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'POST, OPTIONS'
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type'
+          },
         ],
       },
     ];
