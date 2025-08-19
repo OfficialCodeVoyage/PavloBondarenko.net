@@ -160,7 +160,8 @@ const Form: React.FC = () => {
                             name="full-name" 
                             id="full-name" 
                             placeholder="Name *" 
-                            required 
+                            required
+                            maxLength={100}
                         />
                         {errors.fullName && <span className="error-message">{errors.fullName}</span>}
                     </div>
@@ -170,7 +171,8 @@ const Form: React.FC = () => {
                             name="email" 
                             id="email" 
                             placeholder="Email *" 
-                            required 
+                            required
+                            maxLength={255}
                         />
                         {errors.email && <span className="error-message">{errors.email}</span>}
                     </div>
@@ -180,7 +182,8 @@ const Form: React.FC = () => {
                             name="subject" 
                             id="subject" 
                             placeholder="Your Subject *" 
-                            required 
+                            required
+                            maxLength={200}
                         />
                         {errors.subject && <span className="error-message">{errors.subject}</span>}
                     </div>
@@ -190,6 +193,7 @@ const Form: React.FC = () => {
                             id="message" 
                             placeholder="Your Message *" 
                             required
+                            maxLength={5000}
                         ></textarea>
                         {errors.message && <span className="error-message">{errors.message}</span>}
                     </div>

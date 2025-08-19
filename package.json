@@ -23,6 +23,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.7",
+    "isomorphic-dompurify": "^2.26.0",
     "next": "^15.3.5",
     "next-seo": "^6.7.0",
     "nodemailer": "^7.0.4",
