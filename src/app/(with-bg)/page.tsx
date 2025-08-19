@@ -116,7 +116,7 @@ const HomePage: React.FC = () => {
                       <Link target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@OfficialCodeVoyage"
                          className="overlay-link"></Link>
                       <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                      <Image src="/images/yt1.png" height={126} width={200} alt="YouTube" style={{opacity: '1'}} loading="lazy" />
+                      <Image src="/images/yt1.png" height={126} width={200} alt="YouTube" style={{opacity: '1', width: 'auto', height: 'auto', maxWidth: '200px'}} loading="lazy" />
                       <div className="d-flex align-items-center justify-content-between">
                         <div className="infos">
                           <h4>My hobby</h4>
