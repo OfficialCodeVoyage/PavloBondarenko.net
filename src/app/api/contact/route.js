@@ -1,5 +1,4 @@
 import { Resend } from 'resend';
-import DOMPurify from 'isomorphic-dompurify';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -42,35 +41,15 @@ export async function POST(request) {
         }
 
         const formData = await request.formData();
-        
-        // SEC-004: Sanitize all user inputs with DOMPurify
-        const fullName = DOMPurify.sanitize(formData.get('full-name') || '');
-        const email = DOMPurify.sanitize(formData.get('email') || '');
-        const subject = DOMPurify.sanitize(formData.get('subject') || '');
-        const message = DOMPurify.sanitize(formData.get('message') || '');
+        const fullName = formData.get('full-name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
 
         // Basic validation
         if (!fullName || !email || !subject || !message) {
             return Response.json(
                 { error: 'All fields are required' },
-                { status: 400 }
-            );
-        }
-
-        // SEC-004: Additional validation for field lengths
-        const maxLengths = {
-            fullName: 100,
-            email: 255,
-            subject: 200,
-            message: 5000
-        };
-
-        if (fullName.length > maxLengths.fullName ||
-            email.length > maxLengths.email ||
-            subject.length > maxLengths.subject ||
-            message.length > maxLengths.message) {
-            return Response.json(
-                { error: 'Input exceeds maximum allowed length' },
                 { status: 400 }
             );
         }
