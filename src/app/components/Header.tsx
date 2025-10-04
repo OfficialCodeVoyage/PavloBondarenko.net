@@ -62,23 +62,56 @@ const Header: React.FC = () => {
             <header className="header-area">
                 <div className="container">
                     <div className="gx-row d-flex align-items-center justify-content-between">
-                        <Link href="/" className="logo">
+                        <Link
+                            href="/"
+                            className="logo"
+                            title="Pavlo Bondarenko - Product Manager & Developer"
+                            aria-label="Pavlo Bondarenko homepage"
+                        >
                             <span className={`logo-text ${ralewayDots.className}`}>Hello World!</span>
                         </Link>
 
-                        <nav className={`navbar ${menuActive ? 'active' : ''}`}>
+                        <nav className={`navbar ${menuActive ? 'active' : ''}`} aria-label="Main navigation">
                             <ul className="menu">
                                 <li className={getActiveClass('/')}>
-                                    <Link href="/" onClick={handleToggleMenu}>Home</Link>
+                                    <Link
+                                        href="/"
+                                        onClick={handleToggleMenu}
+                                        title="Go to homepage - Pavlo Bondarenko Portfolio"
+                                        aria-label="Homepage"
+                                    >
+                                        Home
+                                    </Link>
                                 </li>
                                 <li className={getActiveClass('/about')}>
-                                    <Link href="/about" onClick={handleToggleMenu}>About</Link>
+                                    <Link
+                                        href="/about"
+                                        onClick={handleToggleMenu}
+                                        title="Learn about Pavlo Bondarenko - Experience, Education & Skills"
+                                        aria-label="About page"
+                                    >
+                                        About
+                                    </Link>
                                 </li>
                                 <li className={getActiveClass('/projects')}>
-                                    <Link href="/projects" onClick={handleToggleMenu}>My Projects</Link>
+                                    <Link
+                                        href="/projects"
+                                        onClick={handleToggleMenu}
+                                        title="View Pavlo's portfolio - 76+ projects in AI, Healthcare & Fintech"
+                                        aria-label="Projects portfolio"
+                                    >
+                                        My Projects
+                                    </Link>
                                 </li>
                                 <li className={getActiveClass('/contact')}>
-                                    <Link href="/contact" onClick={handleToggleMenu}>Contact</Link>
+                                    <Link
+                                        href="/contact"
+                                        onClick={handleToggleMenu}
+                                        title="Contact Pavlo Bondarenko - Get in touch for opportunities"
+                                        aria-label="Contact page"
+                                    >
+                                        Contact
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>
