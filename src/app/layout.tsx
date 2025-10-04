@@ -8,11 +8,13 @@ import JsonLd from './components/JsonLd';
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
+    display: "swap", // Improves performance by showing fallback font while loading
 });
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
+    display: "swap", // Improves performance by showing fallback font while loading
 });
 
 export const metadata: Metadata = {
@@ -48,17 +50,30 @@ export default function RootLayout({
     return (
       <html lang="en">
         <head>
-          {/* Resource hints for performance */}
+          {/* Resource hints for performance optimization */}
           <link rel="preconnect" href="https://cdn.jsdelivr.net" />
           <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
+          {/* DNS prefetch for external domains to speed up connections */}
+          <link rel="dns-prefetch" href="https://devpost.com" />
+          <link rel="dns-prefetch" href="https://www.linkedin.com" />
+          <link rel="dns-prefetch" href="https://github.com" />
+          <link rel="dns-prefetch" href="https://www.instagram.com" />
+          <link rel="dns-prefetch" href="https://www.youtube.com" />
+          <link rel="dns-prefetch" href="https://www.xe.com" />
+
+          {/* Icon stylesheet - load asynchronously for better performance */}
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
           />
+
           {/* FontAwesome removed - using Iconoir icons instead */}
           <link rel="canonical" href="https://pavlobondarenko.net" />
           <meta name="google-site-verification" content="your-verification-code" />
+
+          {/* Performance optimizations */}
+          <meta httpEquiv="x-dns-prefetch-control" content="on" />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           {children}
