@@ -2960,9 +2960,9 @@ ol {
   justify-content: space-between !important;
 }
 
-/* Custom image size overrides for homepage - make images much bigger */
-.about-crenditials-box img[alt='Sign'],
-.about-project-box img[alt='My Works'] {
+/* Custom image size overrides for homepage ONLY - make images much bigger */
+.about-area .about-credentials-wrap .about-crenditials-box img[alt='Sign'],
+.about-area .about-credentials-wrap .about-project-box img[alt='My Works'] {
   width: auto !important;
   max-width: 90% !important;
   height: auto !important;
@@ -2973,9 +2973,9 @@ ol {
   align-self: center !important;
 }
 
-/* Position text and button at bottom */
-.about-crenditials-box .d-flex,
-.about-project-box .d-flex {
+/* Position text and button at bottom - homepage only */
+.about-area .about-credentials-wrap .about-crenditials-box .d-flex,
+.about-area .about-credentials-wrap .about-project-box .d-flex {
   margin-top: 0 !important;
   margin-bottom: -5px !important;
 }
@@ -2986,9 +2986,154 @@ ol {
     min-height: 260px !important;
   }
 
-  .about-crenditials-box img[alt='Sign'],
-  .about-project-box img[alt='My Works'] {
+  .about-area .about-credentials-wrap .about-crenditials-box img[alt='Sign'],
+  .about-area .about-credentials-wrap .about-project-box img[alt='My Works'] {
     transform: scale(1.7);
     margin: 0 auto 25px auto !important;
   }
+}
+
+/* SEO Fix: Make H2 tags in info boxes look identical to H1s */
+.info-box .infos h2 {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.info-box.about-client-box .clients .client-item h2 {
+  color: #ffffff;
+  font-size: 34px;
+  margin-bottom: 17px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.info-box.about-contact-box h2 {
+  font-size: 44px;
+  line-height: 52px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.info-box.about-contact-box h2 span {
+  background:
+    linear-gradient(
+      155deg,
+      rgb(229, 176, 124) 0%,
+      rgb(229, 176, 124) 41%,
+      rgb(198, 157, 133) 41%,
+      rgb(198, 157, 133) 42%,
+      rgb(167, 139, 142) 42%,
+      rgb(167, 139, 142) 44%,
+      rgb(136, 120, 151) 44%,
+      rgb(136, 120, 151) 45%,
+      rgb(105, 101, 159) 45%,
+      rgb(105, 101, 159) 61%,
+      rgb(74, 83, 168) 61%,
+      rgb(74, 83, 168) 78%,
+      rgb(43, 64, 177) 78%,
+      rgb(43, 64, 177) 100%
+    ),
+    linear-gradient(
+      322deg,
+      rgb(229, 176, 124) 0%,
+      rgb(229, 176, 124) 41%,
+      rgb(198, 157, 133) 41%,
+      rgb(198, 157, 133) 42%,
+      rgb(167, 139, 142) 42%,
+      rgb(167, 139, 142) 44%,
+      rgb(136, 120, 151) 44%,
+      rgb(136, 120, 151) 45%,
+      rgb(105, 101, 159) 45%,
+      rgb(105, 101, 159) 61%,
+      rgb(74, 83, 168) 61%,
+      rgb(74, 83, 168) 78%,
+      rgb(43, 64, 177) 78%,
+      rgb(43, 64, 177) 100%
+    ),
+    linear-gradient(
+      33deg,
+      rgb(229, 176, 124) 0%,
+      rgb(229, 176, 124) 41%,
+      rgb(198, 157, 133) 41%,
+      rgb(198, 157, 133) 42%,
+      rgb(167, 139, 142) 42%,
+      rgb(167, 139, 142) 44%,
+      rgb(136, 120, 151) 44%,
+      rgb(136, 120, 151) 45%,
+      rgb(105, 101, 159) 45%,
+      rgb(105, 101, 159) 61%,
+      rgb(74, 83, 168) 61%,
+      rgb(74, 83, 168) 78%,
+      rgb(43, 64, 177) 78%,
+      rgb(43, 64, 177) 100%
+    ),
+    linear-gradient(
+      315deg,
+      rgb(229, 176, 124) 0%,
+      rgb(229, 176, 124) 41%,
+      rgb(198, 157, 133) 41%,
+      rgb(198, 157, 133) 42%,
+      rgb(167, 139, 142) 42%,
+      rgb(167, 139, 142) 44%,
+      rgb(136, 120, 151) 44%,
+      rgb(136, 120, 151) 45%,
+      rgb(105, 101, 159) 45%,
+      rgb(105, 101, 159) 61%,
+      rgb(74, 83, 168) 61%,
+      rgb(74, 83, 168) 78%,
+      rgb(43, 64, 177) 78%,
+      rgb(43, 64, 177) 100%
+    ),
+    linear-gradient(
+      41deg,
+      rgb(229, 176, 124) 0%,
+      rgb(229, 176, 124) 41%,
+      rgb(198, 157, 133) 41%,
+      rgb(198, 157, 133) 42%,
+      rgb(167, 139, 142) 42%,
+      rgb(167, 139, 142) 44%,
+      rgb(136, 120, 151) 44%,
+      rgb(136, 120, 151) 45%,
+      rgb(105, 101, 159) 45%,
+      rgb(105, 101, 159) 61%,
+      rgb(74, 83, 168) 61%,
+      rgb(74, 83, 168) 78%,
+      rgb(43, 64, 177) 78%,
+      rgb(43, 64, 177) 100%
+    ),
+    linear-gradient(90deg, rgb(192, 100, 79), rgb(56, 158, 172));
+  background-blend-mode: overlay, overlay, overlay, overlay, overlay, normal;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info-box.about-contact-box:hover h2 span {
+  background: radial-gradient(523px at 7.1% 19.3%, rgb(147, 15, 255) 2%, rgb(5, 49, 255) 100.7%);
+  background-blend-mode: overlay, overlay, overlay, overlay, overlay, normal;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 991px) {
+  .info-box.about-client-box .clients .client-item h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .info-box.about-contact-box h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+/* SEO Fix: Make H2 section headings look identical to H1s */
+h2.section-heading {
+  color: #ffffff;
+  font-size: 74px;
+  font-weight: 600;
+}
+
+h2.section-heading img {
+  display: block;
 }

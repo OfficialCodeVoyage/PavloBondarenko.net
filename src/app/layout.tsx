@@ -48,6 +48,10 @@ export default function RootLayout({
     return (
       <html lang="en">
         <head>
+          {/* Resource hints for performance */}
+          <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+          <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"

@@ -22,7 +22,7 @@ const AboutPage: React.FC = () => {
                     <div className="d-flex about-me-wrap align-items-start gap-24">
                         <div data-aos="zoom-in">
                             <div className="about-image-box shadow-box">
-                                <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                                <img src="/images/bg1.png" alt="" className="bg-img"/>
                                 <div className="image-inner">
                                     <img src="/images/LOGO/aboutme.png" alt="About Me"/>
                                 </div>
@@ -30,11 +30,11 @@ const AboutPage: React.FC = () => {
                         </div>
 
                         <div className="about-details" data-aos="zoom-in">
-                            <h1 className="section-heading" data-aos="fade-up"><img src="/images/star-2.png"
+                            <h2 className="section-heading" data-aos="fade-up"><img src="/images/star-2.png"
                                                                                     alt="Star"/> Self-summary <img
-                                src="/images/star-2.png" alt="Star"/></h1>
+                                src="/images/star-2.png" alt=""/></h2>
                             <div className="about-details-inner shadow-box">
-                                <img src="/images/icon2.png" alt="Star"/>
+                                <img src="/images/icon2.png" alt=""/>
                                 <h1 style={{marginTop: '-35px'}}><span>Pavlo Bondarenko</span></h1>
                                 <p>
   I swapped my code wizard cape for a product manager hat—mixing tech savvy with a splash of fun to build awesome, scalable solutions.
@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
                     <div className="row mt-24">
                         <div className="col-md-6" data-aos="zoom-in">
                             <div className="about-edc-exp about-experience shadow-box">
-                                <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                                <img src="/images/bg1.png" alt="" className="bg-img"/>
                                 <h3>EXPERIENCE</h3>
 
                                 <ul>
@@ -71,7 +71,7 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="col-md-6" data-aos="zoom-in">
                             <div className="about-edc-exp about-education shadow-box">
-                                <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                                <img src="/images/bg1.png" alt="" className="bg-img"/>
                                 <h3>EDUCATION</h3>
 
                                 <ul>
@@ -102,7 +102,7 @@ const AboutPage: React.FC = () => {
 
                                 <div data-aos="zoom-in">
                                     <div className="about-profile-box info-box shadow-box h-full">
-                                        <img src="/images/bg1.png" alt="BG" className="bg-img"/>
+                                        <img src="/images/bg1.png" alt="" className="bg-img"/>
                                         <div className="inner-profile-icons shadow-box">
                                             <Link target="_blank" rel="noopener noreferrer" className="linkedln"
                                                   href="https://www.linkedin.com/in/mrbondarenko/">
@@ -120,11 +120,11 @@ const AboutPage: React.FC = () => {
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="infos">
                                                 <h4>LET&apos;S CONNECT</h4>
-                                                <h1>My Social Profiles</h1>
+                                                <h2>My Social Profiles</h2>
                                             </div>
 
                                             <Link href='../contact' className="about-btn">
-                                                <img src="/images/icon.svg" alt="Button"/>
+                                                <img src="/images/icon.svg" alt=""/>
                                             </Link>
 
                                         </div>
@@ -134,9 +134,9 @@ const AboutPage: React.FC = () => {
                                 <div data-aos="zoom-in" className="flex-1">
                                     <div className="about-contact-box info-box shadow-box">
                                         <Link className="overlay-link" href='../contact'></Link>
-                                        <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                                        <img src="/images/icon2.png" alt="Icon" className="star-icon"/>
-                                        <h1>Let&apos;s <br/>work <span>together.</span></h1>
+                                        <img src="/images/bg1.png" alt="" className="bg-img"/>
+                                        <img src="/images/icon2.png" alt="" className="star-icon"/>
+                                        <h2>Let&apos;s <br/>work <span>together.</span></h2>
                                         <Link href='../contact' className="about-btn">
                                             <img src="/images/icon.svg" alt="Button"/>
                                         </Link>
@@ -146,16 +146,16 @@ const AboutPage: React.FC = () => {
                                 <div data-aos="zoom-in" className="h-full">
                                     <div className="about-crenditials-box info-box shadow-box">
                                         <Link className="overlay-link" href="/Pavlo_Bondarenko_Resume.pdf" target="_blank" rel="noopener noreferrer"></Link>
-                                        <img src="/images/bg1.png" alt="BG" className="bg-img"/>
-                                        <img src="/images/resume.png" style={{height: '124px'}} alt="Sign"/>
+                                        <img src="/images/bg1.png" alt="" className="bg-img"/>
+                                        <img src="/images/resume.png" style={{height: '124px'}} alt="Resume preview icon"/>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="infos">
                                                 <h4>Download My</h4>
-                                                <h1>Updated Resume</h1>
+                                                <h2>Updated Resume</h2>
                                             </div>
 
                                             <a href="/Pavlo_Bondarenko_Resume.pdf" target="_blank" rel="noopener noreferrer" className="about-btn">
-                                                <img src="/images/icon.svg" alt="Button"/>
+                                                <img src="/images/icon.svg" alt=""/>
                                             </a>
 
                                         </div>
