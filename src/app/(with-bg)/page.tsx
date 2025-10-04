@@ -69,7 +69,7 @@ const HomePage: React.FC = () => {
                       <div className="about-crenditials-box info-box shadow-box h-full">
                         <Link className="overlay-link" href="/about"></Link>
                         <Image src="/images/bg1.png" alt="" className="bg-img" fill style={{ objectFit: 'cover' }} />
-                        <Image src="/images/pbsignature.png" alt="Pavlo Bondarenko signature" width={400} height={200} style={{ width: 'auto', height: 'auto', maxWidth: '90%' }} loading="lazy" />
+                        <Image src="/images/pbsignature.png" alt="Pavlo Bondarenko signature" width={400} height={200} style={{ width: '100%', height: 'auto' }} loading="lazy" />
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="infos">
                             <h4>Credentials</h4>
