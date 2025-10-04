@@ -1,6 +1,6 @@
 # CLAUDE.md - Project Documentation
 
-**Last Updated**: January 19, 2025
+**Last Updated**: January 19, 2025 (Evening Session)
 **Project**: Pavlo Bondarenko Portfolio Website
 **Live URL**: https://pavlobondarenko.net
 **Repository**: https://github.com/OfficialCodeVoyage/PavloBondarenko.net
@@ -45,10 +45,11 @@ This is a sophisticated personal portfolio website for Pavlo Bondarenko, Associa
 
 ## Current Status
 
-**Overall Health Score**: 7.5/10 (Improved from 3.4/10)
+**Overall Health Score**: 8.0/10 (Improved from 3.4/10)
 **Build Status**: ✅ Production Ready
-**Last Deployment**: January 19, 2025
-**Total Commits**: 124
+**Last Deployment**: January 19, 2025 (Evening)
+**Total Commits**: 127
+**GitHub Actions**: ✅ All tests passing
 
 ### ✅ Completed Priorities
 
@@ -84,6 +85,17 @@ This is a sophisticated personal portfolio website for Pavlo Bondarenko, Associa
    - Form validation (client + server side)
    - Rate limiting (3 requests/minute)
    - Professional HTML email templates
+
+6. **✅ GitHub Actions CI/CD (January 19, 2025 - Evening)**
+   - Fixed TypeScript type check failures
+   - Created jest-setup.d.ts for jest-dom types
+   - All workflows now passing (test, deploy, CodeQL)
+   - Automated testing on every push
+
+7. **✅ Image Optimization Fixes**
+   - Fixed credentials signature image size on homepage
+   - Proper Next.js Image component usage
+   - Responsive image sizing with aspect ratio preservation
 
 ### 🔄 In Progress
 
@@ -275,13 +287,15 @@ pavel 7/
 
 ### File Statistics
 
-- **Total Source Files**: 69 JS/TS files (excluding node_modules, .next)
+- **Total Source Files**: 70 JS/TS files (excluding node_modules, .next)
 - **TypeScript Files**: 20 (.tsx and .ts)
+- **TypeScript Declarations**: 2 (next-env.d.ts, jest-setup.d.ts)
 - **Test Files**: 7 (3 unit test suites + 4 E2E specs)
 - **Total Tests**: 186 (41 unit tests + 145 E2E tests)
 - **Components**: 15+ reusable React components
 - **Routes**: 4 main routes (Home, About, Projects, Contact)
 - **API Endpoints**: 1 (Contact form)
+- **GitHub Actions Workflows**: 3 (test.yml, deploy.yml, codeql.yml)
 
 ---
 
@@ -435,6 +449,55 @@ pavel 7/
 - Added auto-reply to visitors
 - Implemented rate limiting (3 requests/minute)
 - Added comprehensive validation (client + server)
+
+### 🔧 GitHub Actions & Bug Fixes (January 19, 2025 - Evening)
+
+**Phase 1: GitHub Actions CI/CD Fix**
+**Date**: January 19, 2025 (Evening Session)
+
+**Problem**: GitHub Actions workflows failing on TypeScript type check
+
+- Tests were passing locally but failing in CI/CD
+- TypeScript couldn't find jest-dom type definitions
+- Error: "Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'"
+
+**Solution Implemented**:
+
+- Created `jest-setup.d.ts` - TypeScript declaration file for jest-dom types
+- Updated `tsconfig.json` to include the new declaration file
+- All tests now pass in GitHub Actions
+
+**Files Modified**:
+
+- Created: `jest-setup.d.ts`
+- Modified: `tsconfig.json`
+
+**Impact**:
+
+- ✅ All GitHub Actions workflows now passing (test, deploy, CodeQL)
+- ✅ Automated testing on every push
+- ✅ CI/CD pipeline fully operational
+
+**Phase 2: Homepage Image Fix**
+**Date**: January 19, 2025 (Evening Session)
+
+**Problem**: Credentials signature image appearing too small on homepage
+
+- Image size broke during Next.js Image component migration
+- `width: 'auto'` with `maxWidth: '90%'` caused incorrect rendering
+
+**Solution**:
+
+- Changed image style from `width: 'auto', height: 'auto', maxWidth: '90%'` to `width: '100%', height: 'auto'`
+- Proper responsive image sizing with aspect ratio preservation
+
+**File Modified**: `src/app/(with-bg)/page.tsx`
+
+**Impact**:
+
+- ✅ Signature image displays at correct size
+- ✅ Maintains responsive design
+- ✅ Consistent with original design intent
 
 ---
 
@@ -903,12 +966,21 @@ npm run test:e2e:headed      # See browser actions
 
 ### Major Milestones
 
-**January 2025**: SEO Optimization Project
+**January 19, 2025 (Evening)**: GitHub Actions & Bug Fixes
+
+- Fixed GitHub Actions CI/CD pipeline
+- Created TypeScript declaration for jest-dom types
+- Fixed homepage credentials signature image size
+- All workflows now passing (test, deploy, CodeQL)
+- Health score improved to 8.0/10
+
+**January 19, 2025 (Afternoon)**: SEO Optimization Project
 
 - 8 comprehensive SEO phases completed
 - Metadata enhanced across all pages
 - 12 JSON-LD schemas implemented
 - Performance and mobile SEO optimized
+- Comprehensive CLAUDE.md documentation update
 
 **December 2024**: Testing Infrastructure
 
@@ -939,10 +1011,11 @@ npm run test:e2e:headed      # See browser actions
 
 ### Git Statistics
 
-- **Total Commits**: 124
+- **Total Commits**: 127
 - **Contributors**: 1 (Pavlo Bondarenko)
 - **Active Development**: 2024-2025
 - **Commit Frequency**: Regular (2-3 commits per development session)
+- **Latest Session**: January 19, 2025 (3 commits - CI/CD fixes)
 
 ---
 
