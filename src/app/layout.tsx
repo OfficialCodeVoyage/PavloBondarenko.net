@@ -50,6 +50,26 @@ export default function RootLayout({
     return (
       <html lang="en">
         <head>
+          {/* Mobile-First Meta Tags */}
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="apple-mobile-web-app-title" content="Pavlo Bondarenko" />
+
+          {/* Theme Color for Mobile Browsers */}
+          <meta name="theme-color" content="#0F0F0F" />
+          <meta name="msapplication-TileColor" content="#0F0F0F" />
+          <meta name="msapplication-navbutton-color" content="#0F0F0F" />
+
+          {/* Format Detection - Prevent automatic linking */}
+          <meta name="format-detection" content="telephone=no, email=no, address=no" />
+
+          {/* Apple Touch Icons for iOS Home Screen */}
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
           {/* Resource hints for performance optimization */}
           <link rel="preconnect" href="https://cdn.jsdelivr.net" />
           <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
