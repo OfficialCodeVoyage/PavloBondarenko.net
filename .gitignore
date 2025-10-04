@@ -55,3 +55,4 @@ bmad-fullstack.txt
 *.bmad
 /web-bundles
 /.bmad-core
+# Test trigger
