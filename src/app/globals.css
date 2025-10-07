@@ -2953,7 +2953,8 @@ ol {
 /* Make the credential and project boxes bigger */
 .about-crenditials-box,
 .about-project-box {
-  min-height: 245px !important;
+  min-height: 247px !important;
+  height: 247px !important;
   padding: 28px 24px !important;
   display: flex !important;
   flex-direction: column !important;
@@ -2983,7 +2984,8 @@ ol {
 @media (max-width: 767px) {
   .about-crenditials-box,
   .about-project-box {
-    min-height: 260px !important;
+    min-height: 262px !important;
+    height: 262px !important;
   }
 
   .about-area .about-credentials-wrap .about-crenditials-box img[alt='Sign'],
